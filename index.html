@@ -1,0 +1,2564 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Мозговой Спринт. Как прокачать мозг на +50% за 30 дней</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=PT+Serif:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream: #F7F2E8;
+  --cream-light: #FDFAF4;
+  --cream-deep: #EFE7D6;
+  --ink: #2A2620;
+  --ink-soft: #4A4339;
+  --ink-mute: #6B5D4A;
+  --sage: #6B8E6B;
+  --sage-deep: #4A6B4A;
+  --sage-soft: #DCE5D8;
+  --terracotta: #C4633D;
+  --terracotta-soft: #F5DCCD;
+  --terracotta-deep: #8F4324;
+  --amber: #B5854A;
+  --amber-soft: #F4E8D0;
+  --line: rgba(42,38,32,0.12);
+  --line-strong: rgba(42,38,32,0.2);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+  line-height: 1.55;
+  font-size: 17px;
+  -webkit-font-smoothing: antialiased;
+}
+.serif { font-family: 'PT Serif', Georgia, serif; }
+
+/* Progress bar */
+.progress-bar { position: fixed; top: 0; left: 0; width: 100%; height: 3px; background: rgba(42,38,32,0.06); z-index: 1003; pointer-events: none; }
+.progress-fill { height: 100%; background: var(--terracotta); width: 0%; transition: width 0.1s linear; pointer-events: none; }
+
+/* Layout */
+.layout { max-width: 1180px; margin: 0 auto; padding: 2rem; display: flex; gap: 3rem; }
+.sidebar { width: 220px; flex-shrink: 0; align-self: flex-start; position: sticky; top: 2rem; max-height: calc(100vh - 4rem); overflow-y: auto; padding-right: 0.5rem; }
+.sidebar::-webkit-scrollbar { width: 4px; }
+.sidebar::-webkit-scrollbar-thumb { background: var(--line); border-radius: 4px; }
+.toc-title { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--terracotta); font-weight: 500; margin-bottom: 1rem; padding-bottom: 0.75rem; border-bottom: 0.5px solid var(--line); }
+.toc-link { display: flex; gap: 0.5rem; padding: 0.4rem 0.5rem; border-radius: 6px; color: var(--ink-mute); text-decoration: none; font-size: 13px; line-height: 1.4; transition: all 0.15s; border-left: 2px solid transparent; }
+.toc-link:hover { color: var(--ink); background: var(--cream-light); }
+.toc-link.active { color: var(--terracotta); border-left-color: var(--terracotta); background: var(--terracotta-soft); }
+.toc-num { font-family: 'PT Serif', Georgia, serif; font-size: 11px; color: var(--ink-mute); min-width: 18px; }
+.toc-link.active .toc-num { color: var(--terracotta); }
+.toc-part { font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--sage-deep); font-weight: 500; margin: 1.25rem 0 0.5rem 0.5rem; }
+.toc-part:first-of-type { margin-top: 0.5rem; }
+.content { max-width: 760px; flex: 1; background: var(--cream-light); border-radius: 12px; border: 0.5px solid var(--line); }
+
+/* Mobile menu button (native button element) */
+.menu-bar { display: none; position: fixed; top: 0; left: 0; right: 0; width: 100%; background: #C4633D; color: #FDFAF4; padding: 14px 18px; z-index: 1002; box-shadow: 0 2px 8px rgba(0,0,0,0.15); cursor: pointer; font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; text-align: center; user-select: none; -webkit-user-select: none; -webkit-appearance: none; appearance: none; -webkit-tap-highlight-color: rgba(255,255,255,0.2); border: none; outline: none; margin: 0; touch-action: manipulation; -webkit-touch-callout: none; isolation: isolate; }
+.menu-bar-text { display: inline-flex; align-items: center; gap: 8px; pointer-events: none; }
+.menu-bar-icon { display: inline-block; width: 16px; height: 12px; position: relative; pointer-events: none; }
+.menu-bar-icon span { position: absolute; left: 0; right: 0; height: 2px; background: currentColor; border-radius: 1px; top: 5px; display: block; }
+.menu-bar-icon::before, .menu-bar-icon::after { content: ''; position: absolute; left: 0; right: 0; height: 2px; background: currentColor; border-radius: 1px; }
+.menu-bar-icon::before { top: 0; }
+.menu-bar-icon::after { bottom: 0; }
+.top-btn { display: none; position: fixed; bottom: 1.25rem; right: 1.25rem; background: var(--cream-light); color: var(--ink); border: 0.5px solid var(--line-strong); width: 44px; height: 44px; border-radius: 50%; font-size: 18px; cursor: pointer; z-index: 998; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0,0,0,0.08); opacity: 0; transition: opacity 0.2s; touch-action: manipulation; -webkit-tap-highlight-color: rgba(0,0,0,0); }
+.top-btn.show { display: flex; opacity: 1; }
+
+/* Mobile overlay menu */
+.mobile-menu { position: fixed; top: 0; right: 0; bottom: 0; left: 0; width: 100%; height: 100vh; height: 100dvh; background: var(--cream); z-index: 9999; display: none; flex-direction: column; padding: 2rem 1.5rem; overflow-y: auto; -webkit-overflow-scrolling: touch; overscroll-behavior: contain; }
+.mobile-menu.open { display: flex; }
+.mobile-menu-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 0.5px solid var(--line); }
+.mobile-menu-title { font-family: 'PT Serif', Georgia, serif; font-size: 22px; font-weight: 700; color: var(--ink); }
+.mobile-close { background: transparent; border: 0.5px solid var(--line-strong); width: 40px; height: 40px; border-radius: 50%; font-size: 20px; cursor: pointer; color: var(--ink); touch-action: manipulation; -webkit-tap-highlight-color: rgba(0,0,0,0); -webkit-user-select: none; user-select: none; }
+.mobile-progress { font-size: 13px; color: var(--ink-mute); margin-bottom: 2rem; padding: 0.75rem 1rem; background: var(--cream-light); border-radius: 8px; border: 0.5px solid var(--line); }
+.mobile-progress strong { color: var(--terracotta); font-weight: 500; }
+.mobile-link { display: flex; gap: 0.75rem; padding: 1rem 0.75rem; border-radius: 8px; color: var(--ink); text-decoration: none; font-size: 16px; line-height: 1.4; border-bottom: 0.5px solid var(--line); touch-action: manipulation; -webkit-tap-highlight-color: rgba(196,99,61,0.1); }
+.mobile-link.active { background: var(--terracotta-soft); color: var(--terracotta-deep); border-color: transparent; }
+.mobile-link.active .mobile-link-num { color: var(--terracotta); }
+.mobile-link-num { font-family: 'PT Serif', Georgia, serif; font-size: 14px; color: var(--ink-mute); min-width: 28px; }
+.mobile-part { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--sage-deep); font-weight: 500; margin: 1.5rem 0 0.5rem; padding-left: 0.75rem; }
+.mobile-part:first-of-type { margin-top: 0; }
+
+/* Cover */
+.cover { padding: 4rem 2.5rem; text-align: center; background: var(--cream); border-bottom: 0.5px solid var(--line); }
+.cover .badge { display: inline-block; font-size: 11px; color: var(--terracotta); letter-spacing: 3px; font-weight: 500; margin-bottom: 2rem; text-transform: uppercase; padding: 5px 14px; border: 0.5px solid var(--terracotta); border-radius: 999px; }
+.cover h1 { font-family: 'PT Serif', Georgia, serif; font-size: 42px; font-weight: 700; margin: 0 0 1rem; color: var(--ink); line-height: 1.1; letter-spacing: -1px; }
+.cover h1 em { font-style: italic; color: var(--terracotta); font-weight: 400; }
+.cover .sub { font-size: 17px; color: var(--ink-mute); margin: 1.25rem auto 2.5rem; font-style: italic; font-family: 'PT Serif', Georgia, serif; max-width: 380px; line-height: 1.4; }
+.cover .author { font-size: 11px; color: var(--ink-mute); letter-spacing: 3px; text-transform: uppercase; border-top: 0.5px solid var(--line); padding-top: 1.5rem; display: inline-block; }
+.cover-img { max-width: 100%; margin: 1.5rem auto 0; display: block; border-radius: 8px; }
+
+/* Sections */
+.section-pad { padding: 2.5rem; }
+.disclaimer { background: var(--cream); padding: 1.5rem 2.5rem; border-bottom: 0.5px solid var(--line); font-size: 13px; color: var(--ink-mute); line-height: 1.5; font-style: italic; }
+.intro h2 { font-family: 'PT Serif', Georgia, serif; font-size: 30px; font-weight: 700; margin: 0 0 1.25rem; color: var(--ink); letter-spacing: -0.3px; line-height: 1.2; }
+.intro p { margin: 0.75rem 0; color: var(--ink-soft); }
+
+/* Chapter head */
+.chap-head { padding: 3rem 2.5rem 1.5rem; border-bottom: 0.5px solid var(--line); background: var(--cream); position: relative; }
+.chap-head .part { font-size: 11px; color: var(--sage-deep); letter-spacing: 2.5px; text-transform: uppercase; font-weight: 500; margin-bottom: 0.75rem; }
+.chap-head .num { font-family: 'PT Serif', Georgia, serif; font-size: 14px; color: var(--ink-mute); letter-spacing: 1px; margin-bottom: 0.5rem; }
+.chap-head h2 { font-family: 'PT Serif', Georgia, serif; font-size: 38px; font-weight: 700; margin: 0.25rem 0 1rem; color: var(--ink); line-height: 1.1; letter-spacing: -0.5px; }
+.chap-head .lead { font-family: 'PT Serif', Georgia, serif; font-size: 19px; font-style: italic; color: var(--ink-soft); margin: 0; line-height: 1.4; }
+.chap-illust { width: 100%; height: auto; display: block; margin: 1.5rem 0 0; border-radius: 8px; background: var(--cream-light); }
+
+/* Chapter body */
+.chap-body { padding: 2rem 2.5rem 1.5rem; }
+.chap-body p { margin: 0.875rem 0; color: var(--ink-soft); }
+.chap-body h3 { font-family: 'PT Serif', Georgia, serif; font-size: 24px; font-weight: 700; margin: 2.25rem 0 0.875rem; color: var(--ink); letter-spacing: -0.3px; line-height: 1.25; }
+.chap-body h4 { font-family: 'PT Serif', Georgia, serif; font-size: 18px; font-weight: 700; margin: 1.5rem 0 0.5rem; color: var(--ink); }
+
+/* Inline ref link */
+.ref { color: var(--terracotta); text-decoration: none; border-bottom: 1px dotted var(--terracotta); padding-bottom: 1px; }
+.ref:hover { background: var(--terracotta-soft); border-bottom-style: solid; }
+
+/* Chapter nav arrows */
+
+/* Callouts */
+.fact { background: var(--cream-deep); border-left: 3px solid var(--sage); padding: 1.125rem 1.375rem; margin: 1.5rem 0; font-size: 15.5px; color: var(--ink-soft); }
+.fact strong { color: var(--ink); font-weight: 500; }
+.highlight { background: var(--terracotta-soft); border-left: 3px solid var(--terracotta); padding: 1.125rem 1.375rem; margin: 1.5rem 0; font-size: 15.5px; color: var(--ink-soft); }
+.highlight strong { color: var(--terracotta-deep); font-weight: 500; }
+.warn { background: var(--amber-soft); border-left: 3px solid var(--amber); padding: 1.125rem 1.375rem; margin: 1.5rem 0; font-size: 15.5px; color: var(--ink-soft); }
+.warn strong { color: var(--ink); font-weight: 500; }
+
+/* Term card */
+.term { background: var(--cream); border: 0.5px solid var(--line); border-radius: 8px; padding: 1.125rem 1.375rem; margin: 1.25rem 0; font-size: 15px; color: var(--ink-soft); line-height: 1.55; }
+.term .word { display: block; font-size: 11px; color: var(--terracotta); letter-spacing: 1.5px; text-transform: uppercase; font-weight: 500; margin-bottom: 0.5rem; }
+.term strong { color: var(--ink); font-weight: 500; }
+
+/* Stats */
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; margin: 1.5rem 0; }
+.stat { background: var(--cream); border: 0.5px solid var(--line); border-radius: 8px; padding: 1.125rem 1.25rem; }
+.stat .num { font-family: 'PT Serif', Georgia, serif; font-size: 28px; font-weight: 700; color: var(--terracotta); line-height: 1; margin-bottom: 0.4rem; letter-spacing: -0.5px; }
+.stat .lbl { font-size: 12.5px; color: var(--ink-mute); line-height: 1.3; }
+
+/* Numbered steps */
+.steps { margin: 1.25rem 0; padding: 0; list-style: none; counter-reset: s; }
+.steps li { counter-increment: s; position: relative; padding: 1rem 0 1rem 3rem; font-size: 15.5px; border-bottom: 0.5px solid var(--line); color: var(--ink-soft); line-height: 1.5; }
+.steps li:last-child { border-bottom: none; }
+.steps li::before { content: counter(s); position: absolute; left: 0; top: 1rem; width: 2rem; height: 2rem; background: var(--sage); color: var(--cream-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 500; }
+.steps strong { color: var(--ink); font-weight: 500; }
+
+/* Do / Don't */
+.dd { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 1.25rem 0; }
+.dd .col { padding: 1.125rem 1.25rem; border-radius: 8px; font-size: 15px; line-height: 1.5; }
+.dd .yes { background: var(--sage-soft); color: var(--ink); }
+.dd .no { background: var(--cream); color: var(--ink-soft); border: 0.5px solid var(--line); }
+.dd .col .h { display: block; margin-bottom: 0.6rem; font-weight: 500; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--sage-deep); }
+.dd .no .h { color: var(--terracotta); }
+.dd ul { margin: 0; padding: 0; list-style: none; }
+.dd li { margin: 0.5rem 0; padding-left: 1.1rem; position: relative; line-height: 1.4; }
+.dd .yes li::before { content: ""; position: absolute; left: 0; top: 0.65rem; width: 6px; height: 6px; background: var(--sage-deep); border-radius: 50%; }
+.dd .no li::before { content: ""; position: absolute; left: 0; top: 0.7rem; width: 8px; height: 1.5px; background: var(--terracotta); }
+
+/* Protocol box */
+.proto { background: var(--cream); border: 0.5px solid var(--line); border-radius: 10px; padding: 1.5rem 1.75rem; margin: 1.5rem 0; }
+.proto .h { font-size: 11px; color: var(--terracotta); letter-spacing: 2px; text-transform: uppercase; font-weight: 500; margin-bottom: 1rem; }
+.proto .row { display: flex; gap: 1rem; padding: 0.75rem 0; border-bottom: 0.5px solid var(--line); font-size: 15px; color: var(--ink-soft); line-height: 1.4; }
+.proto .row:last-child { border-bottom: none; padding-bottom: 0; }
+.proto .row:first-of-type { padding-top: 0; }
+.proto .t { min-width: 70px; color: var(--ink); font-weight: 500; font-family: 'PT Serif', Georgia, serif; font-size: 14.5px; }
+
+/* Recap */
+.recap { background: var(--sage-deep); color: var(--cream-light); border-radius: 10px; padding: 2rem 1.75rem; margin: 2rem 0; }
+.recap .h { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--sage-soft); margin-bottom: 0.75rem; font-weight: 500; }
+.recap h4 { font-family: 'PT Serif', Georgia, serif; font-size: 24px; font-weight: 700; margin: 0 0 1.125rem; color: var(--cream-light); line-height: 1.2; }
+.recap ul { margin: 0; padding: 0; list-style: none; }
+.recap li { margin: 0.6rem 0; padding-left: 1.25rem; position: relative; font-size: 15.5px; line-height: 1.45; }
+.recap li::before { content: ""; position: absolute; left: 0; top: 0.6rem; width: 8px; height: 1.5px; background: var(--sage-soft); }
+
+/* Today */
+.today { background: var(--terracotta-soft); border-radius: 10px; padding: 1.375rem 1.625rem; margin: 1.5rem 0; border: 0.5px dashed var(--terracotta); }
+.today .h { font-size: 11px; color: var(--terracotta-deep); letter-spacing: 2px; text-transform: uppercase; font-weight: 500; margin-bottom: 0.5rem; }
+.today p { margin: 0; font-size: 15.5px; color: var(--ink); line-height: 1.5; }
+
+/* ============ INTERACTIVE WIDGETS ============ */
+
+/* Generic interactive box */
+.iwidget { background: var(--cream); border: 0.5px solid var(--line); border-radius: 12px; padding: 1.5rem; margin: 1.75rem 0; }
+.iwidget .ititle { font-family: 'PT Serif', Georgia, serif; font-size: 18px; font-weight: 700; margin: 0 0 0.25rem; color: var(--ink); }
+.iwidget .isub { font-size: 13px; color: var(--ink-mute); margin-bottom: 1.25rem; line-height: 1.4; }
+.iwidget .ibtn { background: var(--terracotta); color: var(--cream-light); border: none; padding: 0.75rem 1.5rem; border-radius: 8px; font-size: 14px; cursor: pointer; font-weight: 500; font-family: inherit; transition: background 0.15s; }
+.iwidget .ibtn:hover { background: var(--terracotta-deep); }
+.iwidget .ibtn-sage { background: var(--sage-deep); }
+.iwidget .ibtn-sage:hover { background: var(--sage); }
+.iwidget input[type="number"], .iwidget input[type="time"], .iwidget input[type="text"], .iwidget select { padding: 8px 12px; border: 0.5px solid var(--line-strong); border-radius: 6px; font-size: 14px; font-family: inherit; background: var(--cream-light); color: var(--ink); width: 100%; }
+.iwidget input[type="range"] { touch-action: pan-y; -webkit-appearance: auto; }
+.iwidget input:focus { outline: 2px solid var(--terracotta); outline-offset: -1px; }
+.iwidget label { display: block; font-size: 13px; color: var(--ink-mute); margin-bottom: 0.4rem; font-weight: 500; }
+.iwidget .iresult { background: var(--terracotta-soft); border-radius: 8px; padding: 1rem 1.25rem; margin-top: 1rem; font-size: 15px; color: var(--ink); display: none; }
+.iwidget .iresult.show { display: block; }
+.iwidget .iresult strong { color: var(--terracotta-deep); font-weight: 500; }
+
+/* Sleep calc */
+.sleep-calc-row { display: flex; gap: 1rem; align-items: end; flex-wrap: wrap; margin-bottom: 0.5rem; }
+.sleep-calc-row > div { flex: 1; min-width: 140px; }
+
+/* Circadian wheel */
+.circadian { text-align: center; }
+.circadian-clock { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; justify-content: center; }
+.circadian-time { flex: 0 0 auto; min-width: 120px; }
+.circadian-out { flex: 1; text-align: left; min-width: 200px; }
+.circadian-out h5 { font-family: 'PT Serif', Georgia, serif; font-size: 16px; font-weight: 700; margin: 0 0 0.25rem; color: var(--terracotta); }
+.circadian-out p { margin: 0.25rem 0; font-size: 14px; color: var(--ink-soft); line-height: 1.4; }
+.circadian-bars { display: flex; gap: 4px; margin-top: 0.75rem; }
+.circadian-bar { flex: 1; height: 8px; background: var(--cream-deep); border-radius: 2px; position: relative; overflow: hidden; }
+.circadian-bar-fill { position: absolute; left: 0; top: 0; height: 100%; background: var(--sage); border-radius: 2px; transition: width 0.3s; }
+.circadian-bar.cortisol .circadian-bar-fill { background: var(--terracotta); }
+
+/* Movement tracker */
+.move-tracker { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.move-day { background: var(--cream-light); border: 0.5px solid var(--line); border-radius: 8px; padding: 0.75rem 1rem; cursor: pointer; user-select: none; transition: all 0.15s; }
+.move-day:hover { border-color: var(--terracotta); }
+.move-day .mday { font-size: 11px; color: var(--ink-mute); letter-spacing: 1px; text-transform: uppercase; }
+.move-day .mlabel { font-size: 13px; font-weight: 500; color: var(--ink); margin-top: 0.25rem; }
+.move-day input[type="checkbox"] { display: none; }
+.move-day.checked { background: var(--sage-soft); border-color: var(--sage); }
+.move-day.checked .mday { color: var(--sage-deep); }
+
+/* Water calc */
+.water-glasses { display: flex; flex-wrap: wrap; gap: 6px; margin: 1rem 0; }
+.water-glass { width: 32px; height: 44px; background: var(--cream-light); border: 1.5px solid var(--line-strong); border-radius: 0 0 8px 8px; cursor: pointer; transition: all 0.15s; position: relative; user-select: none; }
+.water-glass:hover { border-color: var(--terracotta); }
+.water-glass.full { background: var(--terracotta); border-color: var(--terracotta); }
+
+/* Dopamine quiz */
+.quiz-q { padding: 1rem 0; border-bottom: 0.5px solid var(--line); }
+.quiz-q:last-child { border-bottom: none; }
+.quiz-q p { margin: 0 0 0.5rem; font-size: 14.5px; color: var(--ink); }
+.quiz-buttons { display: flex; gap: 8px; }
+.quiz-buttons button { padding: 0.45rem 1rem; border: 0.5px solid var(--line-strong); border-radius: 6px; background: var(--cream-light); color: var(--ink-soft); font-family: inherit; font-size: 13px; cursor: pointer; }
+.quiz-buttons button.selected { background: var(--terracotta); color: var(--cream-light); border-color: var(--terracotta); }
+.quiz-buttons button:hover:not(.selected) { border-color: var(--terracotta); }
+
+/* Breathing timer */
+.breath-timer { background: var(--sage-soft); border-radius: 12px; padding: 2rem; margin: 1.5rem 0; text-align: center; }
+.breath-circle { width: 140px; height: 140px; border-radius: 50%; background: var(--cream-light); border: 2px solid var(--sage); display: flex; align-items: center; justify-content: center; margin: 1rem auto; transition: transform 4s ease-in-out, background 0.6s; font-family: 'PT Serif', Georgia, serif; font-size: 18px; color: var(--sage-deep); }
+.breath-circle.in { transform: scale(1.45); background: var(--sage); color: var(--cream-light); }
+.breath-circle.hold { transform: scale(1.45); background: var(--terracotta); color: var(--cream-light); }
+.breath-circle.out { transform: scale(1); background: var(--cream-light); color: var(--sage-deep); }
+.breath-cycles { font-size: 13px; color: var(--ink-mute); margin-top: 0.75rem; }
+.breath-tabs { display: flex; gap: 4px; justify-content: center; margin-bottom: 1rem; flex-wrap: wrap; }
+.breath-tab { padding: 0.4rem 0.8rem; border: 0.5px solid var(--line-strong); border-radius: 999px; background: var(--cream-light); color: var(--ink-soft); font-family: inherit; font-size: 12px; cursor: pointer; }
+.breath-tab.active { background: var(--sage-deep); color: var(--cream-light); border-color: var(--sage-deep); }
+
+/* Cold plan */
+.cold-days { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 1rem 0; }
+.cold-day-btn { padding: 0.75rem 0.5rem; border: 0.5px solid var(--line-strong); border-radius: 8px; background: var(--cream-light); cursor: pointer; text-align: center; font-family: inherit; }
+.cold-day-btn.active { background: var(--terracotta); color: var(--cream-light); border-color: var(--terracotta); }
+.cold-day-btn .cdnum { font-family: 'PT Serif', Georgia, serif; font-size: 16px; font-weight: 700; }
+.cold-day-btn .cdsub { font-size: 11px; opacity: 0.8; margin-top: 0.15rem; }
+
+/* Supplement builder */
+.supp-symptoms { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 1rem; }
+.supp-symptom { padding: 0.75rem 1rem; border: 0.5px solid var(--line-strong); border-radius: 8px; background: var(--cream-light); cursor: pointer; font-size: 14px; user-select: none; }
+.supp-symptom:hover { border-color: var(--terracotta); }
+.supp-symptom.checked { background: var(--terracotta-soft); border-color: var(--terracotta); color: var(--terracotta-deep); }
+
+/* Why ladder */
+.why-step { margin-bottom: 0.75rem; }
+.why-step label { font-size: 12px; color: var(--terracotta); font-weight: 500; letter-spacing: 1px; text-transform: uppercase; }
+
+/* Sprint calendar */
+.sprint-cal { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; margin: 1rem 0; }
+.sprint-day { aspect-ratio: 1; min-height: 36px; background: var(--cream-light); border: 0.5px solid var(--line); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: var(--ink-mute); font-weight: 500; }
+.sprint-day.past { background: var(--sage-soft); color: var(--sage-deep); border-color: var(--sage); }
+.sprint-day.today { background: var(--terracotta); color: var(--cream-light); border-color: var(--terracotta); font-weight: 600; }
+
+/* SOS quick buttons */
+.sos-quick { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 1.25rem 0; }
+.sos-btn { padding: 1rem 1.25rem; border: 0.5px solid var(--terracotta); border-radius: 10px; background: var(--cream-light); cursor: pointer; text-align: left; font-family: inherit; transition: all 0.15s; }
+.sos-btn:hover { background: var(--terracotta-soft); }
+.sos-btn .sost { font-family: 'PT Serif', Georgia, serif; font-size: 15px; font-weight: 700; color: var(--terracotta-deep); margin-bottom: 0.15rem; }
+.sos-btn .sosd { font-size: 12px; color: var(--ink-mute); }
+
+/* Self-diagnosis */
+.diag { background: var(--cream); border: 0.5px solid var(--line); border-radius: 10px; padding: 1.5rem; margin: 1.5rem 0; }
+.diag h4 { font-family: 'PT Serif', Georgia, serif; font-size: 18px; font-weight: 700; margin: 0 0 1rem; color: var(--ink); }
+.diag-row { display: flex; align-items: center; gap: 1rem; padding: 0.75rem 0; border-bottom: 0.5px solid var(--line); }
+.diag-row:last-child { border-bottom: none; }
+.diag-label { flex: 1; font-size: 14px; color: var(--ink-soft); line-height: 1.4; }
+.diag-input { width: 80px; padding: 6px 10px; border: 0.5px solid var(--line-strong); border-radius: 6px; font-size: 14px; font-family: inherit; background: var(--cream-light); color: var(--ink); text-align: center; }
+.diag-input:focus { outline: 2px solid var(--terracotta); }
+.diag-total { margin-top: 1rem; padding-top: 1rem; border-top: 0.5px solid var(--line-strong); font-size: 14px; color: var(--ink-mute); display: flex; justify-content: space-between; align-items: center; }
+.diag-total strong { font-family: 'PT Serif', Georgia, serif; font-size: 24px; color: var(--terracotta); font-weight: 700; }
+
+/* Tracker */
+.tracker { background: var(--cream); border: 0.5px solid var(--line); border-radius: 10px; padding: 1.5rem; margin: 1.5rem 0; }
+.tracker h4 { font-family: 'PT Serif', Georgia, serif; font-size: 18px; font-weight: 700; margin: 0 0 0.75rem; color: var(--ink); }
+.tracker-progress { height: 6px; background: var(--cream-deep); border-radius: 3px; margin-bottom: 1rem; overflow: hidden; }
+.tracker-progress-fill { height: 100%; background: var(--terracotta); width: 0%; transition: width 0.3s; border-radius: 3px; }
+.tracker-grid { display: grid; grid-template-columns: repeat(10, 1fr); gap: 6px; margin: 1rem 0; }
+.tracker-day { aspect-ratio: 1; min-height: 36px; background: var(--cream-light); border: 0.5px solid var(--line); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 12px; cursor: pointer; color: var(--ink-mute); transition: all 0.15s; font-weight: 500; user-select: none; }
+.tracker-day:hover { border-color: var(--terracotta); }
+.tracker-day.done { background: var(--terracotta); color: var(--cream-light); border-color: var(--terracotta); }
+.tracker-stats { display: flex; justify-content: space-between; font-size: 13px; color: var(--ink-mute); margin-top: 0.5rem; }
+.tracker-stats strong { color: var(--terracotta); font-weight: 500; }
+
+/* Glossary grid */
+.gloss-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; margin: 1rem 0; }
+.gloss-item { background: var(--cream); padding: 0.75rem 1rem; border-radius: 6px; border: 0.5px solid var(--line); font-size: 13.5px; line-height: 1.4; }
+.gloss-item strong { display: block; color: var(--terracotta); font-size: 12px; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 0.25rem; font-weight: 500; }
+
+/* End */
+.end { text-align: center; padding: 4rem 2rem; background: var(--cream); border-top: 0.5px solid var(--line); }
+.end-title { font-family: 'PT Serif', Georgia, serif; font-size: 26px; color: var(--ink); margin-bottom: 0.5rem; font-weight: 700; }
+.end-quote { font-family: 'PT Serif', Georgia, serif; font-style: italic; color: var(--ink-mute); font-size: 16px; margin: 0.5rem 0 1.5rem; }
+.end-author { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--terracotta); margin-top: 1rem; }
+
+/* Mobile */
+@media (max-width: 900px) {
+  body { padding-top: 48px; }
+  .layout { display: block; padding: 0.75rem; min-height: calc(100vh - 48px); min-height: calc(100dvh - 48px); }
+  .sidebar { display: none; }
+  .menu-bar { display: block; }
+  .top-btn.show { display: flex; }
+  .content { max-width: 100%; border: none; border-radius: 0; background: var(--cream-light); min-height: 100%; }
+  .cover { padding: 3rem 1.25rem; }
+  .cover h1 { font-size: 28px; }
+  .cover .sub { font-size: 15px; }
+  .chap-head { padding: 2rem 1.25rem 1.25rem; }
+  .chap-head h2 { font-size: 26px; }
+  .chap-head .lead { font-size: 16px; }
+  .chap-body { padding: 1.5rem 1.25rem 1rem; }
+  .chap-body h3 { font-size: 21px; }
+  .section-pad { padding: 1.75rem 1.25rem; }
+  .disclaimer { padding: 1.25rem; font-size: 12.5px; }
+  .dd { grid-template-columns: 1fr; }
+  .move-tracker, .supp-symptoms { grid-template-columns: 1fr; }
+  .tracker-grid { grid-template-columns: repeat(7, 1fr); }
+  .cold-days { grid-template-columns: repeat(2, 1fr); }
+  .sos-quick { grid-template-columns: 1fr; }
+      body { font-size: 16px; }
+}
+@media print {
+  body { background: white; font-size: 11pt; line-height: 1.4; }
+  .layout { display: block; max-width: 100%; padding: 0; }
+  .sidebar, .menu-bar, .progress-bar, .top-btn, .mobile-menu { display: none; }
+  .content { background: white; border: none; max-width: 100%; }
+  .chap-head { page-break-before: always; }
+  h2, h3, h4 { page-break-after: avoid; }
+  .recap, .proto, .today, .fact, .highlight, .warn, .term, .breath-timer, .tracker, .diag, .iwidget { page-break-inside: avoid; }
+  @page { size: A5; margin: 12mm; }
+}
+</style>
+</head>
+<body>
+
+<div class="progress-bar"><div class="progress-fill" id="progress"></div></div>
+<button class="menu-bar" id="menuBar" type="button" aria-label="Открыть оглавление"><span class="menu-bar-text"><span class="menu-bar-icon"><span></span></span> Оглавление</span></button>
+<button class="top-btn" id="topBtn" aria-label="Наверх">↑</button>
+
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-head">
+    <div class="mobile-menu-title">Содержание</div>
+    <button class="mobile-close" id="mobileClose" aria-label="Закрыть">×</button>
+  </div>
+  <div class="mobile-progress">Прочитано: <strong id="mobileProgress">0%</strong></div>
+  <div id="mobileNav"></div>
+</div>
+
+<div class="layout">
+
+<aside class="sidebar" id="sidebar">
+  <div class="toc-title">Содержание</div>
+  <nav id="tocNav">
+    <div class="toc-part">Вступление</div>
+    <a href="#cover" data-anchor="#cover" class="toc-link"><span class="toc-num">·</span><span>Обложка</span></a>
+    <a href="#intro" data-anchor="#intro" class="toc-link"><span class="toc-num">·</span><span>Как читать книгу</span></a>
+    <div class="toc-part">Часть 1 · Фундамент</div>
+    <a href="#ch1" data-anchor="#ch1" class="toc-link"><span class="toc-num">01</span><span>Сон</span></a>
+    <a href="#ch2" data-anchor="#ch2" class="toc-link"><span class="toc-num">02</span><span>Свет</span></a>
+    <a href="#ch3" data-anchor="#ch3" class="toc-link"><span class="toc-num">03</span><span>Движение</span></a>
+    <a href="#ch4" data-anchor="#ch4" class="toc-link"><span class="toc-num">04</span><span>Вода и питание</span></a>
+    <a href="#ch5" data-anchor="#ch5" class="toc-link"><span class="toc-num">05</span><span>Дофамин</span></a>
+    <div class="toc-part">Часть 2 · Ускорители</div>
+    <a href="#ch6" data-anchor="#ch6" class="toc-link"><span class="toc-num">06</span><span>Дыхание и медитация</span></a>
+    <a href="#ch7" data-anchor="#ch7" class="toc-link"><span class="toc-num">07</span><span>Холод и тепло</span></a>
+    <a href="#ch8" data-anchor="#ch8" class="toc-link"><span class="toc-num">08</span><span>Добавки</span></a>
+    <a href="#ch9" data-anchor="#ch9" class="toc-link"><span class="toc-num">09</span><span>Мышление</span></a>
+    <div class="toc-part">Часть 3 · Внедрение</div>
+    <a href="#ch10" data-anchor="#ch10" class="toc-link"><span class="toc-num">10</span><span>30 дней. План</span></a>
+    <a href="#ch11" data-anchor="#ch11" class="toc-link"><span class="toc-num">11</span><span>SOS-протоколы</span></a>
+    <div class="toc-part">Приложения</div>
+    <a href="#tracker" data-anchor="#tracker" class="toc-link"><span class="toc-num">·</span><span>Трекер 30 дней</span></a>
+    <a href="#glossary" data-anchor="#glossary" class="toc-link"><span class="toc-num">·</span><span>Словарь и FAQ</span></a>
+  </nav>
+</aside>
+
+<main class="content">
+
+<section class="cover" id="cover">
+  <div class="badge">Мозговой Спринт</div>
+  <h1>Как прокачать мозг<br>на <em>+50%</em><br>за 30 дней</h1>
+  <p class="sub">Простая система ясной головы, спокойствия и энергии</p>
+  <div class="author">Родион Сапрыкин</div>
+</section>
+
+<div class="disclaimer">
+Эта книга носит информационный характер. Перед началом приёма любых добавок, изменением диеты или резким увеличением физических нагрузок проконсультируйся с врачом, особенно при наличии хронических заболеваний, приёме лекарств или особом состоянии (беременность, период восстановления).
+</div>
+
+<section class="intro section-pad" id="intro">
+<h2>Перед тем как начать</h2>
+<p>Эта книга для людей, у которых нет лишнего часа в день на саморазвитие. Для тех, кто хочет почувствовать ясную голову, не превращая жизнь в марафон. Для тех, кому надоело быть уставшим, рассеянным и раздражительным.</p>
+<p>Внутри собрано то, что реально работает. Не теории, не модные тренды, а простые действия, которые можно начать делать сегодня вечером. Большинство из них бесплатные и занимают 5–15 минут в день.</p>
+<h3>Что ты получишь</h3>
+<p>За 30 дней последовательной практики появятся четыре заметные перемены. Стабильная энергия в течение всего дня. Лучший фокус и способность довести дело до конца. Спокойствие, которое не зависит от внешних обстоятельств. Сон, после которого хочется жить.</p>
+<p>Цифра «+50%» в названии это маркер ощущения. Кто-то почувствует меньше, кто-то намного больше. Главное, что изменения будут заметные и устойчивые.</p>
+<h3>Как читать эту книгу</h3>
+<p>Не пытайся внедрить всё за один день. Это самая частая причина, по которой люди бросают любые системы. Прочитай сначала всю книгу, чтобы видеть картину целиком. Потом начни с одной главы. Когда привычка из первой главы встанет на автомат, добавляй следующую.</p>
+<p>В <a href="#ch10" data-anchor="#ch10" class="ref">Главе 10</a> есть готовый план на 30 дней по неделям. Можно следовать ему как есть. Можно сделать свой темп. Главное правило: лучше пять минут каждый день, чем час раз в неделю.</p>
+<div class="highlight">
+<strong>Принцип одного процента.</strong> Если становиться на 1% лучше каждый день, через год ты в 37 раз эффективнее. Не пытайся изменить всё сразу. Маленькие шаги складываются в большие изменения.
+</div>
+</section>
+
+<section class="chap-head" id="ch1">
+  <div class="part">Часть 1 · Фундамент</div>
+  <div class="num">Глава 01</div>
+  <h2>Сон. Главный рычаг</h2>
+  <p class="lead">Если выбрать только одну привычку из всей книги, выбирай сон. Он управляет всем остальным.</p>
+</section>
+<div class="chap-body">
+<p>Представь, что мозг это компьютер. Днём он считает, общается, принимает решения. Ночью он не выключается. Он чистит память, сортирует впечатления, удаляет лишнее и переносит важное в долговременное хранилище.</p>
+<p>Без этого ночного времени утро встречает систему, которая работает медленнее и греется сильнее. Туман в голове. Раздражение по мелочам. Тяга к сладкому и кофе. Решения принимаются хуже.</p>
+<div class="fact">
+<strong>Один факт, чтобы прочувствовать.</strong> Одна бессонная ночь снижает скорость мышления на 25–30%. Это уровень лёгкого алкогольного опьянения. После 17 часов без сна мозг работает примерно как у человека с 0,5 промилле в крови.
+</div>
+
+<h3>Что происходит в мозге, пока ты спишь</h3>
+<p>В 2012 году учёные открыли в мозге систему, о которой раньше не знали. Её назвали глимфатической. Это сеть микроканалов, по которым ночью промывается мозг. Из него вымываются продукты обмена и токсичные белки, накопившиеся за день.</p>
+<p>Активнее всего эта чистка идёт в фазе глубокого сна. Если глубокого сна мало, мусор остаётся. Накопленный за годы, он связан с риском деменции и болезни Альцгеймера.</p>
+<div class="term">
+<span class="word">Глимфатическая система</span>
+Система очистки мозга от метаболических отходов. Работает в основном ночью, во время глубокого сна. Это ночная уборка.
+</div>
+<div class="term">
+<span class="word">Фазы сна</span>
+За ночь мозг проходит 4–5 циклов по 90 минут. В каждом есть глубокий сон (восстановление тела и чистка мозга) и REM-сон (сны, обработка эмоций, память). Обе фазы нужны.
+</div>
+
+<h3>Сколько надо спать</h3>
+<div class="stats">
+<div class="stat"><div class="num">7,5–8</div><div class="lbl">часов в сутки взрослому</div></div>
+<div class="stat"><div class="num">90 мин</div><div class="lbl">длится один цикл сна</div></div>
+<div class="stat"><div class="num">23:00</div><div class="lbl">оптимальный отбой</div></div>
+<div class="stat"><div class="num">−30%</div><div class="lbl">к мышлению после бессонной ночи</div></div>
+</div>
+<p>Спать ровно 8 часов не обязательно. Кому-то достаточно 7, кому-то нужно 8,5. Главное, чтобы пробуждение было без будильника, отдохнувшее, а не вытянутое за волосы. Если такое случается только в выходные, в будни ты не высыпаешься.</p>
+
+<div class="iwidget" id="sleepCalc">
+  <div class="ititle">Когда ложиться сегодня</div>
+  <div class="isub">Введи время подъёма. Калькулятор посчитает оптимальное время отбоя по циклам сна (по 90 минут) с учётом 15 минут на засыпание.</div>
+  <div class="sleep-calc-row">
+    <div>
+      <label for="wakeTime">Время подъёма</label>
+      <input type="time" id="wakeTime" value="07:00">
+    </div>
+    <div>
+      <button class="ibtn" onclick="calcSleep()">Рассчитать</button>
+    </div>
+  </div>
+  <div class="iresult" id="sleepResult"></div>
+</div>
+
+<h3>7 правил здорового сна</h3>
+<ol class="steps">
+<li><strong>Один и тот же график.</strong> Ложись и вставай в одно время, включая выходные. Разница не больше часа. Тело любит ритм.</li>
+<li><strong>Прохладная спальня.</strong> 18–19°C. Чтобы заснуть, тело должно остыть. В жаркой комнате крутишься и не уходишь в глубокий сон.</li>
+<li><strong>Темнота.</strong> Плотные шторы, выключенные индикаторы техники, повязка на глаза при необходимости. Любой свет ночью сбивает выработку мелатонина, гормона сна.</li>
+<li><strong>Тишина.</strong> Беруши, белый шум, закрытая дверь. Каждый ночной звук пробивает фазу глубокого сна, даже без осознанного пробуждения.</li>
+<li><strong>Без экранов за час до сна.</strong> Синий свет от телефона тормозит мелатонин. Подробнее об экранах и дофамине — в <a href="#ch5" data-anchor="#ch5" class="ref">Главе 5</a>.</li>
+<li><strong>Кофеин до 14:00.</strong> Период полураспада кофеина 5–6 часов. Чашка в 17:00 всё ещё активна в крови к полуночи.</li>
+<li><strong>Кровать только для сна.</strong> Не работай в постели, не смотри сериалы. Мозг должен ассоциировать кровать с одним: пора отключаться.</li>
+</ol>
+<div class="term">
+<span class="word">Мелатонин</span>
+Гормон, который мозг вырабатывает в темноте. Запускает сон. Свет, особенно синий от экранов, его подавляет. Поэтому уснуть после ночного скролла так тяжело.
+</div>
+
+<h3>Что помогает заснуть быстро</h3>
+<div class="dd">
+<div class="col yes">
+<span class="h">Делай</span>
+<ul>
+<li>Тёплый душ за час до сна</li>
+<li>Магний за 30–60 минут до сна <a href="#ch8" data-anchor="#ch8" class="ref">(см. Главу 8)</a></li>
+<li>Дыхание 4-7-8 в кровати <a href="#ch6" data-anchor="#ch6" class="ref">(см. Главу 6)</a></li>
+<li>Скучная бумажная книга</li>
+<li>Тёплый травяной чай</li>
+</ul>
+</div>
+<div class="col no">
+<span class="h">Не делай</span>
+<ul>
+<li>Алкоголь «для сна»</li>
+<li>Поздний ужин за 2 часа</li>
+<li>Интенсивные тренировки</li>
+<li>Лежать без сна больше 20 мин</li>
+<li>Смотреть в часы ночью</li>
+</ul>
+</div>
+</div>
+<div class="warn">
+<strong>Про алкоголь.</strong> Кажется, что бокал помогает уснуть. На деле он ломает структуру сна, убивает REM-фазу и резко снижает восстановление. После выпитого как будто спишь, а мозг не отдыхает. Утром усталость, туман и плохое настроение.
+</div>
+
+<div class="proto">
+<div class="h">Протокол вечера. Готовимся ко сну</div>
+<div class="row"><div class="t">21:00</div><div>Выключаешь рабочие чаты. Ужин закончен 1–2 часа назад.</div></div>
+<div class="row"><div class="t">21:30</div><div>Тёплый душ. Приглушённый свет в комнатах. Никаких ярких ламп сверху.</div></div>
+<div class="row"><div class="t">22:00</div><div>Магний 200–400 мг. Бумажная книга или подкаст. Телефон в режим «не беспокоить».</div></div>
+<div class="row"><div class="t">22:30</div><div>В кровать. Дыхание 4-7-8: вдох 4 секунды, задержка 7, выдох 8. Четыре цикла.</div></div>
+<div class="row"><div class="t">23:00</div><div>Спишь.</div></div>
+</div>
+
+<h3>Если не получается заснуть</h3>
+<p>Лежать в кровати и злиться, что не спишь, хуже всего. Это формирует у мозга связь «кровать = тревога». Через 20 минут бесплодных попыток встань. Перейди в другую комнату с тусклым светом. Почитай скучную книгу 15–20 минут. Когда захочется спать, возвращайся.</p>
+<p>Если такое повторяется регулярно, проверь три вещи: кофеин (после 14:00), вечерние тренировки (позже 19:00), экраны (телефон в кровати). В 80% случаев виновато одно из трёх.</p>
+
+<h3>Что делать после плохой ночи</h3>
+<p>Иногда ночь не складывается. Ребёнок, перелёт, тревога, поздняя работа. Один день можно пережить без последствий, если соблюдать простой протокол.</p>
+<ol class="steps">
+<li><strong>Утром не пей кофе натощак.</strong> Сначала вода 500 мл и завтрак. Кофеин на пустой желудок усилит тревогу и подскажет уставшему мозгу спрятаться ещё глубже.</li>
+<li><strong>Выйди на дневной свет на 10–15 минут.</strong> Это самый сильный способ вернуть бодрость. Подробнее — <a href="#ch2" data-anchor="#ch2" class="ref">Глава 2</a>.</li>
+<li><strong>Не пытайся отоспаться днём дольше 20 минут.</strong> Короткий сон 10–20 минут восстановит. Дневной сон от часа сломает следующую ночь.</li>
+<li><strong>Сложные решения отложи.</strong> Невыспавшийся мозг плохо оценивает риски.</li>
+<li><strong>Лечь спать в обычное время.</strong> Не отсыпайся на сутки вперёд. Это собьёт график на неделю.</li>
+</ol>
+<div class="fact">
+<strong>Простое правило.</strong> Не выспаться один раз — переживёшь. Не высыпаться регулярно — теряешь себя. Краткосрочная экономия 1–2 часов ночью даёт долгосрочную плату годами усталости и тумана в голове.
+</div>
+
+<div class="recap">
+<div class="h">Глава 01 · Главное</div>
+<h4>Сон это не отдых. Это работа мозга</h4>
+<ul>
+<li>Спи 7,5–8 часов и ложись в одно время</li>
+<li>Спальня прохладная 18–19°C, тёмная и тихая</li>
+<li>Кофе только до 14:00, экраны убираем за час до сна</li>
+<li>Алкоголь не помогает спать, он ломает сон</li>
+<li>После плохой ночи: вода, свет, без кофе натощак</li>
+</ul>
+</div>
+
+<div class="today">
+<div class="h">Что сделать сегодня</div>
+<p>Поставь будильник на отбой за 30 минут до желаемого сна. Когда он сработает, выключи рабочие чаты, убавь свет в комнате и отложи телефон. Это первый и самый простой шаг.</p>
+</div>
+
+</div>
+
+
+<section class="chap-head" id="ch2">
+  <div class="part">Часть 1 · Фундамент</div>
+  <div class="num">Глава 02</div>
+  <h2>Свет. Второй по силе рычаг</h2>
+  <p class="lead">Свет утром в глаза это самая мощная команда мозгу: проснись и работай.</p>
+</section>
+<div class="chap-body">
+<p>В мозге есть невидимые часы. Они называются циркадными ритмами. Эти часы управляют всем: бодрость, чувство голода, желание спать, готовность мозга работать. Эти часы постоянно подстраиваются. И главный регулировщик это свет.</p>
+<p>Когда яркий свет попадает в глаза утром, мозг получает сигнал «день начался». Запускается выработка кортизола (бодрящий гормон), останавливается мелатонин (гормон сна), включается режим работы. Через 14–16 часов после этого сигнала мозг автоматически готовится ко сну.</p>
+<div class="fact">
+<strong>Если пропустить утренний свет</strong>, внутренние часы сбиваются. Вечером трудно уснуть. Утром трудно проснуться. Энергия скачет. Настроение плавает. Это не лень, это биология.
+</div>
+<div class="term">
+<span class="word">Циркадные ритмы</span>
+24-часовой цикл, по которому работают все системы тела. Сон, гормоны, пищеварение, температура тела, внимание, настроение. Всё подчиняется этому циклу.
+</div>
+<div class="term">
+<span class="word">Кортизол</span>
+Гормон бодрости. По утрам должен быть высокий, чтобы проснуться и сосредоточиться. К вечеру падает, давая место мелатонину. Свет в глаза утром поднимает кортизол правильно.
+</div>
+
+<div class="iwidget" id="circadianWidget">
+  <div class="ititle">Карта твоего дня</div>
+  <div class="isub">Двигай ползунок, чтобы увидеть, что должно происходить с гормонами в каждый час, и что делать со светом.</div>
+  <div class="circadian-clock">
+    <div class="circadian-time">
+      <input type="range" id="circadianTime" min="0" max="23" value="7" step="1" style="width:100%">
+      <div style="text-align:center;font-family:'PT Serif',serif;font-size:24px;font-weight:700;color:var(--terracotta);margin-top:0.5rem" id="circadianHour">07:00</div>
+    </div>
+    <div class="circadian-out" id="circadianOut">
+      <h5>Утренний пик</h5>
+      <p>Кортизол на максимуме, мелатонин падает.</p>
+      <p><strong>Что делать:</strong> ярко на улицу, 10–15 минут.</p>
+      <div class="circadian-bars">
+        <div class="circadian-bar cortisol" title="Кортизол"><div class="circadian-bar-fill" id="cortBar"></div></div>
+        <div class="circadian-bar" title="Мелатонин"><div class="circadian-bar-fill" id="melBar"></div></div>
+      </div>
+      <div style="font-size:11px;color:var(--ink-mute);margin-top:0.4rem">Терракот — кортизол, шалфей — мелатонин</div>
+    </div>
+  </div>
+</div>
+
+<h3>Главное правило</h3>
+<p>В первый час после пробуждения проведи 10–15 минут на улице. Не за окном, не на балконе через стекло, а буквально на улице. Без солнцезащитных очков. Очки и линзы можно. Не смотреть прямо на солнце, просто видеть пространство вокруг.</p>
+<p>Это самая мощная и бесплатная процедура для здоровья мозга. Она настраивает все циркадные ритмы на сутки вперёд. Эффект чувствуется на пятый день.</p>
+<div class="stats">
+<div class="stat"><div class="num">10–15</div><div class="lbl">минут утром на улице</div></div>
+<div class="stat"><div class="num">100к</div><div class="lbl">люкс яркого солнца снаружи</div></div>
+<div class="stat"><div class="num">500</div><div class="lbl">люкс в комнате с лампами</div></div>
+<div class="stat"><div class="num">14–16ч</div><div class="lbl">после света до сна</div></div>
+</div>
+
+<h3>Почему через окно не работает</h3>
+<p>Стекло отражает значительную часть нужных длин волн света. Сидя у окна, получаешь в 50 раз меньше эффекта, чем на улице. Даже в пасмурный день уличный свет сильнее любой комнатной лампы. Шторы открывать недостаточно.</p>
+
+<h3>Что делать в пасмурную погоду и зимой</h3>
+<div class="dd">
+<div class="col yes">
+<span class="h">Работает</span>
+<ul>
+<li>Прогулка на улице 15–20 мин</li>
+<li>Лампа дневного света 10000 люкс</li>
+<li>Балкон или крыльцо без стекла</li>
+<li>Светотерапия 20–30 мин</li>
+</ul>
+</div>
+<div class="col no">
+<span class="h">Не заменит</span>
+<ul>
+<li>Просмотр в окно из дома</li>
+<li>Обычные лампочки в квартире</li>
+<li>Свет от телефона или ноутбука</li>
+<li>Машина с тонировкой</li>
+</ul>
+</div>
+</div>
+<div class="highlight">
+<strong>Зимой.</strong> Если зимой темно с утра, купи лампу для светотерапии 10 000 люкс. Она недорогая, ставится на стол. 20 минут утром во время кофе или чтения почты заменяют недостающий солнечный свет. Это особенно важно при сезонной депрессии. Витамин D зимой тоже критичен — <a href="#ch8" data-anchor="#ch8" class="ref">Глава 8</a>.
+</div>
+
+<h3>Вечерний свет</h3>
+<p>После заката мозг должен видеть мало света и тёплого спектра, чтобы выработался мелатонин. Резкий верхний свет в комнате после 21:00 это команда мозгу «ещё день».</p>
+<ol class="steps">
+<li><strong>Выключи верхние лампы.</strong> Используй настольные и торшеры внизу комнаты. Свет должен идти снизу или сбоку, как от костра, а не сверху, как от солнца.</li>
+<li><strong>Тёплый спектр.</strong> Лампочки с тёплым жёлтым светом, 2700K. Не белый, не холодный. Можно поставить умные лампы и автоматизировать.</li>
+<li><strong>Фильтр на телефон.</strong> Включи Night Shift или Night Light на закат. Снижает синий компонент. Полностью не убирает, но помогает.</li>
+<li><strong>Лучше всего</strong> вообще убрать экраны за час до сна. Бумажная книга, разговор, душ, медитация.</li>
+</ol>
+
+<div class="proto">
+<div class="h">Протокол света за день</div>
+<div class="row"><div class="t">06:30</div><div>Просыпаешься, открываешь шторы.</div></div>
+<div class="row"><div class="t">07:00</div><div>10–15 минут на улице. Прогулка, балкон, дорога к машине.</div></div>
+<div class="row"><div class="t">День</div><div>Работа рядом с окном, если возможно. Перерыв на улицу в обед.</div></div>
+<div class="row"><div class="t">17:00</div><div>Если возможно, второй раз на улицу. Закатное солнце как якорь циркадных ритмов.</div></div>
+<div class="row"><div class="t">21:00</div><div>Верхний свет выключаем. Только тёплые настольные лампы.</div></div>
+<div class="row"><div class="t">22:00</div><div>Минимум света. Книга при настольной лампе, не больше.</div></div>
+</div>
+
+<h3>Когда света не хватает</h3>
+<p>Если работа в офисе без окон, северный город или подъём до рассвета зимой, нужен план Б. Используй несколько слоёв.</p>
+<ul style="margin-left:1.25rem;color:var(--ink-soft)">
+<li style="margin:0.5rem 0">Лампа для светотерапии на рабочий стол утром на 20–30 минут.</li>
+<li style="margin:0.5rem 0">Прогулка в обеденный перерыв обязательна, даже 10 минут.</li>
+<li style="margin:0.5rem 0">Будильник-имитатор рассвета, который постепенно повышает яркость за 30 минут до подъёма.</li>
+<li style="margin:0.5rem 0">Витамин D3 в добавках, см. <a href="#ch8" data-anchor="#ch8" class="ref">Главу 8</a>.</li>
+</ul>
+
+<div class="recap">
+<div class="h">Глава 02 · Главное</div>
+<h4>Свет это команда твоему телу</h4>
+<ul>
+<li>Утром 10–15 минут уличного света в первый час после пробуждения</li>
+<li>Окна не работают, нужно быть на улице</li>
+<li>Зимой используй лампу 10 000 люкс</li>
+<li>Вечером тёплый свет снизу, не верхний и не яркий</li>
+<li>За час до сна убираем экраны полностью</li>
+</ul>
+</div>
+<div class="today">
+<div class="h">Что сделать сегодня</div>
+<p>Завтра утром после пробуждения выйди на улицу на 10 минут. Прогуляйся по двору, постой на балконе без стекла, дойди до магазина. Без очков. Заметишь, что вечером того же дня уснёшь быстрее.</p>
+</div>
+</div>
+
+<section class="chap-head" id="ch3">
+  <div class="part">Часть 1 · Фундамент</div>
+  <div class="num">Глава 03</div>
+  <h2>Движение. Удобрение для мозга</h2>
+  <p class="lead">Тело и мозг это одна система. Когда тело двигается, мозг становится умнее.</p>
+</section>
+<div class="chap-body">
+<p>Самое мощное лекарство для мозга, которое можно купить в любой аптеке, это кроссовки. Регулярное движение делает с мозгом то, чего не делает ни одна добавка, ни одна медитация, ни одна тренировка памяти.</p>
+<p>Когда мышцы работают, они выделяют сигнальные молекулы, которые попадают в мозг. Главная из них стимулирует выработку BDNF. Это белок, который буквально заставляет мозг расти. Новые связи между нейронами, новые клетки в гиппокампе (там живёт память), защита от старения.</p>
+<div class="fact">
+<strong>Без движения</strong> мозг стареет быстрее. С регулярным движением риск деменции снижается на 30–40%. Память лучше, фокус острее, настроение стабильнее, сон глубже <a href="#ch1" data-anchor="#ch1" class="ref">(см. Главу 1)</a>.
+</div>
+<div class="term">
+<span class="word">BDNF</span>
+Brain-Derived Neurotrophic Factor. Белок-удобрение для мозга. Стимулирует рост новых нейронов и связей между ними. Уровень BDNF падает с возрастом и при стрессе. Поднимается от движения, обучения и качественного сна.
+</div>
+<div class="term">
+<span class="word">Гиппокамп</span>
+Структура мозга в форме морского конька. Отвечает за память и обучение. С возрастом сжимается. Регулярные кардиотренировки реально увеличивают объём гиппокампа.
+</div>
+
+<h3>Сколько надо двигаться</h3>
+<p>Минимум, который рекомендует Всемирная организация здравоохранения для здорового мозга и тела:</p>
+<div class="stats">
+<div class="stat"><div class="num">150 мин</div><div class="lbl">кардио в неделю умеренной интенсивности</div></div>
+<div class="stat"><div class="num">2 раза</div><div class="lbl">силовые тренировки в неделю</div></div>
+<div class="stat"><div class="num">7000+</div><div class="lbl">шагов в день</div></div>
+<div class="stat"><div class="num">5–10 мин</div><div class="lbl">микропауз каждые 60 минут</div></div>
+</div>
+<p>150 минут кардио это всего 22 минуты в день, или 30 минут пять раз в неделю. Это не марафон. Быстрая ходьба, велосипед, плавание, лёгкий бег, танцы, любая активность, при которой дышишь чаще обычного и можешь говорить, но не петь.</p>
+
+<div class="iwidget">
+  <div class="ititle">Твоя неделя движения</div>
+  <div class="isub">Отметь, что уже сделано на этой неделе. Прогресс сохраняется автоматически.</div>
+  <div class="move-tracker" id="moveTracker">
+    <label class="move-day"><input type="checkbox" data-move="cardio1"><div class="mday">Кардио 1</div><div class="mlabel">30 минут</div></label>
+    <label class="move-day"><input type="checkbox" data-move="cardio2"><div class="mday">Кардио 2</div><div class="mlabel">30 минут</div></label>
+    <label class="move-day"><input type="checkbox" data-move="cardio3"><div class="mday">Кардио 3</div><div class="mlabel">30 минут</div></label>
+    <label class="move-day"><input type="checkbox" data-move="cardio4"><div class="mday">Кардио 4</div><div class="mlabel">30 минут</div></label>
+    <label class="move-day"><input type="checkbox" data-move="cardio5"><div class="mday">Кардио 5</div><div class="mlabel">30 минут</div></label>
+    <label class="move-day"><input type="checkbox" data-move="strength1"><div class="mday">Силовая 1</div><div class="mlabel">45 минут</div></label>
+    <label class="move-day"><input type="checkbox" data-move="strength2"><div class="mday">Силовая 2</div><div class="mlabel">45 минут</div></label>
+    <label class="move-day"><input type="checkbox" data-move="walk"><div class="mday">Прогулки</div><div class="mlabel">после еды</div></label>
+  </div>
+  <div class="iresult" id="moveResult"></div>
+</div>
+
+<h3>Кардио и силовые. Зачем оба</h3>
+<div class="dd">
+<div class="col yes">
+<span class="h">Кардио даёт</span>
+<ul>
+<li>Прилив крови к мозгу</li>
+<li>Рост BDNF и памяти</li>
+<li>Стабильное настроение</li>
+<li>Здоровое сердце и сосуды</li>
+<li>Лучший сон</li>
+</ul>
+</div>
+<div class="col yes">
+<span class="h">Силовые дают</span>
+<ul>
+<li>Защиту мышц с возрастом</li>
+<li>Сильные кости</li>
+<li>Гормональный баланс</li>
+<li>Уверенность в теле</li>
+<li>Защиту от падений и травм</li>
+</ul>
+</div>
+</div>
+<p>Идеальный микс это две силовые в неделю по 45 минут плюс три кардио по 30 минут. Если кажется, что много, начни с одной тренировки в неделю. Это уже даст эффект.</p>
+<div class="highlight">
+<strong>Микродвижение спасает.</strong> Долгое сидение убивает мозг почти как курение. Каждые 60–90 минут вставай и двигайся 5 минут. Пройдись по комнате, сделай 10 приседаний, постой у окна. Это сбрасывает сахар в крови и возвращает фокус.
+</div>
+
+<h3>Прогулка после еды</h3>
+<p>Сразу после плотной еды кровь насыщается сахаром. Падает энергия, тянет в сон, фокус уходит. Простой приём: 10–15 минут спокойной ходьбы после обеда или ужина. Это снижает скачок сахара на 20–30%, бодрость и работоспособность сохраняются.</p>
+<p>Не быстрая ходьба, не бег. Просто ходьба, как до магазина. Можно делать звонки на ходу, слушать подкаст или просто молчать. Самый недооценённый трюк продуктивности.</p>
+
+<h3>Что делать, если ты сейчас совсем не двигаешься</h3>
+<ol class="steps">
+<li><strong>Неделя 1.</strong> Просто прогулка 15 минут в день. Любая. До работы, после ужина, в обед. Цель не сжечь калории, цель встроить движение в день.</li>
+<li><strong>Неделя 2.</strong> Прогулка увеличивается до 25 минут. Добавь одну простую силовую тренировку дома: 10 приседаний, 5 отжиманий с колен, 30 секунд планка. Три круга.</li>
+<li><strong>Неделя 3.</strong> Две силовые тренировки. Ходьба или лёгкая пробежка 30 минут три раза в неделю.</li>
+<li><strong>Неделя 4.</strong> Постоянная норма: 150 минут кардио в неделю + 2 силовые. Любые форматы, главное регулярно.</li>
+</ol>
+<div class="warn">
+<strong>Не тренируйся интенсивно вечером.</strong> Сильные тренировки за 3 часа до сна повышают температуру тела и кортизол. Уснуть будет сложнее. Утренние и дневные тренировки, наоборот, улучшают сон ночью <a href="#ch1" data-anchor="#ch1" class="ref">(см. Главу 1)</a>.
+</div>
+
+<h3>Без зала и без оборудования</h3>
+<p>Есть три простых упражнения, которые покрывают 80% потребностей. Для них не нужен зал, оборудование и спортивная форма.</p>
+<ul style="margin-left:1.25rem;color:var(--ink-soft)">
+<li style="margin:0.5rem 0"><strong>Приседания.</strong> 3 подхода по 15 раз. Спина прямая, опускание как на стул.</li>
+<li style="margin:0.5rem 0"><strong>Отжимания.</strong> 3 подхода. Если тяжело от пола, делай от стены или с колен. Постепенно усложняй.</li>
+<li style="margin:0.5rem 0"><strong>Планка.</strong> 3 подхода по 30–60 секунд. Прямая линия от пяток до головы, живот втянут.</li>
+</ul>
+<p>15 минут три раза в неделю. Этого достаточно, чтобы поддерживать тело и мозг в хорошей форме.</p>
+
+<div class="recap">
+<div class="h">Глава 03 · Главное</div>
+<h4>Движение это удобрение мозга</h4>
+<ul>
+<li>150 минут кардио в неделю + 2 силовые тренировки</li>
+<li>Прогулка 10–15 минут после еды экономит энергию</li>
+<li>Каждые 60–90 минут работы вставай и двигайся 5 минут</li>
+<li>Не тренируйся интенсивно за 3 часа до сна</li>
+<li>Начни с 15-минутной прогулки в день, остальное добавляй позже</li>
+</ul>
+</div>
+<div class="today">
+<div class="h">Что сделать сегодня</div>
+<p>Сразу после ужина выйди на 15-минутную прогулку. Без музыки, без подкаста. Просто иди и смотри по сторонам. Это перезагрузит и тело, и голову. Завтра повтори.</p>
+</div>
+</div>
+
+<section class="chap-head" id="ch4">
+  <div class="part">Часть 1 · Фундамент</div>
+  <div class="num">Глава 04</div>
+  <h2>Вода и питание</h2>
+  <p class="lead">Мозг это 75% воды и 60% жира. Чем его кормишь, тем он думает.</p>
+</section>
+<div class="chap-body">
+<p>Здесь не будет диет, подсчёта калорий и запретов. Только то, что точно работает для мозга. Простые правила, которые можно выполнять без усилий.</p>
+
+<h3>Сначала вода</h3>
+<p>Большинство людей хронически обезвожены и даже не замечают этого. Усталость, головная боль, плохой фокус, тяга к сладкому часто это просто жажда. Мозг чувствительнее всех органов: потеря 1–2% воды снижает когнитивные функции на 10–15%.</p>
+<div class="stats">
+<div class="stat"><div class="num">300–500</div><div class="lbl">мл сразу после пробуждения</div></div>
+<div class="stat"><div class="num">30 мл</div><div class="lbl">на 1 кг веса в день</div></div>
+<div class="stat"><div class="num">2,1–2,5</div><div class="lbl">литра при весе 70–80 кг</div></div>
+<div class="stat"><div class="num">−15%</div><div class="lbl">когнитивных функций при обезвоживании</div></div>
+</div>
+
+<div class="iwidget">
+  <div class="ititle">Сколько воды тебе нужно</div>
+  <div class="isub">Введи свой вес. Получишь дневную норму и стаканы по 250 мл, которые можно отмечать в течение дня.</div>
+  <div class="sleep-calc-row">
+    <div>
+      <label for="weightInput">Твой вес, кг</label>
+      <input type="number" id="weightInput" min="40" max="200" value="70">
+    </div>
+    <div>
+      <button class="ibtn" onclick="calcWater()">Рассчитать</button>
+    </div>
+  </div>
+  <div class="iresult" id="waterResult"></div>
+  <div class="water-glasses" id="waterGlasses"></div>
+</div>
+
+<p>Простое правило: стакан воды утром, стакан перед каждой едой, стакан перед сном. Уже почти норма. Кофе и чай тоже жидкость, но не считай их за воду. Они мочегонные и работают по-другому.</p>
+<div class="highlight">
+<strong>Вода с электролитами.</strong> Особенно при обильном потоотделении, тренировках, в жару или в отопительный сезон. Щепотка соли + щепотка магния + лимон в стакан тёплой воды утром это идеальный электролитный напиток.
+</div>
+<div class="term">
+<span class="word">Электролиты</span>
+Минералы, которые проводят электрические сигналы в теле. Главные: натрий, калий, магний, кальций. Теряются с потом и мочой. Без них мышцы сводит, голова болит, мозг тормозит.
+</div>
+
+<h3>Главные продукты для мозга</h3>
+<p>Не «правильные продукты» в общем, а конкретные группы, у которых самый сильный эффект на мозг.</p>
+<ol class="steps">
+<li><strong>Жирная рыба.</strong> Лосось, сардины, скумбрия, форель. 2–3 раза в неделю. Источник Омега-3, главного строительного материала для нейронов. Если рыба не любимая, переходи к <a href="#ch8" data-anchor="#ch8" class="ref">Главе 8</a> про добавки.</li>
+<li><strong>Яйца.</strong> Холин из желтка нужен для памяти и фокуса. 1–3 яйца в день безопасно для подавляющего большинства людей. Старая страшилка про холестерин уже давно опровергнута.</li>
+<li><strong>Орехи и семена.</strong> Грецкие, миндаль, фундук, тыквенные семечки. Горсть в день. Хорошие жиры, магний, цинк, витамин Е.</li>
+<li><strong>Темная зелень.</strong> Шпинат, руккола, кейл, петрушка. Магний, фолиевая кислота, антиоксиданты. В каждый обед добавляй пучок зелени или горсть салата.</li>
+<li><strong>Ягоды.</strong> Голубика, черника, малина, ежевика. Антиоксиданты защищают мозг от воспаления. Свежие, замороженные, в смузи. Полстакана в день идеально.</li>
+<li><strong>Авокадо.</strong> Мононенасыщенные жиры, витамины группы B. Половина авокадо несколько раз в неделю.</li>
+<li><strong>Тёмный шоколад.</strong> 70%+ какао. 20–30 граммов в день. Магний, флавоноиды, удовольствие. Лучшая замена сладостям.</li>
+</ol>
+
+<h3>Простое правило тарелки</h3>
+<p>Не считай калории и не пиши пищевой дневник. Используй один визуальный приём.</p>
+<div class="proto">
+<div class="h">Состав тарелки в каждый приём пищи</div>
+<div class="row"><div class="t">½</div><div>Овощи и зелень. Любые, без ограничений. Свежие или приготовленные.</div></div>
+<div class="row"><div class="t">¼</div><div>Белок. Рыба, мясо, птица, яйца, творог, бобовые.</div></div>
+<div class="row"><div class="t">¼</div><div>Сложные углеводы. Гречка, рис, киноа, цельнозерновые, картофель.</div></div>
+<div class="row"><div class="t">+</div><div>Хорошие жиры. Оливковое масло, орехи, авокадо, рыба.</div></div>
+</div>
+<p>Это не диета. Это шаблон для глаз. Когда тарелка собрана так, нужные питательные вещества приходят автоматически и переедания не случается.</p>
+
+<h3>Что вредит мозгу</h3>
+<div class="dd">
+<div class="col yes">
+<span class="h">Сократи</span>
+<ul>
+<li>Сахар и сладкие напитки</li>
+<li>Переработанная еда</li>
+<li>Трансжиры и фастфуд</li>
+<li>Большие порции на ночь</li>
+<li>Алкоголь больше 1–2 порций в неделю</li>
+</ul>
+</div>
+<div class="col no">
+<span class="h">Почему</span>
+<ul>
+<li>Скачки сахара = туман в голове</li>
+<li>Воспаление в мозге</li>
+<li>Замедляет связь между нейронами</li>
+<li>Ломает сон и пищеварение</li>
+<li>Ломает структуру сна и убивает нейроны</li>
+</ul>
+</div>
+</div>
+<div class="warn">
+<strong>Алкоголь это не про мозг.</strong> Любая доза алкоголя снижает объём мозга и качество сна. «Бокал красного для здоровья» миф, разоблачённый последними исследованиями. Минимум на 30 дней спринта откажись полностью. После сравни самочувствие.
+</div>
+
+<h3>Когда есть</h3>
+<p>Не менее важно, чем что есть. Простые правила:</p>
+<ul style="margin-left:1.25rem;color:var(--ink-soft)">
+<li style="margin:0.5rem 0">Завтрак через 30–60 минут после пробуждения. Не сразу, дай телу проснуться.</li>
+<li style="margin:0.5rem 0">Кофе только после еды. Кофе натощак на пустой желудок усиливает тревогу и ломает кортизол.</li>
+<li style="margin:0.5rem 0">Ужин за 2–3 часа до сна. Поздний ужин ломает глимфатическую чистку мозга ночью <a href="#ch1" data-anchor="#ch1" class="ref">(см. Главу 1)</a>.</li>
+<li style="margin:0.5rem 0">Если хочется перекусить вечером, попробуй стакан тёплой воды или чашку травяного чая. В 80% случаев это была жажда.</li>
+</ul>
+
+<div class="recap">
+<div class="h">Глава 04 · Главное</div>
+<h4>Корми мозг, а не желудок</h4>
+<ul>
+<li>30 мл воды на 1 кг веса в день, начиная со стакана с утра</li>
+<li>Жирная рыба, орехи, ягоды, зелень, яйца, тёмный шоколад</li>
+<li>Тарелка ½ овощи + ¼ белок + ¼ сложные углеводы + жиры</li>
+<li>Сахар и алкоголь сокращаем до минимума</li>
+<li>Ужин за 2–3 часа до сна</li>
+</ul>
+</div>
+<div class="today">
+<div class="h">Что сделать сегодня</div>
+<p>Поставь рядом с кроватью стакан воды. Завтра утром, как только откроются глаза, выпей его до дна. Это первый и самый простой способ запустить тело и мозг на день.</p>
+</div>
+</div>
+
+<section class="chap-head" id="ch5">
+  <div class="part">Часть 1 · Фундамент</div>
+  <div class="num">Глава 05</div>
+  <h2>Дофамин и цифровая гигиена</h2>
+  <p class="lead">Это не лень и не слабость воли. Это выгорание от потока коротких удовольствий.</p>
+</section>
+<div class="chap-body">
+<p>Если сосредоточиться невозможно, отвлечения постоянны, обычные дела кажутся скучными, а в телефон тянет всё время — это не лень. Это сломанная дофаминовая система. И её можно починить.</p>
+<div class="term">
+<span class="word">Дофамин</span>
+Нейромедиатор мотивации и предвкушения. Не «гормон удовольствия», а именно того, что заставляет стремиться к чему-то. Когда дофамина выделяется слишком много и слишком часто (короткие видео, лайки, лента), мозг привыкает и обычные дела перестают приносить удовольствие.
+</div>
+
+<h3>Как это получилось</h3>
+<p>Эволюция дала мозгу простую систему: сделал что-то полезное (нашёл еду, помог племени, освоил навык) — получи дофамин и хорошее настроение. Эта система работает миллион лет. И вот пришёл TikTok.</p>
+<p>Каждое короткое видео это микродоза дофамина. Лайк это микродоза. Уведомление это микродоза. Скролл это сотни микродоз в час. Мозг получает столько дофамина, сколько раньше получал от реальных побед за месяц.</p>
+<p>Что делает мозг? Снижает чувствительность. Чтобы получить тот же кайф, нужно больше стимуляции. И теперь обычная книга, прогулка, разговор, работа кажутся скучными. Не потому что они скучные, а потому что мозг привык к фейерверку.</p>
+<div class="fact">
+<strong>Цифры пугают.</strong> Средний человек берёт телефон в руки 96 раз в день. Это раз в 10 минут в часы бодрствования. Каждое уведомление сбивает фокус, и мозгу нужно 23 минуты, чтобы вернуться к глубокой работе.
+</div>
+
+<div class="iwidget">
+  <div class="ititle">Тест: сломан ли твой дофамин</div>
+  <div class="isub">Ответь честно на 7 вопросов. Никто не увидит. В конце получишь короткий вердикт.</div>
+  <div id="dopaQuiz">
+    <div class="quiz-q" data-q="1"><p>Берёшь телефон в руки сразу после пробуждения?</p><div class="quiz-buttons"><button onclick="quizAnswer(1,1)">Да</button><button onclick="quizAnswer(1,0)">Нет</button></div></div>
+    <div class="quiz-q" data-q="2"><p>Сложно дочитать длинную статью до конца?</p><div class="quiz-buttons"><button onclick="quizAnswer(2,1)">Да</button><button onclick="quizAnswer(2,0)">Нет</button></div></div>
+    <div class="quiz-q" data-q="3"><p>Скучно даже когда ничего не делаешь?</p><div class="quiz-buttons"><button onclick="quizAnswer(3,1)">Да</button><button onclick="quizAnswer(3,0)">Нет</button></div></div>
+    <div class="quiz-q" data-q="4"><p>Тяжело начать сложную задачу без отвлечений?</p><div class="quiz-buttons"><button onclick="quizAnswer(4,1)">Да</button><button onclick="quizAnswer(4,0)">Нет</button></div></div>
+    <div class="quiz-q" data-q="5"><p>Не помнишь, чем занимался прошлым вечером?</p><div class="quiz-buttons"><button onclick="quizAnswer(5,1)">Да</button><button onclick="quizAnswer(5,0)">Нет</button></div></div>
+    <div class="quiz-q" data-q="6"><p>Тревога без причины бывает чаще раза в неделю?</p><div class="quiz-buttons"><button onclick="quizAnswer(6,1)">Да</button><button onclick="quizAnswer(6,0)">Нет</button></div></div>
+    <div class="quiz-q" data-q="7"><p>В очереди или в лифте сразу достаёшь телефон?</p><div class="quiz-buttons"><button onclick="quizAnswer(7,1)">Да</button><button onclick="quizAnswer(7,0)">Нет</button></div></div>
+  </div>
+  <div class="iresult" id="dopaResult"></div>
+</div>
+
+<h3>5 правил цифровой гигиены</h3>
+<ol class="steps">
+<li><strong>Первый час без телефона.</strong> Утро принадлежит тебе. Сначала вода, свет, душ, завтрак <a href="#ch4" data-anchor="#ch4" class="ref">(см. Главу 4)</a>. Только потом телефон. Это правило одно меняет день кардинально.</li>
+<li><strong>Все уведомления выключены.</strong> Кроме звонков и сообщений от 5–10 самых важных людей. Остальное проверяется самостоятельно, когда удобно, а не когда телефон вибрирует.</li>
+<li><strong>Чёрно-белый режим.</strong> На iPhone и Android есть режим оттенков серого. Включи его для рабочих часов. Без ярких цветов лента перестаёт быть привлекательной за 2 дня.</li>
+<li><strong>Удали приложения, которые крадут время.</strong> Если соцсеть только в браузере, времени тратится в 3 раза меньше. Лимиты на TikTok, Instagram, YouTube. 30 минут в день максимум.</li>
+<li><strong>Телефон не в спальне.</strong> Заряжается в другой комнате. Купи обычный будильник за 500 рублей. Утро станет другим.</li>
+</ol>
+<div class="highlight">
+<strong>Скука это навык.</strong> В очереди, в лифте, в транспорте, ожидая встречи, не доставай телефон. Просто стой и смотри. Поначалу это сложно. Потом приходят мысли, идеи, наблюдения. Скука это пространство, где мозг придумывает.
+</div>
+
+<h3>Дофаминовый детокс</h3>
+<p>Раз в неделю устраивай день без соцсетей и развлекательного контента. Полностью. Один день из семи. Это сбрасывает чувствительность дофаминовой системы. После такого дня обычные дела возвращают вкус.</p>
+<p>Раз в квартал делай полный детокс на 3 дня. Никаких лент, никаких видео, никаких новостей. Только звонки, сообщения по делу, рабочие задачи. Многим первый раз страшно. Через 3 дня появляется ясность, которую забыл.</p>
+
+<div class="proto">
+<div class="h">Протокол: первый час утра без телефона</div>
+<div class="row"><div class="t">06:30</div><div>Будильник срабатывает (обычный, не телефон). Стакан воды у кровати.</div></div>
+<div class="row"><div class="t">06:35</div><div>10–15 минут на улице или у окна без стекла <a href="#ch2" data-anchor="#ch2" class="ref">(см. Главу 2)</a>.</div></div>
+<div class="row"><div class="t">06:50</div><div>Душ, можно контрастный. Завтрак без телефона.</div></div>
+<div class="row"><div class="t">07:30</div><div>Только теперь можно включить телефон. Сначала календарь и план дня. Соцсети потом.</div></div>
+</div>
+
+<h3>Глубокая работа</h3>
+<p>Когда нужно сделать сложную задачу, телефон в другой комнате. Уведомления выключены полностью. Браузер закрыт. Один таб с одной задачей.</p>
+<p>Работай блоками 50 минут, перерыв 10 минут. Это техника Помодоро. За один такой блок делается больше, чем за 3 часа обычной работы с телефоном под рукой.</p>
+<div class="warn">
+<strong>Не пытайся резко.</strong> Если сейчас в телефоне 6 часов в день, не стоит завтра сократить до 30 минут. Это не сработает. Цель: убрать на 1 час за неделю. Через месяц 2–3 часа в телефоне, и это уже здоровая норма.
+</div>
+
+<div class="recap">
+<div class="h">Глава 05 · Главное</div>
+<h4>Не получается сосредоточиться? Это не лень, это сломанный дофамин</h4>
+<ul>
+<li>Первый час утра без телефона</li>
+<li>Все уведомления отключены, кроме важных людей</li>
+<li>Чёрно-белый режим экрана в рабочее время</li>
+<li>Лимиты на соцсети, телефон не в спальне</li>
+<li>Один день в неделю полностью без лент</li>
+</ul>
+</div>
+<div class="today">
+<div class="h">Что сделать сегодня</div>
+<p>Зайди в настройки уведомлений и выключи их везде, кроме звонков и максимум двух мессенджеров. Это займёт 5 минут. К концу дня заметишь, насколько спокойнее голова.</p>
+</div>
+</div>
+
+<section class="chap-head" id="ch6">
+  <div class="part">Часть 2 · Ускорители</div>
+  <div class="num">Глава 06</div>
+  <h2>Дыхание и медитация</h2>
+  <p class="lead">Самый быстрый способ изменить состояние мозга. Бесплатно, всегда с собой, эффект за минуту.</p>
+</section>
+<div class="chap-body">
+<p>Дыхание это единственная функция тела, которой управляешь и сознательно, и бессознательно. Это значит, через дыхание можно напрямую достучаться до нервной системы. За 1–3 минуты возможно успокоиться, сосредоточиться, прийти в себя или зарядиться. Без таблеток.</p>
+<p>В этой главе пять техник на разные случаи. Освой все. Потом будешь использовать ту, которая нужна именно сейчас.</p>
+<div class="term">
+<span class="word">Парасимпатическая нервная система</span>
+Система покоя и восстановления. Когда она активна — спокойствие, пищеварение работает, тело восстанавливается. Длинный медленный выдох её включает.
+</div>
+<div class="term">
+<span class="word">Симпатическая нервная система</span>
+Система действия. Активируется в стрессе, опасности, при физической нагрузке. Длинный вдох её разгоняет. Полезно собраться, опасно жить в этом режиме весь день.
+</div>
+
+<h3>Универсальный таймер дыхания</h3>
+<p>Выбери технику, нажми кнопку и следуй кругу. Круг расширяется на вдохе, замирает на задержке, сжимается на выдохе.</p>
+<div class="breath-timer">
+  <div class="breath-tabs">
+    <button class="breath-tab active" data-breath="478" onclick="setBreathMode('478')">4-7-8</button>
+    <button class="breath-tab" data-breath="square" onclick="setBreathMode('square')">По квадрату</button>
+    <button class="breath-tab" data-breath="phys" onclick="setBreathMode('phys')">Физиологический вздох</button>
+  </div>
+  <div class="breath-circle" id="breathCircle">Готов</div>
+  <button class="ibtn ibtn-sage" onclick="startBreath()" id="breathStartBtn">Начать</button>
+  <div class="breath-cycles" id="breathCycles">4 цикла, 76 секунд</div>
+</div>
+
+<h3>Техника 1. Дыхание 4-7-8. При тревоге и перед сном</h3>
+<p>Самая мощная техника для снятия тревоги и засыпания. Длинный выдох сильно активирует парасимпатическую систему.</p>
+<ol class="steps">
+<li><strong>Вдох носом 4 секунды.</strong> Медленно, в живот, не в грудь.</li>
+<li><strong>Задержка дыхания 7 секунд.</strong> Без напряжения. Просто без дыхания.</li>
+<li><strong>Выдох ртом 8 секунд.</strong> Долго, тонкой струёй, через приоткрытые губы.</li>
+<li><strong>Повтори 4 цикла.</strong> Это всего 76 секунд.</li>
+</ol>
+<p>Когда использовать: перед сном в кровати <a href="#ch1" data-anchor="#ch1" class="ref">(см. Главу 1)</a>, при панической атаке <a href="#ch11" data-anchor="#ch11" class="ref">(см. Главу 11)</a>, перед сложным разговором, когда спокойствие не приходит. Эффект за 1–2 цикла.</p>
+
+<h3>Техника 2. Дыхание по квадрату. Перед задачей</h3>
+<p>Армейская техника для сохранения ясности под давлением. Вдох, задержка, выдох, задержка по 4 секунды. Балансирует нервную систему, даёт спокойную сосредоточенность.</p>
+<p>Используй перед презентацией, важным звонком, моментом сборки. 5 циклов = 80 секунд.</p>
+
+<h3>Техника 3. Физиологический вздох. При остром стрессе</h3>
+<p>Самая быстрая техника снятия стресса в моменте. Открыл учёный Эндрю Хуберман. Работает за 30 секунд.</p>
+<ol class="steps">
+<li><strong>Глубокий вдох носом.</strong> До почти полных лёгких.</li>
+<li><strong>Короткий доборный вдох носом.</strong> Сразу же, без выдоха. Лёгкие наполняются полностью.</li>
+<li><strong>Длинный медленный выдох ртом.</strong> Долго, до конца.</li>
+<li><strong>Повтори 1–3 раза.</strong></li>
+</ol>
+<p>Используй, когда поднимается раздражение, тревога, паника. Двойной вдох расправляет лёгочные альвеолы, длинный выдох сбрасывает накопленный CO2 и расслабляет.</p>
+
+<h3>Техника 4. Випассана. Утро или день</h3>
+<p>Простая медитация наблюдения. Не требует приложений, мантр и поз лотоса.</p>
+<ol class="steps">
+<li><strong>Сядь удобно.</strong> Спина прямая, не напряжена. Руки на коленях.</li>
+<li><strong>Закрой глаза.</strong> Дыхание естественное, без управления.</li>
+<li><strong>Сосредоточься на ощущении воздуха в ноздрях.</strong> Прохладный на вдохе, тёплый на выдохе.</li>
+<li><strong>Когда ум уносится мыслями</strong> (это случается каждые 10–20 секунд), мягко возвращай внимание к дыханию. Без оценки, без раздражения.</li>
+<li><strong>5–10 минут в день.</strong> С таймером.</li>
+</ol>
+<p>Это не выключение мыслей. Это тренировка возвращаться к фокусу. Через 2 недели ежедневной практики появляется заметный эффект: меньше уносит в работе и в жизни.</p>
+
+<h3>Техника 5. NSDR. Дневная перезагрузка</h3>
+<p>Non-Sleep Deep Rest. Глубокий отдых без сна. 10–20 минут, и эффект как от часа сна.</p>
+<div class="term">
+<span class="word">NSDR</span>
+Состояние глубокого расслабления тела с сохранением сознания. Аналогично йога-нидре. Восстанавливает дофамин, снимает усталость, улучшает фокус. Можно делать в обед на работе, не ложась.
+</div>
+<p>Используется как:</p>
+<ul style="margin-left:1.25rem;color:var(--ink-soft)">
+<li style="margin:0.5rem 0">Дневная перезагрузка между задачами или в обеденный перерыв.</li>
+<li style="margin:0.5rem 0">После плохой ночи для восстановления энергии <a href="#ch1" data-anchor="#ch1" class="ref">(см. Главу 1)</a>.</li>
+<li style="margin:0.5rem 0">Перед сном, если не получается уснуть.</li>
+</ul>
+<p>Найди в YouTube «NSDR Huberman» или «йога-нидра». Бесплатно, гайды на 10, 20 и 30 минут. Просто ложишься на спину, надеваешь наушники и следуешь голосу.</p>
+
+<div class="proto">
+<div class="h">Когда какую технику использовать</div>
+<div class="row"><div class="t">Утро</div><div>Випассана 5–10 минут после душа. Настройка ума на день.</div></div>
+<div class="row"><div class="t">Перед задачей</div><div>Дыхание по квадрату 5 циклов. Собранность.</div></div>
+<div class="row"><div class="t">Днём</div><div>NSDR 10–20 минут. Перезагрузка.</div></div>
+<div class="row"><div class="t">Острый стресс</div><div>Физиологический вздох 1–3 раза.</div></div>
+<div class="row"><div class="t">Перед сном</div><div>Дыхание 4-7-8 в кровати. Засыпание.</div></div>
+</div>
+<div class="highlight">
+<strong>Лучше пять минут каждый день, чем час раз в неделю.</strong> Регулярность важнее длительности. 5 минут утренней випассаны 30 дней подряд изменят мозг сильнее, чем 4-часовой ретрит раз в год.
+</div>
+
+<div class="recap">
+<div class="h">Глава 06 · Главное</div>
+<h4>Дыхание это пульт от нервной системы</h4>
+<ul>
+<li>Длинный выдох успокаивает</li>
+<li>Двойной вдох с длинным выдохом гасит острый стресс за 30 секунд</li>
+<li>Дыхание 4-7-8 для сна и тревоги</li>
+<li>Випассана 5–10 минут утром тренирует фокус</li>
+<li>NSDR днём заменяет час сна</li>
+</ul>
+</div>
+<div class="today">
+<div class="h">Что сделать сегодня</div>
+<p>Перед сном лёжа в кровати сделай 4 цикла дыхания 4-7-8. Просто попробуй. Скорее всего, сон придёт во время или сразу после.</p>
+</div>
+</div>
+
+<section class="chap-head" id="ch7">
+  <div class="part">Часть 2 · Ускорители</div>
+  <div class="num">Глава 07</div>
+  <h2>Холод и тепло. Термостресс</h2>
+  <p class="lead">Краткий стресс делает крепче. Длинный убивает.</p>
+</section>
+<div class="chap-body">
+<p>Тело создано выживать в неудобных условиях. Холод, жара, голод. Всё это в малых дозах активирует механизмы защиты и восстановления. Без этого стресса тело и мозг постепенно теряют тонус.</p>
+<p>Современная жизнь убрала этот стресс. Тёплый дом, стабильная температура, еда всегда под рукой. И тело начинает деградировать. Восстановить контролируемый термостресс это один из самых сильных биохаков.</p>
+
+<h3>Холодовое воздействие</h3>
+<p>Холод запускает в теле взрывной коктейль. Норадреналин (фокус и энергия) поднимается на 530%. Дофамин (мотивация и настроение) на 250% и держится 2–3 часа после процедуры. Это естественный антидепрессант без побочных эффектов.</p>
+<div class="fact">
+<strong>Что даёт регулярный холод:</strong> рост BDNF в мозге <a href="#ch3" data-anchor="#ch3" class="ref">(см. Главу 3)</a>, лучший фокус и настроение, ускорение восстановления, снижение воспаления, тренировка нервной системы выдерживать дискомфорт.
+</div>
+<div class="term">
+<span class="word">Норадреналин</span>
+Гормон бодрости и фокуса. Запускает режим «здесь и сейчас». Холод повышает его в 5 раз и держит несколько часов. Поэтому после холодового душа невозможно тупить.
+</div>
+
+<div class="iwidget">
+  <div class="ititle">План холодового душа на 4 недели</div>
+  <div class="isub">Нажми на нужную неделю, чтобы увидеть, что делать. Постепенный заход безопаснее и эффективнее.</div>
+  <div class="cold-days">
+    <button class="cold-day-btn active" onclick="setColdWeek(1)"><div class="cdnum">1</div><div class="cdsub">Старт</div></button>
+    <button class="cold-day-btn" onclick="setColdWeek(2)"><div class="cdnum">2</div><div class="cdsub">Привыкание</div></button>
+    <button class="cold-day-btn" onclick="setColdWeek(3)"><div class="cdnum">3</div><div class="cdsub">Закрепление</div></button>
+    <button class="cold-day-btn" onclick="setColdWeek(4)"><div class="cdnum">4</div><div class="cdsub">Норма</div></button>
+  </div>
+  <div class="iresult show" id="coldResult"></div>
+</div>
+
+<div class="stats">
+<div class="stat"><div class="num">1–3 мин</div><div class="lbl">оптимальное время в холоде</div></div>
+<div class="stat"><div class="num">10–15°C</div><div class="lbl">температура для эффекта</div></div>
+<div class="stat"><div class="num">2–4 раза</div><div class="lbl">в неделю достаточно</div></div>
+<div class="stat"><div class="num">+250%</div><div class="lbl">дофамина на 2–3 часа</div></div>
+</div>
+
+<h3>Когда лучше делать</h3>
+<p>Утром или в первой половине дня. Холодовое воздействие резко поднимает кортизол и норадреналин. Это правильно утром, плохо вечером перед сном <a href="#ch1" data-anchor="#ch1" class="ref">(см. Главу 1)</a>.</p>
+<p>Если только что закончил силовую тренировку, не делай холод сразу. Подожди 4–6 часов. Холод сразу после силовой блокирует рост мышц.</p>
+<div class="highlight">
+<strong>Дышать ровно.</strong> Главное правило при холоде: спокойное равномерное дыхание. Не задерживать. Не визжать. Длинный выдох помогает справиться с шоком <a href="#ch6" data-anchor="#ch6" class="ref">(см. Главу 6)</a>. Через 30–40 секунд тело привыкает, становится терпимо.
+</div>
+
+<h3>Тепло. Сауна и баня</h3>
+<p>Если холод даёт острый кратковременный шок, сауна работает наоборот. Длительный мягкий стресс. Тоже мощный для мозга, особенно для долгосрочной защиты от деменции.</p>
+<p>Финские учёные 20 лет наблюдали за мужчинами, которые регулярно ходят в сауну. Те, кто посещал сауну 4–7 раз в неделю, имели риск развития деменции на 66% ниже, чем те, кто ходил раз в неделю. Риск Альцгеймера на 65% ниже.</p>
+<div class="term">
+<span class="word">Белки теплового шока</span>
+Heat Shock Proteins. Активируются от тепла. Восстанавливают повреждённые белки в клетках, защищают нейроны от старения. Один из главных механизмов, почему сауна продлевает жизнь мозга.
+</div>
+
+<h3>Протокол сауны</h3>
+<div class="proto">
+<div class="h">Базовый протокол сауны</div>
+<div class="row"><div class="t">Темп.</div><div>80–100°C для финской сауны. Не выше 100°C, иначе вреднее, чем полезнее.</div></div>
+<div class="row"><div class="t">Время</div><div>15–20 минут за один заход. Можно 2–3 захода с перерывом.</div></div>
+<div class="row"><div class="t">Частота</div><div>2–3 раза в неделю минимум. 4+ раз — максимальная защита.</div></div>
+<div class="row"><div class="t">Перерыв</div><div>Холодная вода или прохладный душ между заходами.</div></div>
+<div class="row"><div class="t">Вода</div><div>До, во время и после сауны пей воду. Минимум 0,5 литра за визит <a href="#ch4" data-anchor="#ch4" class="ref">(см. Главу 4)</a>.</div></div>
+</div>
+
+<h3>Без сауны и проруби</h3>
+<p>Если нет доступа к сауне или невозможно купаться в открытой воде, можно получить большую часть эффекта через простые вещи:</p>
+<ul style="margin-left:1.25rem;color:var(--ink-soft)">
+<li style="margin:0.5rem 0">Контрастный душ ежедневно.</li>
+<li style="margin:0.5rem 0">Горячая ванна 40°C на 20 минут раз в неделю активирует белки теплового шока почти как сауна.</li>
+<li style="margin:0.5rem 0">Прогулка зимой в лёгкой одежде вместо теплой шубы. Это тоже холодовое воздействие.</li>
+</ul>
+<div class="warn">
+<strong>Противопоказания.</strong> Если есть проблемы с сердцем, высокое или низкое давление, болезнь Рейно, беременность, или приём лекарств, обязательно обсуди термостресс с врачом перед началом. В большинстве случаев это безопасно, но проверить надо.
+</div>
+
+<div class="recap">
+<div class="h">Глава 07 · Главное</div>
+<h4>Контролируемый стресс делает мозг крепче</h4>
+<ul>
+<li>Холодный душ 1–3 минуты, 2–4 раза в неделю</li>
+<li>Делать утром или в первой половине дня</li>
+<li>Сауна 80–100°C, 15–20 минут, 2–4 раза в неделю</li>
+<li>Дыши ровно, не задерживай в холоде</li>
+<li>Контрастный душ заменяет 80% эффекта проруби</li>
+</ul>
+</div>
+<div class="today">
+<div class="h">Что сделать сегодня</div>
+<p>В конце вечернего душа последние 30 секунд переключи воду на максимально холодную. Просто стой и дыши. Это первое знакомство с осознанным холодом. Завтра 45 секунд.</p>
+</div>
+</div>
+
+<section class="chap-head" id="ch8">
+  <div class="part">Часть 2 · Ускорители</div>
+  <div class="num">Глава 08</div>
+  <h2>Добавки. Стартовый и продвинутый набор</h2>
+  <p class="lead">Добавки это не магия. Это 10% эффекта поверх фундамента из сна, света, движения и питания.</p>
+</section>
+<div class="chap-body">
+<p>Сначала важное предупреждение. Добавки не заменят плохой сон, отсутствие движения и пиццу на ужин. Если фундамент не построен, никакая ашваганда не спасёт. Сначала <a href="#ch1" data-anchor="#ch1" class="ref">главы 1–5</a>, потом эта.</p>
+<p>Но если фундамент стоит, добавки реально дают ещё 10–15% поверх. И этот процент стоит того, чтобы разобраться.</p>
+<div class="warn">
+<strong>Перед началом любого приёма добавок проконсультируйся с врачом</strong>, особенно при наличии хронических заболеваний или приёме лекарств. Дозировки в этой главе общие, для здорового взрослого человека. Конкретная ситуация может отличаться.
+</div>
+
+<div class="iwidget">
+  <div class="ititle">Конструктор твоего набора</div>
+  <div class="isub">Отметь свои симптомы. Получишь персональные рекомендации, какие добавки тебе подойдут в первую очередь.</div>
+  <div class="supp-symptoms" id="suppSymptoms">
+    <div class="supp-symptom" data-supp="anxiety">Постоянная тревога, тяжело расслабиться</div>
+    <div class="supp-symptom" data-supp="sleep">Плохо засыпаю, прерывистый сон</div>
+    <div class="supp-symptom" data-supp="energy">Низкая энергия, утомляемость</div>
+    <div class="supp-symptom" data-supp="focus">Туман в голове, плохой фокус</div>
+    <div class="supp-symptom" data-supp="mood">Плохое настроение, апатия</div>
+    <div class="supp-symptom" data-supp="immunity">Часто простужаюсь</div>
+    <div class="supp-symptom" data-supp="muscle">Мышцы сводит, восстановление долгое</div>
+    <div class="supp-symptom" data-supp="winter">Сейчас осень или зима</div>
+  </div>
+  <button class="ibtn" onclick="buildSuppPlan()">Получить набор</button>
+  <div class="iresult" id="suppResult"></div>
+</div>
+
+<h3>Стартовый набор. С чего начать</h3>
+<p>Эти 4 добавки покрывают 80% потребностей мозга и тела. Если непонятно, с чего начать, бери их.</p>
+<div class="stats">
+<div class="stat"><div class="num">1</div><div class="lbl">Омега-3</div></div>
+<div class="stat"><div class="num">2</div><div class="lbl">Магний глицинат</div></div>
+<div class="stat"><div class="num">3</div><div class="lbl">Витамин D3 + K2</div></div>
+<div class="stat"><div class="num">4</div><div class="lbl">B-комплекс</div></div>
+</div>
+
+<h4>Омега-3 (рыбий жир)</h4>
+<p><strong>Зачем.</strong> Главный строительный материал нейронов. Поддерживает мозг, сердце, суставы, кожу. Уменьшает воспаление.</p>
+<p><strong>Сколько.</strong> 1000–2000 мг EPA+DHA в сутки.</p>
+<p><strong>Когда.</strong> Утром или в обед, обязательно с едой, содержащей жир. Лучше усваивается.</p>
+<p><strong>На что смотреть при покупке.</strong> Соотношение EPA:DHA примерно 2:1 или 1:1. Триглицеридная форма (TG) лучше эфирной (EE). Очищенный от ртути и тяжёлых металлов, есть сертификат IFOS или аналог.</p>
+<p><strong>Хранить</strong> в холодильнике, особенно после открытия. Иначе окисляется.</p>
+
+<h4>Магний глицинат</h4>
+<p><strong>Зачем.</strong> Магний участвует в более чем 300 реакциях в теле. Снижает тревогу, улучшает сон <a href="#ch1" data-anchor="#ch1" class="ref">(см. Главу 1)</a>, расслабляет мышцы, нужен для нервной системы. Большинство людей хронически в дефиците.</p>
+<p><strong>Сколько.</strong> 200–400 мг в сутки.</p>
+<p><strong>Когда.</strong> За 30–60 минут до сна. Помогает уснуть.</p>
+<p><strong>Какая форма.</strong> Глицинат лучше всего для мозга и сна. L-треонат (треонат магния) ещё лучше для мозга, но дороже. Цитрат подходит, но при больших дозах слабит. Оксид плохо усваивается, не бери.</p>
+
+<h4>Витамин D3 + K2</h4>
+<p><strong>Зачем.</strong> D3 нужен для иммунитета, костей, настроения, гормонов. В наших широтах с октября по апрель почти у всех дефицит. K2 нужен, чтобы кальций откладывался в кости, а не в сосуды.</p>
+<p><strong>Сколько.</strong> D3: 2000–5000 МЕ в сутки в холодное время года. К2 (MK-7): 100–200 мкг.</p>
+<p><strong>Когда.</strong> С завтраком, обязательно с жирной едой.</p>
+<p><strong>Лучше всего</strong> сдать анализ 25(OH)D раз в 6 месяцев. Цель 50–80 нг/мл. Если ниже 30 нужен курс восстановления с врачом.</p>
+
+<h4>B-комплекс</h4>
+<p><strong>Зачем.</strong> Витамины группы B (B6, B9, B12 и другие) нужны для энергии, нервной системы, синтеза нейромедиаторов. Особенно важны при стрессе, при веганстве, при больших нагрузках.</p>
+<p><strong>Сколько.</strong> Готовый комплекс 100% суточной нормы.</p>
+<p><strong>Когда.</strong> Утром с едой. Не вечером, могут дать энергию, мешающую уснуть.</p>
+<p><strong>Что искать.</strong> Активные формы: метилфолат вместо фолиевой кислоты, метилкобаламин вместо цианокобаламина. Они лучше работают.</p>
+
+<h3>Расширенный набор. Когда базы мало</h3>
+<p>Когда стартовый набор уже работает 2–3 месяца, можно добавить 1–2 пункта из этого списка. Не бросайся сразу на всё.</p>
+
+<h4>Креатин моногидрат</h4>
+<p><strong>Зачем.</strong> Не только для мышц. Креатин даёт энергию мозгу, улучшает память, особенно при недосыпе. Один из самых изученных и безопасных порошков на свете.</p>
+<p><strong>Сколько.</strong> 3–5 граммов в сутки.</p>
+<p><strong>Когда.</strong> В любое время с водой или соком. Можно добавить в смузи или кофе.</p>
+<p><strong>Эффект чувствуется</strong> через 3–4 недели регулярного приёма. Это не быстро, но устойчиво.</p>
+
+<h4>Цинк</h4>
+<p><strong>Зачем.</strong> Иммунитет, гормоны, кожа, заживление, мужское здоровье, мозг. Многие в дефиците, особенно при малом количестве мяса в рационе.</p>
+<p><strong>Сколько.</strong> 15–30 мг в сутки.</p>
+<p><strong>Когда.</strong> С едой, не натощак (тошнит).</p>
+<p><strong>Не вместе с кальцием</strong>, они мешают друг другу.</p>
+
+<h4>Ашваганда</h4>
+<p><strong>Зачем.</strong> Адаптоген, снижает кортизол, помогает справляться со стрессом, улучшает сон, снижает тревожность. При постоянном напряжении эта добавка очень помогает.</p>
+<p><strong>Сколько.</strong> 300–600 мг экстракта KSM-66 в сутки.</p>
+<p><strong>Когда.</strong> Вечером с едой.</p>
+<p><strong>Курсами.</strong> 2–3 месяца приёма, потом перерыв 1 месяц. Постоянно не нужно.</p>
+
+<h4>Львиная грива</h4>
+<p><strong>Зачем.</strong> Гриб, который стимулирует выработку фактора роста нервов. Поддерживает память и фокус. Исследований пока меньше, чем хотелось бы, но добавка безопасная и многие отмечают эффект.</p>
+<p><strong>Сколько.</strong> 500–1000 мг экстракта в сутки.</p>
+<p><strong>Когда.</strong> Утром с едой.</p>
+
+<h3>График приёма</h3>
+<div class="proto">
+<div class="h">Утро (с завтраком)</div>
+<div class="row"><div class="t">·</div><div>Омега-3</div></div>
+<div class="row"><div class="t">·</div><div>Витамин D3 + K2</div></div>
+<div class="row"><div class="t">·</div><div>B-комплекс</div></div>
+<div class="row"><div class="t">·</div><div>Львиная грива (если принимаешь)</div></div>
+</div>
+<div class="proto">
+<div class="h">Обед</div>
+<div class="row"><div class="t">·</div><div>Цинк (если не утром)</div></div>
+<div class="row"><div class="t">·</div><div>Креатин (можно в любое время)</div></div>
+</div>
+<div class="proto">
+<div class="h">Вечер (за 30–60 минут до сна)</div>
+<div class="row"><div class="t">·</div><div>Магний глицинат</div></div>
+<div class="row"><div class="t">·</div><div>Ашваганда (если принимаешь)</div></div>
+</div>
+<div class="highlight">
+<strong>Где брать.</strong> iHerb, аптечные сети, специализированные магазины. Качество важнее цены. Дешёвые добавки часто содержат меньше активного вещества, чем заявлено, или плохо усваиваются. Проверенные бренды: NOW Foods, Solgar, Doctor's Best, Thorne, Jarrow.
+</div>
+
+<h3>Что не работает или сомнительно</h3>
+<ul style="margin-left:1.25rem;color:var(--ink-soft)">
+<li style="margin:0.5rem 0"><strong>Поливитамины.</strong> Дешёвые мульти содержат всё подряд в плохой форме и низких дозах. Лучше отдельные добавки в правильных формах.</li>
+<li style="margin:0.5rem 0"><strong>Зелёные смеси типа Athletic Greens.</strong> Дорого, маркетинг, не доказано лучше обычных овощей <a href="#ch4" data-anchor="#ch4" class="ref">(см. Главу 4)</a>.</li>
+<li style="margin:0.5rem 0"><strong>Ноотропы по типу пирацетама и фенибута.</strong> В РФ они аптечные, в Европе и США рецептурные. Эффект сомнительный, побочки реальные. Не рекомендую без врача.</li>
+<li style="margin:0.5rem 0"><strong>Мелатонин.</strong> Помогает только при джетлаге. На постоянной основе ломает выработку собственного.</li>
+</ul>
+
+<div class="recap">
+<div class="h">Глава 08 · Главное</div>
+<h4>Добавки это финиш, а не старт</h4>
+<ul>
+<li>Стартовый набор: Омега-3, Магний глицинат, D3+K2, B-комплекс</li>
+<li>Расширение: креатин, цинк, ашваганда, львиная грива</li>
+<li>Утром: жирорастворимые с едой и Омега-3</li>
+<li>Вечером: магний и ашваганда</li>
+<li>Сначала фундамент (главы 1–5), потом добавки</li>
+</ul>
+</div>
+<div class="today">
+<div class="h">Что сделать сегодня</div>
+<p>Сделай заказ на стартовый набор: Омега-3, Магний глицинат, D3+K2, B-комплекс. К моменту, когда придёт посылка, книга будет дочитана и можно начинать приём.</p>
+</div>
+</div>
+
+<section class="chap-head" id="ch9">
+  <div class="part">Часть 2 · Ускорители</div>
+  <div class="num">Глава 09</div>
+  <h2>Мышление и внимание</h2>
+  <p class="lead">Когда фундамент стоит и мозг работает, нужны инструменты, чтобы направлять его в нужную сторону.</p>
+</section>
+<div class="chap-body">
+<p>Эта глава про инструменты для головы. Не теория, не философия. Шесть простых методов, которые можно использовать сегодня для решения реальных задач.</p>
+
+<h3>Инструмент 1. 5 Почему. Когда нужно понять причину</h3>
+<p>Самый простой и мощный способ найти настоящую причину проблемы. Изобрели в Toyota. Работает всегда.</p>
+<p>Берёшь проблему. Спрашиваешь «почему?» 5 раз подряд. Каждый ответ становится новой проблемой, к которой задаёшь следующий «почему?».</p>
+
+<div class="iwidget">
+  <div class="ititle">Попробуй прямо сейчас</div>
+  <div class="isub">Введи проблему и пройди по 5 уровням «почему?». Поможет найти настоящий корень. Сохраняется автоматически.</div>
+  <div id="whyLadder">
+    <div class="why-step"><label>Проблема</label><input type="text" data-why="0" placeholder="Например: я постоянно опаздываю"></div>
+    <div class="why-step"><label>Почему 1</label><input type="text" data-why="1" placeholder="Долго собираюсь утром"></div>
+    <div class="why-step"><label>Почему 2</label><input type="text" data-why="2" placeholder="Не знаю, что надевать"></div>
+    <div class="why-step"><label>Почему 3</label><input type="text" data-why="3" placeholder="Не подготовил вечером"></div>
+    <div class="why-step"><label>Почему 4</label><input type="text" data-why="4" placeholder="Залипал в телефон"></div>
+    <div class="why-step"><label>Почему 5 (корень)</label><input type="text" data-why="5" placeholder="Нет вечернего ритуала"></div>
+  </div>
+  <div class="iresult show" style="background:var(--sage-soft);border:0.5px solid var(--sage)"><strong>Совет.</strong> Решение работает на последнем уровне. Если справиться с пятой причиной — все четыре верхние симптома исчезнут сами.</div>
+</div>
+
+<p>Используй для рабочих проблем (почему сорван проект), личных (почему ругаемся с партнёром), здоровья (почему устаю), денег (почему не получается копить).</p>
+
+<h3>Инструмент 2. Матрица Эйзенхауэра. Когда задач больше, чем времени</h3>
+<p>Все твои задачи делятся на 4 типа по двум осям: важно/не важно и срочно/не срочно. Картинка простая: квадрат на 4 части.</p>
+<table style="width:100%;border-collapse:collapse;margin:1.5rem 0;font-size:14.5px">
+<tr><td style="padding:1rem;border:0.5px solid var(--line);background:var(--terracotta-soft);width:50%"><strong style="color:var(--terracotta-deep)">Срочно + Важно</strong><br>Делай сразу. Кризисы, дедлайны, аварии.</td>
+<td style="padding:1rem;border:0.5px solid var(--line);background:var(--sage-soft);width:50%"><strong style="color:var(--sage-deep)">Важно + Не срочно</strong><br>Планируй и делай регулярно. Здоровье, обучение, отношения, стратегия.</td></tr>
+<tr><td style="padding:1rem;border:0.5px solid var(--line);background:var(--cream)"><strong style="color:var(--ink-mute)">Срочно + Не важно</strong><br>Делегируй. Большинство звонков, чужие просьбы, мелкая операционка.</td>
+<td style="padding:1rem;border:0.5px solid var(--line);background:var(--cream)"><strong style="color:var(--ink-mute)">Не срочно + Не важно</strong><br>Удали. Соцсети, бесполезные встречи, новости.</td></tr>
+</table>
+<p>Главный секрет матрицы: успешные люди живут в зелёной зоне (важно, не срочно). Неуспешные постоянно гасят пожары в красной зоне (срочно, важно). Регулярная работа над важным предотвращает срочное.</p>
+<p>Утром потрать 5 минут: выпиши задачи, разложи по квадратам. Делай в порядке зелёный → красный → жёлтый. Серый удали.</p>
+
+<h3>Инструмент 3. Ментальные карты. Когда мысли в голове путаются</h3>
+<p>Способ выгрузить мысли из головы на бумагу так, чтобы стало видно структуру.</p>
+<ol class="steps">
+<li><strong>В центре листа</strong> напиши главную тему. Любую. «Запуск нового продукта». «Семейный отпуск». «Решение проблемы с командой».</li>
+<li><strong>От центра проведи 4–6 веток.</strong> Это главные подтемы. Для отпуска: бюджет, маршрут, даты, документы, кто едет.</li>
+<li><strong>От каждой ветки расходятся подветки.</strong> Конкретные задачи и идеи.</li>
+<li><strong>Используй цвета и иконки.</strong> Это включает правое полушарие, помогает запоминать.</li>
+</ol>
+<p>Бумага и ручка лучше любых приложений. На крайний случай Miro, XMind, FreeForm на iPad. Ментальная карта это не для презентаций. Это для головы.</p>
+
+<h3>Инструмент 4. Zettelkasten. Когда читаешь и хочешь запомнить</h3>
+<p>Метод немецкого социолога Никласа Лумана. Он за свою жизнь написал 70 книг, потому что использовал систему карточек. Сейчас её повторяют в цифровых заметках типа Obsidian или Roam.</p>
+<div class="term">
+<span class="word">Zettelkasten</span>
+По-немецки «ящик с записками». Система связанных между собой коротких заметок. Каждая заметка одна идея. Заметки ссылаются друг на друга, создавая сеть. Со временем сеть становится умнее тебя.
+</div>
+<p>Принципы:</p>
+<ol class="steps">
+<li><strong>Одна заметка одна идея.</strong> Не «Конспект главы», а «Сон чистит мозг ночью». Короткая, конкретная, своими словами.</li>
+<li><strong>Своими словами.</strong> Не копируй цитаты. Перескажи идею, как объяснил бы другу. Это и есть обучение.</li>
+<li><strong>Ссылки между заметками.</strong> Когда новая идея перекликается со старой, сделай ссылку. Со временем это становится второй памятью.</li>
+<li><strong>Регулярный пересмотр.</strong> Раз в неделю просматривай свежие заметки. Раз в месяц находи неожиданные связи.</li>
+</ol>
+<p>Простой старт: бесплатное приложение Obsidian. 10 минут в день записываешь самые яркие идеи из прочитанного и пережитого. Через год это уникальная база знаний.</p>
+
+<h3>Инструмент 5. Anki. Чтобы запомнить навсегда</h3>
+<p>Anki — бесплатное приложение карточек с интервальным повторением. Учишь карточку, повторяешь её через увеличивающиеся промежутки (час, день, неделя, месяц). Так информация переходит в долговременную память.</p>
+<p>Идеально для языков, медицинских терминов, имён клиентов, цитат, формул, фактов. Чемпионы по запоминанию используют именно этот принцип.</p>
+<ol class="steps">
+<li><strong>Скачай Anki.</strong> Бесплатно для компьютера и Android. Для iPhone есть платная версия.</li>
+<li><strong>Создай 5 карточек в день.</strong> Вопрос на одной стороне, ответ на другой. Коротко, конкретно.</li>
+<li><strong>Повторяй 10 минут утром.</strong> Приложение само решает, какие карточки показать сегодня.</li>
+<li><strong>Через 3 месяца</strong> у тебя сотни запомненных вещей без усилий зубрёжки.</li>
+</ol>
+
+<h3>Инструмент 6. Метод локусов. Когда нужно запомнить много</h3>
+<p>Древнеримская мнемотехника. Используется чемпионами по запоминанию.</p>
+<p>Представь хорошо знакомое тебе место (свой дом, путь на работу, школу детства). Мысленно «развешивай» то, что нужно запомнить, на разные точки маршрута. Чем ярче и абсурднее образ, тем лучше.</p>
+<p>Например, нужно запомнить речь из 7 пунктов. Первый пункт «вступление о компании» — представь, что огромный логотип компании висит на двери дома. Второй пункт «цифры роста» — заходишь в прихожую, а там танцуют огромные графики. И так далее. Когда выступаешь, мысленно идёшь по дому и вспоминаешь.</p>
+
+<h3>Бонус. Dual N-Back для рабочей памяти</h3>
+<p>Игра-тренажёр для рабочей памяти. На экране в случайных местах появляется квадрат, в наушниках звучит буква. Задача: запомнить, где был квадрат и какая была буква 1 шаг назад (1-back), потом 2 шага назад (2-back), и так далее.</p>
+<p>Бесплатное приложение Brain Workshop или N-Back на телефон. 10 минут в день. Через 2–3 недели заметна способность держать в голове больше задач одновременно.</p>
+<div class="highlight">
+<strong>Что не работает.</strong> Приложения «тренировки мозга» типа Lumosity. В этих играх рост есть, но это не переносится на жизнь. Реальная тренировка мозга это изучение нового навыка: язык, инструмент, программирование, танцы. Сложное, медленное, требующее усилий.
+</div>
+
+<div class="recap">
+<div class="h">Глава 09 · Главное</div>
+<h4>Инструменты для головы, которые работают</h4>
+<ul>
+<li>5 Почему чтобы найти корень проблемы</li>
+<li>Матрица Эйзенхауэра чтобы решать важное, а не срочное</li>
+<li>Ментальные карты чтобы выгрузить мысли</li>
+<li>Zettelkasten и Anki чтобы запоминать прочитанное навсегда</li>
+<li>Изучение нового навыка лучше любых «тренировок мозга»</li>
+</ul>
+</div>
+<div class="today">
+<div class="h">Что сделать сегодня</div>
+<p>Возьми любую проблему, которая сейчас беспокоит. Запиши её в виджете «5 Почему» выше. Пройди по 5 уровням. Скорее всего, найдётся причина, которой раньше не было видно.</p>
+</div>
+</div>
+
+<section class="chap-head" id="ch10">
+  <div class="part">Часть 3 · Внедрение</div>
+  <div class="num">Глава 10</div>
+  <h2>30 дней. План и самодиагностика</h2>
+  <p class="lead">Знание не меняет жизнь. Жизнь меняет действие. План это первый шаг.</p>
+</section>
+<div class="chap-body">
+<p>Эта глава самая важная в книге. Здесь конкретный план на 30 дней по неделям. Не пытайся внедрить всё сразу. Это самая частая причина провала любых систем.</p>
+
+<h3>Сначала самодиагностика</h3>
+<p>Чтобы увидеть прогресс через месяц, нужно зафиксировать стартовую точку. Заполни эту таблицу честно. Никто не увидит. Через 30 дней повтори и сравни.</p>
+<div class="diag">
+<h4>Где я сейчас. Оцени по шкале 1–10</h4>
+<div class="diag-row">
+<div class="diag-label">Качество сна (легко засыпаю, просыпаюсь отдохнувшим)</div>
+<input type="number" min="1" max="10" class="diag-input" data-diag>
+</div>
+<div class="diag-row">
+<div class="diag-label">Уровень энергии в течение дня</div>
+<input type="number" min="1" max="10" class="diag-input" data-diag>
+</div>
+<div class="diag-row">
+<div class="diag-label">Способность сосредоточиться</div>
+<input type="number" min="1" max="10" class="diag-input" data-diag>
+</div>
+<div class="diag-row">
+<div class="diag-label">Стрессоустойчивость и спокойствие</div>
+<input type="number" min="1" max="10" class="diag-input" data-diag>
+</div>
+<div class="diag-row">
+<div class="diag-label">Общее настроение и удовольствие от жизни</div>
+<input type="number" min="1" max="10" class="diag-input" data-diag>
+</div>
+<div class="diag-total">
+<span>Текущий уровень из 50</span>
+<strong id="diagTotal">0</strong>
+</div>
+</div>
+<p>Запомни число. Через 30 дней пересчитаешь. У большинства результат вырастает на 15–25 пунктов. Это и есть «+50%» из названия книги.</p>
+
+<div class="iwidget">
+  <div class="ititle">Календарь твоего спринта</div>
+  <div class="isub">Введи дату начала. Калькулятор покажет, на каком дне ты сейчас и сколько осталось до конца спринта.</div>
+  <div class="sleep-calc-row">
+    <div>
+      <label for="sprintStart">Дата начала спринта</label>
+      <input type="date" id="sprintStart">
+    </div>
+    <div>
+      <button class="ibtn" onclick="calcSprint()">Показать</button>
+    </div>
+  </div>
+  <div class="iresult" id="sprintResult"></div>
+  <div class="sprint-cal" id="sprintCal" style="display:none"></div>
+</div>
+
+<h3>Принципы плана</h3>
+<ol class="steps">
+<li><strong>Одна привычка на неделю.</strong> Не пытайся внедрить три. Только то, что в плане на эту неделю. Прошлое сохраняется.</li>
+<li><strong>Лучше 5 минут каждый день, чем час раз в неделю.</strong> Регулярность важнее.</li>
+<li><strong>Пропустил день не страшно. Пропустил два подряд — проблема.</strong> Это правило не пропускать дважды.</li>
+<li><strong>Отмечай в трекере.</strong> Видеть зелёные клеточки очень мотивирует.</li>
+<li><strong>30-й день не финиш.</strong> Это начало. После спринта решишь, какие привычки оставить навсегда.</li>
+</ol>
+
+<h3>Неделя 1. Сон, свет, вода</h3>
+<p>Самый важный фундамент. Если эта неделя получится, остальные пойдут легче.</p>
+<div class="proto">
+<div class="h">Неделя 1. Что делать каждый день</div>
+<div class="row"><div class="t">Утро</div><div>Стакан воды (300–500 мл) сразу после пробуждения. 10–15 минут на улице в первый час <a href="#ch2" data-anchor="#ch2" class="ref">(см. Главу 2)</a>. Завтрак через 30–60 минут.</div></div>
+<div class="row"><div class="t">День</div><div>Кофе только до 14:00. Вода в течение дня минимум 1,5 литра.</div></div>
+<div class="row"><div class="t">Вечер</div><div>Без экранов за час до сна. Отбой в одно и то же время. Спальня прохладная и тёмная <a href="#ch1" data-anchor="#ch1" class="ref">(см. Главу 1)</a>.</div></div>
+</div>
+<p><strong>Что не делать ещё.</strong> Не начинать добавки, не делать холодовой душ, не менять питание. Только сон, свет, вода. Это уже много.</p>
+
+<h3>Неделя 2. Движение и дыхание</h3>
+<p>Привычки прошлой недели сохраняем. Добавляем тело.</p>
+<div class="proto">
+<div class="h">Неделя 2. Что добавляется</div>
+<div class="row"><div class="t">Утро</div><div>5 минут випассаны после душа <a href="#ch6" data-anchor="#ch6" class="ref">(см. Главу 6)</a>.</div></div>
+<div class="row"><div class="t">День</div><div>Прогулка 15 минут после обеда. Микропаузы 5 минут каждый час работы.</div></div>
+<div class="row"><div class="t">3 раза/нед</div><div>Кардио 25–30 минут (быстрая ходьба, бег, велосипед, бассейн) <a href="#ch3" data-anchor="#ch3" class="ref">(см. Главу 3)</a>.</div></div>
+<div class="row"><div class="t">Вечер</div><div>Дыхание 4-7-8 в кровати. 4 цикла.</div></div>
+</div>
+<p><strong>Если совсем не было движения раньше</strong>, начни просто с прогулки 15 минут в день. Это уже революция для тела. Силовые добавишь на третьей неделе.</p>
+
+<h3>Неделя 3. Питание, добавки, холод</h3>
+<p>Привычки первых двух недель сохраняем. Добавляем химию тела.</p>
+<div class="proto">
+<div class="h">Неделя 3. Что добавляется</div>
+<div class="row"><div class="t">Утро</div><div>С завтраком: Омега-3, Витамин D3+K2, B-комплекс <a href="#ch8" data-anchor="#ch8" class="ref">(см. Главу 8)</a>.</div></div>
+<div class="row"><div class="t">День</div><div>Тарелка ½ овощи + ¼ белок + ¼ сложные углеводы <a href="#ch4" data-anchor="#ch4" class="ref">(см. Главу 4)</a>. 30 секунд холода в конце душа <a href="#ch7" data-anchor="#ch7" class="ref">(см. Главу 7)</a>.</div></div>
+<div class="row"><div class="t">2 раза/нед</div><div>Силовые тренировки 30–45 минут.</div></div>
+<div class="row"><div class="t">Вечер</div><div>Магний глицинат за 30–60 минут до сна. Ужин за 2–3 часа до сна.</div></div>
+</div>
+<p>Холодовое воздействие наращиваем постепенно: первые 2 дня 30 секунд, потом 1 минута, к концу недели 2 минуты.</p>
+
+<h3>Неделя 4. Мозг и цифровая гигиена</h3>
+<p>Финальная неделя. Все базовые привычки уже работают. Теперь работа с вниманием и мышлением.</p>
+<div class="proto">
+<div class="h">Неделя 4. Что добавляется</div>
+<div class="row"><div class="t">Утро</div><div>Первый час без телефона. Только вода, свет, медитация, завтрак <a href="#ch5" data-anchor="#ch5" class="ref">(см. Главу 5)</a>.</div></div>
+<div class="row"><div class="t">Утро+</div><div>5 минут матрицы Эйзенхауэра: задачи на день по приоритетам <a href="#ch9" data-anchor="#ch9" class="ref">(см. Главу 9)</a>.</div></div>
+<div class="row"><div class="t">День</div><div>Глубокая работа блоками по 50 минут. Уведомления выключены. NSDR 10–20 минут в обед.</div></div>
+<div class="row"><div class="t">Вечер</div><div>15 минут чтения с записью 2–3 идей в Zettelkasten.</div></div>
+<div class="row"><div class="t">1 раз/нед</div><div>День без соцсетей.</div></div>
+</div>
+
+<h3>День 30. Подведи итог</h3>
+<p>Заполни ту же таблицу самодиагностики ещё раз. Сравни с первым днём.</p>
+<p>Реши, что оставляешь навсегда. Не всё. Выбери 3–5 привычек, которые дали больше всего. Они уже встроились в жизнь. Остальное либо отбросишь, либо подключишь во втором цикле.</p>
+<div class="highlight">
+<strong>После 30 дней.</strong> Большинство привычек не доводятся до автоматизма за месяц. Реальное закрепление 60–90 дней. Так что 30 дней это знакомство, после которого становится понятно, что работает именно для тебя.
+</div>
+
+<div class="recap">
+<div class="h">Глава 10 · Главное</div>
+<h4>План это система, а не вдохновение</h4>
+<ul>
+<li>Одна привычка на одну неделю, не больше</li>
+<li>Неделя 1: сон, свет, вода</li>
+<li>Неделя 2: движение и дыхание</li>
+<li>Неделя 3: питание, добавки, холод</li>
+<li>Неделя 4: цифровая гигиена и мышление</li>
+<li>В конце сравни с самодиагностикой</li>
+</ul>
+</div>
+<div class="today">
+<div class="h">Что сделать сегодня</div>
+<p>Если книга зацепила, открой следующий раздел с трекером. Поставь дату начала спринта на завтрашнее утро. И помни: 1% улучшений каждый день это в 37 раз лучше через год.</p>
+</div>
+</div>
+
+<section class="chap-head" id="ch11">
+  <div class="part">Часть 3 · Внедрение</div>
+  <div class="num">Глава 11</div>
+  <h2>SOS-протоколы</h2>
+  <p class="lead">Когда всё плохо, не до планов. Эти протоколы для срочных ситуаций. Возвращайся сюда быстро.</p>
+</section>
+<div class="chap-body">
+<p>Жизнь не идёт по графику. Случаются панические атаки, бессонные ночи, срывы, тревога перед важным днём. Эта глава шпаргалка. Когда плохо, открываешь и делаешь по пунктам.</p>
+
+<div class="iwidget">
+  <div class="ititle">Быстрый запуск протокола</div>
+  <div class="isub">Нажми на кнопку, чтобы перейти к нужному протоколу. Поставь книгу в закладки, чтобы найти эту главу за секунду в кризисный момент.</div>
+  <div class="sos-quick">
+    <button class="sos-btn" onclick="document.getElementById('sosPanic').scrollIntoView({behavior:'smooth'})"><div class="sost">Паническая атака</div><div class="sosd">5 минут до облегчения</div></button>
+    <button class="sos-btn" onclick="document.getElementById('sosBreak').scrollIntoView({behavior:'smooth'})"><div class="sost">Срыв и перегруз</div><div class="sosd">Когда хочется послать всё</div></button>
+    <button class="sos-btn" onclick="document.getElementById('sosNoSleep').scrollIntoView({behavior:'smooth'})"><div class="sost">Утро без сна</div><div class="sosd">Как пережить день</div></button>
+    <button class="sos-btn" onclick="document.getElementById('sosAnxiety').scrollIntoView({behavior:'smooth'})"><div class="sost">Тревога</div><div class="sosd">Перед важным событием</div></button>
+    <button class="sos-btn" onclick="document.getElementById('sosStuck').scrollIntoView({behavior:'smooth'})"><div class="sost">Не могу начать</div><div class="sosd">Прокрастинация</div></button>
+  </div>
+</div>
+
+<div id="sosPanic" style="background:var(--cream);border-left:3px solid var(--terracotta);padding:1.25rem 1.5rem;margin:1.25rem 0">
+<h4 style="font-family:'PT Serif',serif;font-size:18px;font-weight:700;margin:0 0 0.5rem;color:var(--terracotta-deep)">Паническая атака. 5 минут до облегчения</h4>
+<ol style="margin:0.5rem 0 0 1.25rem;padding:0">
+<li style="margin:0.25rem 0;font-size:15px;color:var(--ink-soft)"><strong>Дыхание 4-7-8.</strong> 4 цикла подряд. Это первое и главное <a href="#ch6" data-anchor="#ch6" class="ref">(см. Главу 6)</a>.</li>
+<li style="margin:0.25rem 0;font-size:15px;color:var(--ink-soft)"><strong>Холод на лицо.</strong> Холодная вода или лёд на щёки и шею 20–30 секунд. Запускает рефлекс ныряния, замедляет сердце.</li>
+<li style="margin:0.25rem 0;font-size:15px;color:var(--ink-soft)"><strong>Техника 5-4-3-2-1.</strong> Вслух или про себя назови: 5 вещей, что видишь. 4 что слышишь. 3 что чувствуешь телом. 2 запаха. 1 вкус. Возвращает в настоящее.</li>
+<li style="margin:0.25rem 0;font-size:15px;color:var(--ink-soft)"><strong>Медленная ходьба 5 минут.</strong> Не сидеть на месте. Просто ходи и считай шаги.</li>
+<li style="margin:0.25rem 0;font-size:15px;color:var(--ink-soft)"><strong>Запиши, что было триггером.</strong> Через час, когда отпустит. Это поможет в будущем.</li>
+</ol>
+</div>
+
+<div id="sosBreak" style="background:var(--cream);border-left:3px solid var(--terracotta);padding:1.25rem 1.5rem;margin:1.25rem 0">
+<h4 style="font-family:'PT Serif',serif;font-size:18px;font-weight:700;margin:0 0 0.5rem;color:var(--terracotta-deep)">Срыв и перегруз. Когда хочется послать всё</h4>
+<ol style="margin:0.5rem 0 0 1.25rem;padding:0">
+<li style="margin:0.25rem 0;font-size:15px;color:var(--ink-soft)"><strong>Признай состояние вслух.</strong> «Сейчас очень плохо.» Не борись, признай.</li>
+<li style="margin:0.25rem 0;font-size:15px;color:var(--ink-soft)"><strong>Вода и лёгкая еда.</strong> Часто срыв это банальный голод и обезвоживание. Проверь сначала тело <a href="#ch4" data-anchor="#ch4" class="ref">(см. Главу 4)</a>.</li>
+<li style="margin:0.25rem 0;font-size:15px;color:var(--ink-soft)"><strong>Отмени, что можно.</strong> Без геройства. Перенеси встречу, попроси о помощи, скажи правду.</li>
+<li style="margin:0.25rem 0;font-size:15px;color:var(--ink-soft)"><strong>Прогулка 30 минут на улице.</strong> Не на ленте, не на велике. Просто прогулка с мыслями.</li>
+<li style="margin:0.25rem 0;font-size:15px;color:var(--ink-soft)"><strong>Лечь спать раньше обычного.</strong> Завтра утром составишь план. Сегодня просто пережить.</li>
+<li style="margin:0.25rem 0;font-size:15px;color:var(--ink-soft)"><strong>На следующий день не наказывать себя.</strong> Без кофе натощак, лёгкая еда, прогулка, обычный план. Возвращение, а не штраф.</li>
+</ol>
+</div>
+
+<div id="sosNoSleep" style="background:var(--cream);border-left:3px solid var(--terracotta);padding:1.25rem 1.5rem;margin:1.25rem 0">
+<h4 style="font-family:'PT Serif',serif;font-size:18px;font-weight:700;margin:0 0 0.5rem;color:var(--terracotta-deep)">Утро после плохой ночи</h4>
+<ol style="margin:0.5rem 0 0 1.25rem;padding:0">
+<li style="margin:0.25rem 0;font-size:15px;color:var(--ink-soft)"><strong>Стакан воды 500 мл сразу.</strong></li>
+<li style="margin:0.25rem 0;font-size:15px;color:var(--ink-soft)"><strong>10–15 минут на улице.</strong> Главное правило этого утра <a href="#ch2" data-anchor="#ch2" class="ref">(см. Главу 2)</a>.</li>
+<li style="margin:0.25rem 0;font-size:15px;color:var(--ink-soft)"><strong>Кофе только после еды.</strong> Не натощак.</li>
+<li style="margin:0.25rem 0;font-size:15px;color:var(--ink-soft)"><strong>Сложные задачи отложить.</strong> Сегодня день простых дел.</li>
+<li style="margin:0.25rem 0;font-size:15px;color:var(--ink-soft)"><strong>NSDR 20 минут в обед.</strong> Заменит часть пропущенного сна <a href="#ch6" data-anchor="#ch6" class="ref">(см. Главу 6)</a>.</li>
+<li style="margin:0.25rem 0;font-size:15px;color:var(--ink-soft)"><strong>Не спать днём дольше 20 минут.</strong> Иначе ночью снова не уснёшь.</li>
+<li style="margin:0.25rem 0;font-size:15px;color:var(--ink-soft)"><strong>Лечь в обычное время.</strong> Не в 19:00, а в свои 22–23. Иначе на завтра сместится график.</li>
+</ol>
+</div>
+
+<div id="sosAnxiety" style="background:var(--cream);border-left:3px solid var(--terracotta);padding:1.25rem 1.5rem;margin:1.25rem 0">
+<h4 style="font-family:'PT Serif',serif;font-size:18px;font-weight:700;margin:0 0 0.5rem;color:var(--terracotta-deep)">Тревога перед важным событием</h4>
+<ol style="margin:0.5rem 0 0 1.25rem;padding:0">
+<li style="margin:0.25rem 0;font-size:15px;color:var(--ink-soft)"><strong>Дыхание по квадрату.</strong> 5 циклов. Балансирует нервную систему <a href="#ch6" data-anchor="#ch6" class="ref">(см. Главу 6)</a>.</li>
+<li style="margin:0.25rem 0;font-size:15px;color:var(--ink-soft)"><strong>Сожми и расслабь.</strong> Сожми все мышцы тела на 5 секунд, потом резко расслабь. 3 раза. Сбрасывает физическое напряжение.</li>
+<li style="margin:0.25rem 0;font-size:15px;color:var(--ink-soft)"><strong>Холодная вода на запястья.</strong> 30 секунд. Снижает пульс.</li>
+<li style="margin:0.25rem 0;font-size:15px;color:var(--ink-soft)"><strong>Сфокусируйся на теле.</strong> Стопы на полу. Спина прямая. Ты здесь.</li>
+<li style="margin:0.25rem 0;font-size:15px;color:var(--ink-soft)"><strong>Худший сценарий.</strong> Спроси «Что самое страшное может случиться?» Обычно это не катастрофа. Тревога становится меньше.</li>
+</ol>
+</div>
+
+<div id="sosStuck" style="background:var(--cream);border-left:3px solid var(--terracotta);padding:1.25rem 1.5rem;margin:1.25rem 0">
+<h4 style="font-family:'PT Serif',serif;font-size:18px;font-weight:700;margin:0 0 0.5rem;color:var(--terracotta-deep)">Не могу начать важное дело</h4>
+<ol style="margin:0.5rem 0 0 1.25rem;padding:0">
+<li style="margin:0.25rem 0;font-size:15px;color:var(--ink-soft)"><strong>Правило 2 минут.</strong> Скажи себе «поработаю над этим только 2 минуты». Через 2 минуты в 90% случаев ты уже втянулся.</li>
+<li style="margin:0.25rem 0;font-size:15px;color:var(--ink-soft)"><strong>Уменьши задачу.</strong> Не «написать отчёт», а «открыть документ и написать заголовок».</li>
+<li style="margin:0.25rem 0;font-size:15px;color:var(--ink-soft)"><strong>Убери все отвлекалки.</strong> Телефон в другую комнату. Браузер закрыт. Один таб с задачей <a href="#ch5" data-anchor="#ch5" class="ref">(см. Главу 5)</a>.</li>
+<li style="margin:0.25rem 0;font-size:15px;color:var(--ink-soft)"><strong>Таймер на 25 минут.</strong> Помодоро. Только эта задача 25 минут, потом перерыв 5 минут.</li>
+<li style="margin:0.25rem 0;font-size:15px;color:var(--ink-soft)"><strong>Не получается всё равно?</strong> Возможно, просто усталость. Сделай 10-минутную прогулку и попробуй снова.</li>
+</ol>
+</div>
+
+<div class="warn">
+<strong>Когда обращаться к специалисту.</strong> Эти протоколы для острых, но временных состояний. Если паника, тревога или бессонница повторяются регулярно (несколько раз в неделю в течение месяца), это сигнал обратиться к психологу или психиатру. Это не слабость, это здоровая забота о себе.
+</div>
+
+<div class="recap">
+<div class="h">Глава 11 · Главное</div>
+<h4>В кризисе действуй по протоколу</h4>
+<ul>
+<li>При панике: 4-7-8 + холод на лицо + техника 5-4-3-2-1</li>
+<li>После срыва: вода, еда, прогулка, ранний сон, без штрафа на завтра</li>
+<li>После плохой ночи: вода, свет, без кофе натощак</li>
+<li>Перед важным: дыхание по квадрату + холод на запястья</li>
+<li>Не могу начать: правило 2 минут + таймер 25</li>
+</ul>
+</div>
+<div class="today">
+<div class="h">Что сделать сегодня</div>
+<p>Сделай закладку на эту главу. Когда плохо, не нужно искать совет в интернете. Просто открой книгу и сделай по пунктам.</p>
+</div>
+</div>
+
+<section class="chap-head" id="tracker">
+  <div class="part">Приложение</div>
+  <div class="num">·</div>
+  <h2>Трекер 30 дней</h2>
+  <p class="lead">Отмечай каждый день, в который ты выполнил основные привычки. Прогресс сохраняется автоматически.</p>
+</section>
+<div class="chap-body">
+<div class="tracker">
+<h4>Мой 30-дневный спринт</h4>
+<div class="tracker-progress"><div class="tracker-progress-fill" id="trackerFill"></div></div>
+<div class="tracker-grid" id="trackerGrid"></div>
+<div class="tracker-stats">
+<span>Дней выполнено: <strong id="trackerDone">0</strong> из 30</span>
+<span><strong id="trackerStreak">0</strong> дней подряд</span>
+</div>
+</div>
+<p>Кликай на день, чтобы отметить выполнение. Минимум, что должно быть в этот день: ты лёг и встал в нужное время, выпил воду утром, вышел на свет, был на ногах хотя бы 15 минут, не залипал в телефон с утра. Полная программа описана в <a href="#ch10" data-anchor="#ch10" class="ref">Главе 10</a>.</p>
+
+<h3>Чек-лист дня</h3>
+<div class="proto">
+<div class="h">Утро</div>
+<div class="row"><div class="t">·</div><div>Стакан воды 300–500 мл</div></div>
+<div class="row"><div class="t">·</div><div>10–15 минут на улице</div></div>
+<div class="row"><div class="t">·</div><div>Первый час без телефона</div></div>
+<div class="row"><div class="t">·</div><div>Завтрак + добавки</div></div>
+<div class="row"><div class="t">·</div><div>5 минут медитации</div></div>
+</div>
+<div class="proto">
+<div class="h">День</div>
+<div class="row"><div class="t">·</div><div>Кофе только до 14:00</div></div>
+<div class="row"><div class="t">·</div><div>Прогулка после еды</div></div>
+<div class="row"><div class="t">·</div><div>Микропаузы каждый час</div></div>
+<div class="row"><div class="t">·</div><div>1,5–2 литра воды</div></div>
+<div class="row"><div class="t">·</div><div>Тренировка по плану недели</div></div>
+</div>
+<div class="proto">
+<div class="h">Вечер</div>
+<div class="row"><div class="t">·</div><div>Ужин за 2–3 часа до сна</div></div>
+<div class="row"><div class="t">·</div><div>Магний за 30–60 минут до сна</div></div>
+<div class="row"><div class="t">·</div><div>Без экранов за час до сна</div></div>
+<div class="row"><div class="t">·</div><div>Дыхание 4-7-8 в кровати</div></div>
+<div class="row"><div class="t">·</div><div>Отбой в одно время</div></div>
+</div>
+</div>
+
+<section class="chap-head" id="glossary">
+  <div class="part">Приложение</div>
+  <div class="num">·</div>
+  <h2>Словарь и быстрые ответы</h2>
+  <p class="lead">Все термины из книги в одном месте плюс ответы на частые вопросы.</p>
+</section>
+<div class="chap-body">
+<h3>Словарь</h3>
+<div class="gloss-grid">
+<div class="gloss-item"><strong>BDNF</strong>Белок, который заставляет мозг расти. Поднимается от движения, обучения, сна. <a href="#ch3" data-anchor="#ch3" class="ref">Глава 3</a></div>
+<div class="gloss-item"><strong>Глимфатическая система</strong>Ночная чистка мозга от метаболических отходов. Работает во сне. <a href="#ch1" data-anchor="#ch1" class="ref">Глава 1</a></div>
+<div class="gloss-item"><strong>Циркадные ритмы</strong>24-часовой цикл, по которому работают все системы тела. <a href="#ch2" data-anchor="#ch2" class="ref">Глава 2</a></div>
+<div class="gloss-item"><strong>Кортизол</strong>Гормон бодрости. Высокий утром, низкий вечером. Регулируется светом. <a href="#ch2" data-anchor="#ch2" class="ref">Глава 2</a></div>
+<div class="gloss-item"><strong>Мелатонин</strong>Гормон сна. Вырабатывается в темноте. Свет его подавляет. <a href="#ch1" data-anchor="#ch1" class="ref">Глава 1</a></div>
+<div class="gloss-item"><strong>Дофамин</strong>Нейромедиатор мотивации. Не «гормон удовольствия», а гормон стремления. <a href="#ch5" data-anchor="#ch5" class="ref">Глава 5</a></div>
+<div class="gloss-item"><strong>Норадреналин</strong>Гормон фокуса и активности. Поднимается от холода, кофе, интенсивности. <a href="#ch7" data-anchor="#ch7" class="ref">Глава 7</a></div>
+<div class="gloss-item"><strong>Гиппокамп</strong>Структура мозга, отвечающая за память. Растёт от кардио и обучения. <a href="#ch3" data-anchor="#ch3" class="ref">Глава 3</a></div>
+<div class="gloss-item"><strong>Электролиты</strong>Минералы для нервов и мышц: натрий, калий, магний, кальций. <a href="#ch4" data-anchor="#ch4" class="ref">Глава 4</a></div>
+<div class="gloss-item"><strong>NSDR</strong>Глубокий отдых без сна. 10–20 минут восстанавливают энергию как сон. <a href="#ch6" data-anchor="#ch6" class="ref">Глава 6</a></div>
+<div class="gloss-item"><strong>Випассана</strong>Медитация наблюдения за дыханием. Тренирует фокус. <a href="#ch6" data-anchor="#ch6" class="ref">Глава 6</a></div>
+<div class="gloss-item"><strong>HSP</strong>Белки теплового шока. Активируются от сауны. Защищают нейроны от старения. <a href="#ch7" data-anchor="#ch7" class="ref">Глава 7</a></div>
+<div class="gloss-item"><strong>Парасимпатическая НС</strong>Система покоя. Включается длинным выдохом. <a href="#ch6" data-anchor="#ch6" class="ref">Глава 6</a></div>
+<div class="gloss-item"><strong>Симпатическая НС</strong>Система действия. Активная при стрессе и нагрузке. <a href="#ch6" data-anchor="#ch6" class="ref">Глава 6</a></div>
+<div class="gloss-item"><strong>Помодоро</strong>Техника работы блоками 25 минут с перерывом 5 минут. <a href="#ch5" data-anchor="#ch5" class="ref">Глава 5</a></div>
+<div class="gloss-item"><strong>Zettelkasten</strong>Система связанных коротких заметок. Вторая память. <a href="#ch9" data-anchor="#ch9" class="ref">Глава 9</a></div>
+</div>
+
+<h3>Быстрые ответы</h3>
+<h4>Что если нет 30 минут на чтение книги?</h4>
+<p>Прочитай только Главу 1, 2 и 10. Это уже даст 70% эффекта. Остальное добавишь позже.</p>
+<h4>Можно ли пропустить добавки?</h4>
+<p>Да. Все 4 базовые добавки можно получать из еды, если ешь жирную рыбу 2–3 раза в неделю, гуляешь летом без крема, ешь много зелени и яиц. Но в наших широтах зимой добавки сильно облегчают жизнь.</p>
+<h4>А если не получается спать 8 часов из-за ребёнка?</h4>
+<p>Жить с маленьким ребёнком и спать 8 часов сложно. Выживай через NSDR (10–20 минут днём заменяют час сна), утренний свет, кофе только до 14:00 и магний на ночь. Это не идеал, но это лучше, чем ничего.</p>
+<h4>Что если нет возможности гулять утром?</h4>
+<p>Купи лампу для светотерапии 10 000 люкс. Включай на 20 минут утром, пока пьёшь кофе или работаешь за столом. 80% эффекта улицы получишь.</p>
+<h4>Можно ли пить кофе вообще?</h4>
+<p>Можно. До 400 мг кофеина в сутки безопасно (это 3–4 чашки). Главное правило: только до 14:00 и только после еды. Не на пустой желудок.</p>
+<h4>А алкоголь совсем нельзя?</h4>
+<p>На 30 дней спринта откажись полностью. После можешь выпивать 1–2 раза в неделю. Но больше нельзя без последствий для мозга и сна. Сравни самочувствие с алкоголем и без, выбирай сам.</p>
+<h4>Сколько ждать эффекта?</h4>
+<p>Сон и энергия чувствуются с 3–5 дня. Настроение и стресс с 7–10 дня. Память и фокус с 14–21 дня. Глубокие изменения от добавок (BDNF, состав мозга) с 60–90 дней.</p>
+<h4>Что делать, если был срыв и неделя пропущена?</h4>
+<p>Просто продолжи с того места, где остановился. Не перезапускай счётчик с нуля. Не штрафуй себя. Главное правило системы: продолжать, даже если не идеально.</p>
+<h4>Можно ли ускорить, делая всё сразу?</h4>
+<p>Нет. Это самая частая причина провала. Мозг не успевает адаптироваться, силы воли не хватает, всё бросается через неделю. Одна привычка в неделю это математически оптимально.</p>
+<h4>Подходит ли это пожилым людям?</h4>
+<p>Да. Все рекомендации в книге безопасны и полезны для людей любого возраста. Но при наличии хронических заболеваний обсуди план с врачом, особенно по добавкам, холоду и силовым тренировкам.</p>
+</div>
+
+<section class="end">
+<div class="end-title">Лучшее время начать было вчера.</div>
+<div class="end-quote">«Второе лучшее — сейчас.»</div>
+<div class="end-author">Родион Сапрыкин</div>
+</section>
+
+</main>
+</div>
+
+<script>
+(function() {
+"use strict";
+
+// =============================================
+// УТИЛИТЫ (совместимые с Я.Браузером и WebView)
+// =============================================
+
+function $(sel, ctx) { return (ctx || document).querySelector(sel); }
+function $$(sel, ctx) { return (ctx || document).querySelectorAll(sel); }
+
+// Ручной поиск ближайшего предка с атрибутом (вместо closest)
+function findAncestor(el, attr) {
+  while (el && el !== document) {
+    if (el.nodeType === 1 && el.getAttribute && el.getAttribute(attr)) return el;
+    el = el.parentNode;
+  }
+  return null;
+}
+
+// Throttle для scroll-листенеров
+function throttle(fn, wait) {
+  var last = 0, timer = null;
+  return function() {
+    var now = +new Date();
+    var remaining = wait - (now - last);
+    var args = arguments, ctx = this;
+    if (remaining <= 0) {
+      if (timer) { clearTimeout(timer); timer = null; }
+      last = now;
+      try { fn.apply(ctx, args); } catch(e) {}
+    } else if (!timer) {
+      timer = setTimeout(function() {
+        last = +new Date();
+        timer = null;
+        try { fn.apply(ctx, args); } catch(e) {}
+      }, remaining);
+    }
+  };
+}
+
+// Получение позиции прокрутки (совместимый способ)
+function getScrollY() {
+  return window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+}
+
+// Плавная прокрутка к Y (ручная, через requestAnimationFrame)
+// Это нужно потому что window.scrollTo({behavior:smooth}) ломается в Я.Браузере
+var raf = window.requestAnimationFrame || window.webkitRequestAnimationFrame || function(cb) { return setTimeout(cb, 16); };
+
+function smoothScrollTo(targetY) {
+  var startY = getScrollY();
+  var distance = targetY - startY;
+  if (distance === 0) return;
+  var duration = Math.min(600, Math.max(250, Math.abs(distance) * 0.5));
+  var startTime = +new Date();
+  var cancelled = false;
+  function step() {
+    if (cancelled) return;
+    var elapsed = +new Date() - startTime;
+    var progress = Math.min(1, elapsed / duration);
+    var eased = 1 - Math.pow(1 - progress, 3);
+    window.scrollTo(0, startY + distance * eased);
+    if (progress < 1) raf(step);
+  }
+  raf(step);
+  // Страховка: если RAF не отработал (фоновая вкладка / спящий браузер),
+  // через 1.5 секунды переходим к цели мгновенно
+  setTimeout(function() { cancelled = true; window.scrollTo(0, targetY); }, 1500);
+}
+
+// Безопасный localStorage
+function lsGet(key) {
+  try { return localStorage.getItem(key); } catch(e) { return null; }
+}
+function lsSet(key, val) {
+  try { localStorage.setItem(key, val); return true; } catch(e) { return false; }
+}
+
+// =============================================
+// УНИВЕРСАЛЬНЫЙ ОБРАБОТЧИК ЯКОРНЫХ ССЫЛОК
+// =============================================
+function handleAnchorClick(e) {
+  try {
+    // Не обрабатываем клики по кнопкам меню — у них собственные обработчики
+    var t = e.target;
+    while (t && t !== document) {
+      if (t.id === 'menuBar' || t.id === 'mobileClose') return;
+      t = t.parentNode;
+    }
+    var link = findAncestor(e.target, 'data-anchor');
+    if (!link) return;
+    e.preventDefault();
+    if (e.stopPropagation) e.stopPropagation();
+    var anchor = link.getAttribute('data-anchor');
+    if (!anchor) return;
+    var id = anchor.charAt(0) === '#' ? anchor.substring(1) : anchor;
+    var target = document.getElementById(id);
+    if (!target) return;
+    var rect = target.getBoundingClientRect();
+    var top = rect.top + getScrollY();
+    smoothScrollTo(top);
+    if (window.history && history.replaceState) {
+      try { history.replaceState(null, '', '#' + id); } catch(err) {}
+    }
+  } catch(err) {}
+}
+document.addEventListener('click', handleAnchorClick, false);
+
+// =============================================
+// PROGRESS BAR
+// =============================================
+var progressBar = document.getElementById('progress');
+var mobileProgress = document.getElementById('mobileProgress');
+function updateProgress() {
+  try {
+    var scrolled = getScrollY();
+    var docH = document.documentElement.scrollHeight || document.body.scrollHeight;
+    var winH = window.innerHeight || document.documentElement.clientHeight;
+    var max = docH - winH;
+    var pct = max > 0 ? Math.round((scrolled / max) * 100) : 0;
+    if (progressBar) progressBar.style.width = pct + '%';
+    if (mobileProgress) mobileProgress.textContent = pct + '%';
+  } catch(e) {}
+}
+window.addEventListener('scroll', throttle(updateProgress, 80), { passive: true });
+
+// =============================================
+// TOC ACTIVE LINK
+// =============================================
+var tocLinks = $$('.toc-link');
+var sections = [];
+for (var i = 0; i < tocLinks.length; i++) {
+  var anchor = tocLinks[i].getAttribute('data-anchor');
+  if (anchor) {
+    var id = anchor.replace(/^#/, '');
+    var el = document.getElementById(id);
+    if (el) sections.push({ link: tocLinks[i], el: el, id: id });
+  }
+}
+function updateActiveTocLink() {
+  try {
+    var scrollPos = getScrollY() + 120;
+    var current = sections[0];
+    for (var i = 0; i < sections.length; i++) {
+      if (sections[i].el.offsetTop <= scrollPos) current = sections[i];
+    }
+    for (var j = 0; j < tocLinks.length; j++) tocLinks[j].classList.remove('active');
+    var ml = $$('.mobile-link');
+    for (var k = 0; k < ml.length; k++) ml[k].classList.remove('active');
+    if (current) {
+      current.link.classList.add('active');
+      var mobileLink = document.querySelector('.mobile-link[data-target="' + current.id + '"]');
+      if (mobileLink) mobileLink.classList.add('active');
+    }
+  } catch(e) {}
+}
+window.addEventListener('scroll', throttle(updateActiveTocLink, 150), { passive: true });
+
+// =============================================
+// MOBILE MENU
+// =============================================
+var menuBtn = document.getElementById('menuBar');
+var mobileMenu = document.getElementById('mobileMenu');
+var mobileClose = document.getElementById('mobileClose');
+var mobileNav = document.getElementById('mobileNav');
+
+function buildMobileNav() {
+  try {
+    var src = document.getElementById('tocNav');
+    if (!src || !mobileNav) return;
+    // Клонируем структуру и меняем классы
+    var html = src.innerHTML
+      .replace(/class="toc-link"/g, 'class="mobile-link"')
+      .replace(/class="toc-num"/g, 'class="mobile-link-num"')
+      .replace(/class="toc-part"/g, 'class="mobile-part"');
+    mobileNav.innerHTML = html;
+    var links = $$('.mobile-link', mobileNav);
+    for (var i = 0; i < links.length; i++) {
+      var a = links[i].getAttribute('data-anchor');
+      if (a) links[i].setAttribute('data-target', a.replace(/^#/, ''));
+    }
+  } catch(e) {}
+}
+buildMobileNav();
+
+function openMobileMenu(e) {
+  if (e) { e.preventDefault(); if (e.stopPropagation) e.stopPropagation(); if (e.stopImmediatePropagation) e.stopImmediatePropagation(); }
+  try {
+    if (mobileMenu && mobileMenu.classList.contains('open')) return false;
+    if (mobileMenu) mobileMenu.classList.add('open');
+    // Никакого body-lock. Меню fixed с overflow-y: auto, перекрывает весь viewport.
+    // Body-lock в Я.Браузере и WebView Telegram/VK оставляет скрол в залипшем состоянии.
+  } catch(err) {}
+  return false;
+}
+function closeMobileMenu(e) {
+  if (e) { e.preventDefault(); if (e.stopPropagation) e.stopPropagation(); if (e.stopImmediatePropagation) e.stopImmediatePropagation(); }
+  try {
+    if (mobileMenu) mobileMenu.classList.remove('open');
+  } catch(err) {}
+  return false;
+}
+
+// Универсальный навеситель: click + touchend дубль для WebView Telegram/VK,
+// которые иногда не пробрасывают click из touchend на не-button элементах
+function bindTap(el, handler) {
+  if (!el) return;
+  var lastTouch = 0;
+  var startX = 0, startY = 0;
+  el.addEventListener('click', function(e) {
+    // Если только что обработали через touchend, пропускаем дубликат
+    if (Date.now() - lastTouch < 500) { e.preventDefault(); return; }
+    handler(e);
+  }, false);
+  el.addEventListener('touchstart', function(e) {
+    if (e.touches && e.touches[0]) {
+      startX = e.touches[0].pageX;
+      startY = e.touches[0].pageY;
+    }
+  }, { passive: true });
+  el.addEventListener('touchend', function(e) {
+    if (!e.changedTouches || !e.changedTouches[0]) return;
+    var dx = Math.abs(e.changedTouches[0].pageX - startX);
+    var dy = Math.abs(e.changedTouches[0].pageY - startY);
+    if (dx > 10 || dy > 10) return; // был скрол
+    lastTouch = Date.now();
+    handler(e);
+  }, false);
+}
+
+bindTap(menuBtn, openMobileMenu);
+bindTap(mobileClose, closeMobileMenu);
+
+if (mobileNav) {
+  // Capture-фаза: перехватываем клик до того, как Я.Браузер сделает нативный переход по href
+  mobileNav.addEventListener('click', function(e) {
+    var link = findAncestor(e.target, 'data-anchor');
+    if (!link) return;
+    e.preventDefault();
+    if (e.stopPropagation) e.stopPropagation();
+    var anchor = link.getAttribute('data-anchor');
+    if (!anchor) return;
+    var id = anchor.charAt(0) === '#' ? anchor.substring(1) : anchor;
+    // Сначала закрываем меню, потом скролим (через RAF чтобы успел отрисоваться)
+    closeMobileMenu();
+    requestAnimationFrame(function() {
+      requestAnimationFrame(function() {
+        var target = document.getElementById(id);
+        if (!target) return;
+        var rect = target.getBoundingClientRect();
+        var top = rect.top + getScrollY();
+        smoothScrollTo(top);
+        if (window.history && history.replaceState) {
+          try { history.replaceState(null, '', '#' + id); } catch(err) {}
+        }
+      });
+    });
+  }, true); // capture: true
+}
+
+// =============================================
+// TOP BUTTON
+// =============================================
+var topBtn = document.getElementById('topBtn');
+function updateTopBtn() {
+  try {
+    if (!topBtn) return;
+    if (getScrollY() > 600) topBtn.classList.add('show');
+    else topBtn.classList.remove('show');
+  } catch(e) {}
+}
+window.addEventListener('scroll', throttle(updateTopBtn, 200), { passive: true });
+if (topBtn) {
+  topBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    smoothScrollTo(0);
+  }, false);
+}
+
+// =============================================
+// SLEEP CALCULATOR
+// =============================================
+window.calcSleep = function() {
+  try {
+    var input = document.getElementById('wakeTime');
+    if (!input) return;
+    var wake = input.value;
+    if (!wake) return;
+    var parts = wake.split(':');
+    var h = parseInt(parts[0], 10), m = parseInt(parts[1], 10);
+    var wakeMin = h * 60 + m;
+    var result = document.getElementById('sleepResult');
+    if (!result) return;
+    var cycles = [6, 5, 4];
+    var times = [];
+    for (var i = 0; i < cycles.length; i++) {
+      var c = cycles[i];
+      var totalMin = wakeMin - (c * 90 + 15);
+      var adjusted = ((totalMin % 1440) + 1440) % 1440;
+      var sh = Math.floor(adjusted / 60), sm = adjusted % 60;
+      times.push({ hours: c, time: ('0'+sh).slice(-2) + ':' + ('0'+sm).slice(-2) });
+    }
+    result.innerHTML =
+      '<strong>Оптимальное время отбоя:</strong><br>' +
+      '· <strong>' + times[0].time + '</strong> — 6 циклов, 9 часов сна (идеально)<br>' +
+      '· <strong>' + times[1].time + '</strong> — 5 циклов, 7,5 часов сна (норма)<br>' +
+      '· <strong>' + times[2].time + '</strong> — 4 цикла, 6 часов сна (минимум)';
+    result.classList.add('show');
+  } catch(e) {}
+};
+
+// =============================================
+// CIRCADIAN WIDGET
+// =============================================
+function updateCircadian(hour) {
+  try {
+    var out = document.getElementById('circadianOut');
+    var hourEl = document.getElementById('circadianHour');
+    if (!out || !hourEl) return;
+    hourEl.textContent = (hour < 10 ? '0' : '') + hour + ':00';
+    var cortisol, melatonin, title, desc, action;
+    if (hour >= 6 && hour < 9) {
+      cortisol = 95; melatonin = 5;
+      title = 'Утренний пик'; desc = 'Кортизол на максимуме, мелатонин падает.';
+      action = 'Что делать: ярко на улицу, 10–15 минут.';
+    } else if (hour >= 9 && hour < 12) {
+      cortisol = 80; melatonin = 0;
+      title = 'Пик продуктивности'; desc = 'Лучшее время для сложных задач.';
+      action = 'Что делать: глубокая работа, важные решения.';
+    } else if (hour >= 12 && hour < 15) {
+      cortisol = 60; melatonin = 0;
+      title = 'Послеобеденный спад'; desc = 'Энергия слегка падает после еды.';
+      action = 'Что делать: прогулка после обеда, кофе до 14:00.';
+    } else if (hour >= 15 && hour < 18) {
+      cortisol = 50; melatonin = 5;
+      title = 'Второе дыхание'; desc = 'Хорошее время для тренировок.';
+      action = 'Что делать: кардио или силовые, второй выход на солнце.';
+    } else if (hour >= 18 && hour < 21) {
+      cortisol = 30; melatonin = 20;
+      title = 'Замедление'; desc = 'Тело начинает готовиться ко сну.';
+      action = 'Что делать: ужин, тёплый свет в комнате, без верхних ламп.';
+    } else if (hour >= 21 && hour < 24) {
+      cortisol = 15; melatonin = 70;
+      title = 'Вечер'; desc = 'Мелатонин растёт, тело хочет покоя.';
+      action = 'Что делать: без экранов, магний, дыхание 4-7-8.';
+    } else if (hour >= 0 && hour < 3) {
+      cortisol = 5; melatonin = 95;
+      title = 'Глубокий сон'; desc = 'Самая чистка мозга, фаза глубокого сна.';
+      action = 'Что должно быть: полная темнота, 18–19°C.';
+    } else {
+      cortisol = 30; melatonin = 60;
+      title = 'Перед пробуждением'; desc = 'Кортизол начинает расти, тело готовится встать.';
+      action = 'Что должно быть: будильник имитирует рассвет, окно с занавесками.';
+    }
+    out.innerHTML = '<h5>' + title + '</h5><p>' + desc + '</p><p><strong>' + action + '</strong></p>' +
+      '<div class="circadian-bars"><div class="circadian-bar cortisol"><div class="circadian-bar-fill" style="width:' + cortisol + '%"></div></div>' +
+      '<div class="circadian-bar"><div class="circadian-bar-fill" style="width:' + melatonin + '%"></div></div></div>' +
+      '<div style="font-size:11px;color:var(--ink-mute);margin-top:0.4rem">Терракот — кортизол, шалфей — мелатонин</div>';
+  } catch(e) {}
+}
+var circTime = document.getElementById('circadianTime');
+if (circTime) {
+  circTime.addEventListener('input', function(e) { updateCircadian(parseInt(e.target.value, 10)); }, false);
+  updateCircadian(7);
+}
+
+// =============================================
+// MOVEMENT TRACKER
+// =============================================
+var moveTracker = document.getElementById('moveTracker');
+var moveState = {};
+try { moveState = JSON.parse(lsGet('mozg_move') || '{}') || {}; } catch(e) { moveState = {}; }
+
+function updateMove() {
+  try {
+    if (!moveTracker) return;
+    var inputs = moveTracker.querySelectorAll('input[type="checkbox"]');
+    for (var i = 0; i < inputs.length; i++) {
+      var key = inputs[i].getAttribute('data-move');
+      if (moveState[key]) {
+        inputs[i].checked = true;
+        inputs[i].parentElement.classList.add('checked');
+      }
+    }
+    var cardio = 0, strength = 0;
+    var cKeys = ['cardio1','cardio2','cardio3','cardio4','cardio5'];
+    for (var c = 0; c < cKeys.length; c++) if (moveState[cKeys[c]]) cardio++;
+    var sKeys = ['strength1','strength2'];
+    for (var s = 0; s < sKeys.length; s++) if (moveState[sKeys[s]]) strength++;
+    var walk = moveState.walk ? 1 : 0;
+    var result = document.getElementById('moveResult');
+    if (!result) return;
+    var cardioMin = cardio * 30;
+    var msg = '<strong>Кардио:</strong> ' + cardioMin + ' минут из 150 (' + Math.min(100, Math.round(cardioMin/150*100)) + '%)<br>';
+    msg += '<strong>Силовые:</strong> ' + strength + ' из 2<br>';
+    msg += '<strong>Прогулки:</strong> ' + (walk ? 'регулярно' : 'не отмечено');
+    if (cardioMin >= 150 && strength >= 2) msg += '<br><br>Норма недели выполнена.';
+    result.innerHTML = msg;
+    result.classList.add('show');
+  } catch(e) {}
+}
+if (moveTracker) {
+  moveTracker.addEventListener('click', function(e) {
+    if (e.target.tagName === 'INPUT') {
+      var key = e.target.getAttribute('data-move');
+      moveState[key] = e.target.checked;
+      lsSet('mozg_move', JSON.stringify(moveState));
+      updateMove();
+    }
+  }, false);
+  updateMove();
+}
+
+// =============================================
+// WATER CALCULATOR
+// =============================================
+window.calcWater = function() {
+  try {
+    var w = parseFloat(document.getElementById('weightInput').value);
+    if (!w || w < 30 || w > 300) return;
+    var ml = Math.round(w * 30);
+    var liters = (ml / 1000).toFixed(1);
+    var glasses = Math.round(ml / 250);
+    var result = document.getElementById('waterResult');
+    if (!result) return;
+    result.innerHTML = '<strong>Твоя норма:</strong> ' + liters + ' литра в день (' + glasses + ' стаканов по 250 мл).<br>Кликай по стаканам ниже, чтобы отмечать выпитую воду.';
+    result.classList.add('show');
+    var glassWrap = document.getElementById('waterGlasses');
+    if (!glassWrap) return;
+    glassWrap.innerHTML = '';
+    var drunk = 0;
+    for (var i = 0; i < glasses; i++) {
+      var g = document.createElement('div');
+      g.className = 'water-glass';
+      (function(elem) {
+        elem.addEventListener('click', function() {
+          elem.classList.toggle('full');
+          drunk = glassWrap.querySelectorAll('.water-glass.full').length;
+          result.innerHTML = '<strong>Твоя норма:</strong> ' + liters + ' литра в день. Выпито: ' + drunk + ' из ' + glasses + ' стаканов.';
+        }, false);
+      })(g);
+      glassWrap.appendChild(g);
+    }
+  } catch(e) {}
+};
+
+// =============================================
+// DOPAMINE QUIZ
+// =============================================
+var quizAnswers = {};
+window.quizAnswer = function(q, val) {
+  try {
+    quizAnswers[q] = val;
+    var qEl = document.querySelector('.quiz-q[data-q="' + q + '"]');
+    if (!qEl) return;
+    var btns = qEl.querySelectorAll('button');
+    for (var i = 0; i < btns.length; i++) btns[i].classList.remove('selected');
+    btns[val ? 0 : 1].classList.add('selected');
+    var keys = [];
+    for (var k in quizAnswers) if (quizAnswers.hasOwnProperty(k)) keys.push(k);
+    if (keys.length === 7) {
+      var score = 0;
+      for (var j = 0; j < keys.length; j++) score += quizAnswers[keys[j]];
+      var result = document.getElementById('dopaResult');
+      if (!result) return;
+      var verdict;
+      if (score <= 2) verdict = '<strong>Дофамин в порядке.</strong> Ты держишь баланс. Продолжай в том же духе.';
+      else if (score <= 4) verdict = '<strong>Лёгкая разбалансировка.</strong> Начни с правил 1 и 2 из этой главы. Через 2 недели заметишь разницу.';
+      else if (score <= 6) verdict = '<strong>Дофамин сильно расшатан.</strong> Внедри все 5 правил. Дополнительно один день в неделю без соцсетей.';
+      else verdict = '<strong>Сильное выгорание дофаминовой системы.</strong> Нужен 3-дневный детокс плюс все 5 правил. Восстановление займёт 2–3 недели.';
+      result.innerHTML = '<strong>Результат: ' + score + ' из 7.</strong><br>' + verdict;
+      result.classList.add('show');
+    }
+  } catch(e) {}
+};
+
+// =============================================
+// BREATHING TIMER
+// =============================================
+var breathRunning = false;
+var breathMode = '478';
+var breathModes = {
+  '478': { cycles: 4, phases: [{name:'Вдох',cls:'in',time:4000},{name:'Держим',cls:'hold',time:7000},{name:'Выдох',cls:'out',time:8000}], desc: '4 цикла, 76 секунд' },
+  'square': { cycles: 5, phases: [{name:'Вдох',cls:'in',time:4000},{name:'Держим',cls:'hold',time:4000},{name:'Выдох',cls:'out',time:4000},{name:'Пауза',cls:'',time:4000}], desc: '5 циклов, 80 секунд' },
+  'phys': { cycles: 3, phases: [{name:'Глубокий вдох',cls:'in',time:2000},{name:'Доборный вдох',cls:'in',time:1000},{name:'Длинный выдох',cls:'out',time:5000}], desc: '3 цикла, 24 секунды' }
+};
+window.setBreathMode = function(mode) {
+  try {
+    if (breathRunning) return;
+    breathMode = mode;
+    var tabs = $$('.breath-tab');
+    for (var i = 0; i < tabs.length; i++) tabs[i].classList.remove('active');
+    var tab = document.querySelector('.breath-tab[data-breath="' + mode + '"]');
+    if (tab) tab.classList.add('active');
+    var cy = document.getElementById('breathCycles');
+    var ci = document.getElementById('breathCircle');
+    if (cy) cy.textContent = breathModes[mode].desc;
+    if (ci) { ci.textContent = 'Готов'; ci.className = 'breath-circle'; }
+  } catch(e) {}
+};
+window.startBreath = function() {
+  try {
+    if (breathRunning) return;
+    breathRunning = true;
+    var config = breathModes[breathMode];
+    var circle = document.getElementById('breathCircle');
+    var cycles = document.getElementById('breathCycles');
+    if (!circle || !cycles) { breathRunning = false; return; }
+    var cycle = 0;
+    function doCycle() {
+      if (cycle >= config.cycles) {
+        circle.className = 'breath-circle';
+        circle.textContent = 'Готово';
+        cycles.textContent = 'Сделано ' + config.cycles + ' циклов. Чувствуешь?';
+        breathRunning = false;
+        return;
+      }
+      var phaseIdx = 0;
+      function doPhase() {
+        if (phaseIdx >= config.phases.length) {
+          cycle++;
+          doCycle();
+          return;
+        }
+        var p = config.phases[phaseIdx];
+        circle.className = 'breath-circle ' + p.cls;
+        circle.textContent = p.name;
+        cycles.textContent = 'Цикл ' + (cycle + 1) + ' из ' + config.cycles;
+        setTimeout(function() { phaseIdx++; doPhase(); }, p.time);
+      }
+      doPhase();
+    }
+    doCycle();
+  } catch(e) { breathRunning = false; }
+};
+
+// =============================================
+// COLD PLAN
+// =============================================
+var coldPlans = {
+  1: '<strong>Неделя 1. Старт.</strong><br>В конце обычного душа последние 30 секунд переключи на максимально холодную воду. 4–5 раз за неделю. Дыши ровно, не задерживай.',
+  2: '<strong>Неделя 2. Привыкание.</strong><br>Холодный душ 1 минута без тёплого финала. 3–4 раза за неделю. Если страшно — оставь голову в стороне, мочи только тело.',
+  3: '<strong>Неделя 3. Закрепление.</strong><br>Холодный душ 2 минуты, температура 10–15°C. 3 раза за неделю. После душа жди, пока тело само согреется (2–3 минуты).',
+  4: '<strong>Неделя 4. Норма.</strong><br>Холодный душ 2–3 минуты, 2–4 раза в неделю. Можно добавить ледяную ванну или открытую воду, если есть доступ. Но это не обязательно.'
+};
+window.setColdWeek = function(w) {
+  try {
+    var btns = $$('.cold-day-btn');
+    for (var i = 0; i < btns.length; i++) {
+      if (i + 1 === w) btns[i].classList.add('active');
+      else btns[i].classList.remove('active');
+    }
+    var r = document.getElementById('coldResult');
+    if (r) r.innerHTML = coldPlans[w];
+  } catch(e) {}
+};
+try { window.setColdWeek(1); } catch(e) {}
+
+// =============================================
+// SUPPLEMENT BUILDER
+// =============================================
+var suppRecommendations = {
+  anxiety: ['Магний глицинат', 'Ашваганда'],
+  sleep: ['Магний глицинат', 'Ашваганда'],
+  energy: ['B-комплекс', 'Витамин D3+K2', 'Креатин'],
+  focus: ['Омега-3', 'Креатин', 'Львиная грива'],
+  mood: ['Витамин D3+K2', 'Омега-3', 'B-комплекс'],
+  immunity: ['Витамин D3+K2', 'Цинк'],
+  muscle: ['Магний глицинат', 'Креатин'],
+  winter: ['Витамин D3+K2', 'Омега-3']
+};
+var suppEls = $$('.supp-symptom');
+for (var sx = 0; sx < suppEls.length; sx++) {
+  (function(el) {
+    el.addEventListener('click', function() { el.classList.toggle('checked'); }, false);
+  })(suppEls[sx]);
+}
+window.buildSuppPlan = function() {
+  try {
+    var checked = [];
+    var els = $$('.supp-symptom.checked');
+    for (var i = 0; i < els.length; i++) checked.push(els[i].getAttribute('data-supp'));
+    var result = document.getElementById('suppResult');
+    if (!result) return;
+    if (checked.length === 0) {
+      result.innerHTML = 'Сначала отметь хотя бы один симптом.';
+      result.classList.add('show');
+      return;
+    }
+    var suppCount = {};
+    for (var c = 0; c < checked.length; c++) {
+      var recs = suppRecommendations[checked[c]] || [];
+      for (var r = 0; r < recs.length; r++) {
+        suppCount[recs[r]] = (suppCount[recs[r]] || 0) + 1;
+      }
+    }
+    var sorted = [];
+    for (var k in suppCount) if (suppCount.hasOwnProperty(k)) sorted.push([k, suppCount[k]]);
+    sorted.sort(function(a, b) { return b[1] - a[1]; });
+    var top = sorted.slice(0, 4);
+    var lines = [];
+    for (var t = 0; t < top.length; t++) lines.push((t+1) + '. ' + top[t][0]);
+    result.innerHTML = '<strong>Тебе подойдут в первую очередь:</strong><br>' + lines.join('<br>') +
+      '<br><br>Подробные дозировки и время приёма — в тексте главы выше.';
+    result.classList.add('show');
+  } catch(e) {}
+};
+
+// =============================================
+// WHY LADDER (saves to localStorage)
+// =============================================
+var whyInputs = $$('input[data-why]');
+for (var wi = 0; wi < whyInputs.length; wi++) {
+  (function(inp) {
+    try {
+      var saved = lsGet('mozg_why_' + inp.getAttribute('data-why'));
+      if (saved) inp.value = saved;
+    } catch(e) {}
+    inp.addEventListener('input', function() {
+      lsSet('mozg_why_' + inp.getAttribute('data-why'), inp.value);
+    }, false);
+  })(whyInputs[wi]);
+}
+
+// =============================================
+// SPRINT CALENDAR
+// =============================================
+window.calcSprint = function() {
+  try {
+    var input = document.getElementById('sprintStart');
+    if (!input) return;
+    var start = input.value;
+    if (!start) return;
+    var startDate = new Date(start);
+    var today = new Date();
+    today.setHours(0,0,0,0);
+    startDate.setHours(0,0,0,0);
+    var diff = Math.floor((today - startDate) / (1000 * 60 * 60 * 24));
+    var result = document.getElementById('sprintResult');
+    var cal = document.getElementById('sprintCal');
+    if (!result || !cal) return;
+    if (diff < 0) {
+      result.innerHTML = '<strong>Старт через ' + Math.abs(diff) + ' дней.</strong> Готовься.';
+      result.classList.add('show');
+      cal.style.display = 'none';
+    } else if (diff > 30) {
+      result.innerHTML = '<strong>Спринт завершён ' + (diff - 30) + ' дней назад.</strong> Время повторить самодиагностику и решить, что оставить навсегда.';
+      result.classList.add('show');
+      cal.style.display = 'none';
+    } else {
+      var dayNum = diff + 1;
+      var week;
+      if (dayNum <= 7) week = '1 (сон, свет, вода)';
+      else if (dayNum <= 14) week = '2 (движение и дыхание)';
+      else if (dayNum <= 21) week = '3 (питание, добавки, холод)';
+      else week = '4 (мозг и цифровая гигиена)';
+      result.innerHTML = '<strong>Сейчас день ' + dayNum + ' из 30.</strong> Это неделя ' + week + '. Осталось ' + (30 - dayNum) + ' дней.';
+      result.classList.add('show');
+      cal.style.display = 'grid';
+      cal.innerHTML = '';
+      for (var i = 1; i <= 30; i++) {
+        var d = document.createElement('div');
+        d.className = 'sprint-day';
+        d.textContent = i;
+        if (i < dayNum) d.classList.add('past');
+        else if (i === dayNum) d.classList.add('today');
+        cal.appendChild(d);
+      }
+    }
+    lsSet('mozg_sprint_start', start);
+  } catch(e) {}
+};
+try {
+  var savedStart = lsGet('mozg_sprint_start');
+  if (savedStart) {
+    var ss = document.getElementById('sprintStart');
+    if (ss) {
+      ss.value = savedStart;
+      window.calcSprint();
+    }
+  }
+} catch(e) {}
+
+// =============================================
+// SELF-DIAGNOSIS
+// =============================================
+var diagInputs = $$('[data-diag]');
+var diagTotal = document.getElementById('diagTotal');
+function updateDiag() {
+  try {
+    var total = 0;
+    for (var i = 0; i < diagInputs.length; i++) {
+      var v = parseInt(diagInputs[i].value, 10) || 0;
+      if (v >= 1 && v <= 10) total += v;
+    }
+    if (diagTotal) diagTotal.textContent = total;
+    var values = [];
+    for (var j = 0; j < diagInputs.length; j++) values.push(diagInputs[j].value);
+    lsSet('mozg_diag', JSON.stringify(values));
+  } catch(e) {}
+}
+for (var di = 0; di < diagInputs.length; di++) {
+  diagInputs[di].addEventListener('input', updateDiag, false);
+}
+try {
+  var savedDiag = JSON.parse(lsGet('mozg_diag') || '[]');
+  for (var dj = 0; dj < savedDiag.length; dj++) {
+    if (diagInputs[dj]) diagInputs[dj].value = savedDiag[dj];
+  }
+  updateDiag();
+} catch(e) {}
+
+// =============================================
+// TRACKER 30 DAYS
+// =============================================
+var trackerGrid = document.getElementById('trackerGrid');
+var trackerFill = document.getElementById('trackerFill');
+var trackerDone = document.getElementById('trackerDone');
+var trackerStreak = document.getElementById('trackerStreak');
+var trackerState = {};
+try { trackerState = JSON.parse(lsGet('mozg_tracker') || '{}') || {}; } catch(e) { trackerState = {}; }
+
+function renderTracker() {
+  try {
+    if (!trackerGrid) return;
+    trackerGrid.innerHTML = '';
+    for (var i = 1; i <= 30; i++) {
+      (function(dayNum) {
+        var day = document.createElement('div');
+        day.className = 'tracker-day';
+        day.textContent = dayNum;
+        if (trackerState[dayNum]) day.classList.add('done');
+        day.addEventListener('click', function() {
+          trackerState[dayNum] = !trackerState[dayNum];
+          lsSet('mozg_tracker', JSON.stringify(trackerState));
+          renderTracker();
+        }, false);
+        trackerGrid.appendChild(day);
+      })(i);
+    }
+    var done = 0;
+    for (var k in trackerState) if (trackerState[k]) done++;
+    if (trackerDone) trackerDone.textContent = done;
+    if (trackerFill) trackerFill.style.width = (done / 30 * 100) + '%';
+    var streak = 0, maxStreak = 0;
+    for (var d = 1; d <= 30; d++) {
+      if (trackerState[d]) { streak++; if (streak > maxStreak) maxStreak = streak; }
+      else streak = 0;
+    }
+    if (trackerStreak) trackerStreak.textContent = maxStreak;
+  } catch(e) {}
+}
+renderTracker();
+
+// =============================================
+// INIT
+// =============================================
+try {
+  updateProgress();
+  updateActiveTocLink();
+  updateTopBtn();
+} catch(e) {}
+
+// Пересчёт после загрузки шрифтов (Safari может сдвинуть layout после смены fallback на Inter)
+try {
+  if (document.fonts && document.fonts.ready && document.fonts.ready.then) {
+    document.fonts.ready.then(function() {
+      try { updateProgress(); updateActiveTocLink(); updateTopBtn(); } catch(e) {}
+    });
+  }
+} catch(e) {}
+
+// Страховка: пересчёт после полной загрузки страницы
+window.addEventListener('load', function() {
+  try { updateProgress(); updateActiveTocLink(); updateTopBtn(); } catch(e) {}
+}, false);
+
+})();
+</script>
+
+</body>
+</html>
