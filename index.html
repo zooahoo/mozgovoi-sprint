@@ -4,383 +4,24 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Мозговой Спринт. Как прокачать мозг на +50% за 30 дней</title>
+<meta name="description" content="Книга-программа на 30 дней: 21 глава о сне, свете, движении, питании, гормонах, мышлении и привычках. Более 40 интерактивных тестов, калькуляторов и тренажёров.">
 <link rel="icon" type="image/png" href="/favicon.png">
 <link rel="apple-touch-icon" href="/favicon.png">
+<link rel="canonical" href="https://мозговой-спринт.рф/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Мозговой Спринт. Как прокачать мозг на +50% за 30 дней">
+<meta property="og:description" content="Книга-программа на 30 дней: сон, свет, движение, питание, гормоны, мышление, привычки. Более 40 интерактивных тестов и тренажёров.">
+<meta property="og:image" content="https://i.ibb.co/whJJ6dx6/cover2.png">
+<meta property="og:url" content="https://мозговой-спринт.рф/">
+<meta property="og:locale" content="ru_RU">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Мозговой Спринт. Как прокачать мозг на +50% за 30 дней">
+<meta name="twitter:description" content="Книга-программа на 30 дней с интерактивными тестами и тренажёрами.">
+<meta name="twitter:image" content="https://i.ibb.co/whJJ6dx6/cover2.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=PT+Serif:wght@400;700&display=swap" rel="stylesheet">
-<style>
-:root {
-  --cream: #F7F2E8;
-  --cream-light: #FDFAF4;
-  --cream-deep: #EFE7D6;
-  --ink: #2A2620;
-  --ink-soft: #4A4339;
-  --ink-mute: #6B5D4A;
-  --sage: #6B8E6B;
-  --sage-deep: #4A6B4A;
-  --sage-soft: #DCE5D8;
-  --terracotta: #C4633D;
-  --terracotta-soft: #F5DCCD;
-  --terracotta-deep: #8F4324;
-  --amber: #B5854A;
-  --amber-soft: #F4E8D0;
-  --line: rgba(42,38,32,0.12);
-  --line-strong: rgba(42,38,32,0.2);
-}
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html { }
-body {
-  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
-  background: var(--cream);
-  color: var(--ink);
-  line-height: 1.55;
-  font-size: 17px;
-  -webkit-font-smoothing: antialiased;
-}
-.serif { font-family: 'PT Serif', Georgia, serif; }
-
-/* Progress bar */
-.progress-bar { position: fixed; top: 0; left: 0; width: 100%; height: 3px; background: rgba(42,38,32,0.06); z-index: 1000; }
-.progress-fill { height: 100%; background: var(--terracotta); width: 0%; transition: width 0.1s linear; }
-
-/* Layout */
-.layout { max-width: 1180px; margin: 0 auto; padding: 2rem; display: flex; gap: 3rem; }
-.sidebar { width: 220px; flex-shrink: 0; align-self: flex-start; position: sticky; top: 2rem; max-height: calc(100vh - 4rem); overflow-y: auto; padding-right: 0.5rem; }
-.sidebar::-webkit-scrollbar { width: 4px; }
-.sidebar::-webkit-scrollbar-thumb { background: var(--line); border-radius: 4px; }
-.toc-title { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--terracotta); font-weight: 500; margin-bottom: 1rem; padding-bottom: 0.75rem; border-bottom: 0.5px solid var(--line); }
-.toc-link { display: flex; gap: 0.5rem; padding: 0.4rem 0.5rem; border-radius: 6px; color: var(--ink-mute); text-decoration: none; font-size: 13px; line-height: 1.4; transition: all 0.15s; border-left: 2px solid transparent; }
-.toc-link:hover { color: var(--ink); background: var(--cream-light); }
-.toc-link.active { color: var(--terracotta); border-left-color: var(--terracotta); background: var(--terracotta-soft); }
-.toc-num { font-family: 'PT Serif', Georgia, serif; font-size: 11px; color: var(--ink-mute); min-width: 18px; }
-.toc-link.active .toc-num { color: var(--terracotta); }
-.toc-part { font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--sage-deep); font-weight: 500; margin: 1.25rem 0 0.5rem 0.5rem; }
-.toc-part:first-of-type { margin-top: 0.5rem; }
-.content { max-width: 760px; flex: 1; background: var(--cream-light); border-radius: 12px; border: 0.5px solid var(--line); }
-
-/* Mobile menu button */
-.menu-bar { display: none; position: fixed; top: 0; left: 0; right: 0; background: #C4633D; color: #FDFAF4; padding: 14px 18px; z-index: 999; box-shadow: 0 2px 8px rgba(0,0,0,0.15); cursor: pointer; font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; text-align: center; user-select: none; -webkit-tap-highlight-color: rgba(255,255,255,0.2); border: none; margin: 0; }
-.menu-bar-text { display: inline-flex; align-items: center; gap: 8px; pointer-events: none; }
-.menu-bar-icon { display: inline-block; width: 16px; height: 12px; position: relative; pointer-events: none; }
-.menu-bar-icon span { position: absolute; left: 0; right: 0; height: 2px; background: currentColor; border-radius: 1px; top: 5px; display: block; }
-.menu-bar-icon::before, .menu-bar-icon::after { content: ''; position: absolute; left: 0; right: 0; height: 2px; background: currentColor; border-radius: 1px; }
-.menu-bar-icon::before { top: 0; }
-.menu-bar-icon::after { bottom: 0; }
-.top-btn { display: none; position: fixed; bottom: 1.25rem; right: 1.25rem; background: var(--cream-light); color: var(--ink); border: 0.5px solid var(--line-strong); width: 44px; height: 44px; border-radius: 50%; font-size: 18px; cursor: pointer; z-index: 998; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0,0,0,0.08); opacity: 0; transition: opacity 0.2s; touch-action: manipulation; -webkit-tap-highlight-color: rgba(0,0,0,0); }
-.top-btn.show { display: flex; opacity: 1; }
-
-/* Mobile overlay menu */
-.mobile-menu { position: fixed; top: 0; right: 0; bottom: 0; left: 0; background: var(--cream); z-index: 1001; display: none; flex-direction: column; padding: 2rem 1.5rem; overflow-y: auto; -webkit-overflow-scrolling: touch; overscroll-behavior: contain; }
-.mobile-menu.open { display: flex; }
-.mobile-menu-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 0.5px solid var(--line); }
-.mobile-menu-title { font-family: 'PT Serif', Georgia, serif; font-size: 22px; font-weight: 700; color: var(--ink); }
-.mobile-close { background: transparent; border: 0.5px solid var(--line-strong); width: 40px; height: 40px; border-radius: 50%; font-size: 20px; cursor: pointer; color: var(--ink); touch-action: manipulation; -webkit-tap-highlight-color: rgba(0,0,0,0); }
-.mobile-progress { font-size: 13px; color: var(--ink-mute); margin-bottom: 2rem; padding: 0.75rem 1rem; background: var(--cream-light); border-radius: 8px; border: 0.5px solid var(--line); }
-.mobile-progress strong { color: var(--terracotta); font-weight: 500; }
-.mobile-link { display: flex; gap: 0.75rem; padding: 1rem 0.75rem; border-radius: 8px; color: var(--ink); text-decoration: none; font-size: 16px; line-height: 1.4; border-bottom: 0.5px solid var(--line); }
-.mobile-link.active { background: var(--terracotta-soft); color: var(--terracotta-deep); border-color: transparent; }
-.mobile-link.active .mobile-link-num { color: var(--terracotta); }
-.mobile-link-num { font-family: 'PT Serif', Georgia, serif; font-size: 14px; color: var(--ink-mute); min-width: 28px; }
-.mobile-part { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--sage-deep); font-weight: 500; margin: 1.5rem 0 0.5rem; padding-left: 0.75rem; }
-.mobile-part:first-of-type { margin-top: 0; }
-
-/* Cover */
-.cover { padding: 4rem 2.5rem; text-align: center; background: var(--cream); border-bottom: 0.5px solid var(--line); }
-.cover .badge { display: inline-block; font-size: 11px; color: var(--terracotta); letter-spacing: 3px; font-weight: 500; margin-bottom: 2rem; text-transform: uppercase; padding: 5px 14px; border: 0.5px solid var(--terracotta); border-radius: 999px; }
-.cover h1 { font-family: 'PT Serif', Georgia, serif; font-size: 42px; font-weight: 700; margin: 0 0 1rem; color: var(--ink); line-height: 1.1; letter-spacing: -1px; }
-.cover h1 em { font-style: italic; color: var(--terracotta); font-weight: 400; }
-.cover .sub { font-size: 17px; color: var(--ink-mute); margin: 1.25rem auto 2.5rem; font-style: italic; font-family: 'PT Serif', Georgia, serif; max-width: 380px; line-height: 1.4; }
-.cover .author { font-size: 11px; color: var(--ink-mute); letter-spacing: 3px; text-transform: uppercase; border-top: 0.5px solid var(--line); padding-top: 1.5rem; display: inline-block; }
-.cover-img { max-width: 100%; margin: 1.5rem auto 0; display: block; border-radius: 8px; }
-
-/* Sections */
-.section-pad { padding: 2.5rem; }
-.disclaimer { background: var(--cream); padding: 1.5rem 2.5rem; border-bottom: 0.5px solid var(--line); font-size: 13px; color: var(--ink-mute); line-height: 1.5; font-style: italic; }
-.intro h2 { font-family: 'PT Serif', Georgia, serif; font-size: 30px; font-weight: 700; margin: 0 0 1.25rem; color: var(--ink); letter-spacing: -0.3px; line-height: 1.2; }
-.intro p { margin: 0.75rem 0; color: var(--ink-soft); }
-
-/* Chapter head */
-.chap-head { padding: 3rem 2.5rem 1.5rem; border-bottom: 0.5px solid var(--line); background: var(--cream); position: relative; }
-.chap-head .part { font-size: 11px; color: var(--sage-deep); letter-spacing: 2.5px; text-transform: uppercase; font-weight: 500; margin-bottom: 0.75rem; }
-.chap-head .num { font-family: 'PT Serif', Georgia, serif; font-size: 14px; color: var(--ink-mute); letter-spacing: 1px; margin-bottom: 0.5rem; }
-.chap-head h2 { font-family: 'PT Serif', Georgia, serif; font-size: 38px; font-weight: 700; margin: 0.25rem 0 1rem; color: var(--ink); line-height: 1.1; letter-spacing: -0.5px; }
-.chap-head .lead { font-family: 'PT Serif', Georgia, serif; font-size: 19px; font-style: italic; color: var(--ink-soft); margin: 0; line-height: 1.4; }
-.chap-illust { width: 100%; height: auto; display: block; margin: 1.5rem 0 0; border-radius: 8px; background: var(--cream-light); }
-
-/* Chapter body */
-.chap-body { padding: 2rem 2.5rem 1.5rem; }
-.chap-body p { margin: 0.875rem 0; color: var(--ink-soft); }
-.chap-body h3 { font-family: 'PT Serif', Georgia, serif; font-size: 24px; font-weight: 700; margin: 2.25rem 0 0.875rem; color: var(--ink); letter-spacing: -0.3px; line-height: 1.25; }
-.chap-body h4 { font-family: 'PT Serif', Georgia, serif; font-size: 18px; font-weight: 700; margin: 1.5rem 0 0.5rem; color: var(--ink); }
-
-/* Inline ref link */
-.ref { color: var(--terracotta); text-decoration: none; border-bottom: 1px dotted var(--terracotta); padding-bottom: 1px; }
-.ref:hover { background: var(--terracotta-soft); border-bottom-style: solid; }
-
-/* Chapter nav arrows */
-
-/* Callouts */
-.fact { background: var(--cream-deep); border-left: 3px solid var(--sage); padding: 1.125rem 1.375rem; margin: 1.5rem 0; font-size: 15.5px; color: var(--ink-soft); }
-.fact strong { color: var(--ink); font-weight: 500; }
-.highlight { background: var(--terracotta-soft); border-left: 3px solid var(--terracotta); padding: 1.125rem 1.375rem; margin: 1.5rem 0; font-size: 15.5px; color: var(--ink-soft); }
-.highlight strong { color: var(--terracotta-deep); font-weight: 500; }
-.warn { background: var(--amber-soft); border-left: 3px solid var(--amber); padding: 1.125rem 1.375rem; margin: 1.5rem 0; font-size: 15.5px; color: var(--ink-soft); }
-.warn strong { color: var(--ink); font-weight: 500; }
-
-/* Term card */
-.term { background: var(--cream); border: 0.5px solid var(--line); border-radius: 8px; padding: 1.125rem 1.375rem; margin: 1.25rem 0; font-size: 15px; color: var(--ink-soft); line-height: 1.55; }
-.term .word { display: block; font-size: 11px; color: var(--terracotta); letter-spacing: 1.5px; text-transform: uppercase; font-weight: 500; margin-bottom: 0.5rem; }
-.term strong { color: var(--ink); font-weight: 500; }
-
-/* Stats */
-.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; margin: 1.5rem 0; }
-.stat { background: var(--cream); border: 0.5px solid var(--line); border-radius: 8px; padding: 1.125rem 1.25rem; }
-.stat .num { font-family: 'PT Serif', Georgia, serif; font-size: 28px; font-weight: 700; color: var(--terracotta); line-height: 1; margin-bottom: 0.4rem; letter-spacing: -0.5px; }
-.stat .lbl { font-size: 12.5px; color: var(--ink-mute); line-height: 1.3; }
-
-/* Numbered steps */
-.steps { margin: 1.25rem 0; padding: 0; list-style: none; counter-reset: s; }
-.steps li { counter-increment: s; position: relative; padding: 1rem 0 1rem 3rem; font-size: 15.5px; border-bottom: 0.5px solid var(--line); color: var(--ink-soft); line-height: 1.5; }
-.steps li:last-child { border-bottom: none; }
-.steps li::before { content: counter(s); position: absolute; left: 0; top: 1rem; width: 2rem; height: 2rem; background: var(--sage); color: var(--cream-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 500; }
-.steps strong { color: var(--ink); font-weight: 500; }
-
-/* Do / Don't */
-.dd { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 1.25rem 0; }
-.dd .col { padding: 1.125rem 1.25rem; border-radius: 8px; font-size: 15px; line-height: 1.5; }
-.dd .yes { background: var(--sage-soft); color: var(--ink); }
-.dd .no { background: var(--cream); color: var(--ink-soft); border: 0.5px solid var(--line); }
-.dd .col .h { display: block; margin-bottom: 0.6rem; font-weight: 500; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--sage-deep); }
-.dd .no .h { color: var(--terracotta); }
-.dd ul { margin: 0; padding: 0; list-style: none; }
-.dd li { margin: 0.5rem 0; padding-left: 1.1rem; position: relative; line-height: 1.4; }
-.dd .yes li::before { content: ""; position: absolute; left: 0; top: 0.65rem; width: 6px; height: 6px; background: var(--sage-deep); border-radius: 50%; }
-.dd .no li::before { content: ""; position: absolute; left: 0; top: 0.7rem; width: 8px; height: 1.5px; background: var(--terracotta); }
-
-/* Protocol box */
-.proto { background: var(--cream); border: 0.5px solid var(--line); border-radius: 10px; padding: 1.5rem 1.75rem; margin: 1.5rem 0; }
-.proto .h { font-size: 11px; color: var(--terracotta); letter-spacing: 2px; text-transform: uppercase; font-weight: 500; margin-bottom: 1rem; }
-.proto .row { display: flex; gap: 1rem; padding: 0.75rem 0; border-bottom: 0.5px solid var(--line); font-size: 15px; color: var(--ink-soft); line-height: 1.4; }
-.proto .row:last-child { border-bottom: none; padding-bottom: 0; }
-.proto .row:first-of-type { padding-top: 0; }
-.proto .t { min-width: 70px; color: var(--ink); font-weight: 500; font-family: 'PT Serif', Georgia, serif; font-size: 14.5px; }
-
-/* Recap */
-.recap { background: var(--sage-deep); color: var(--cream-light); border-radius: 10px; padding: 2rem 1.75rem; margin: 2rem 0; }
-.recap .h { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--sage-soft); margin-bottom: 0.75rem; font-weight: 500; }
-.recap h4 { font-family: 'PT Serif', Georgia, serif; font-size: 24px; font-weight: 700; margin: 0 0 1.125rem; color: var(--cream-light); line-height: 1.2; }
-.recap ul { margin: 0; padding: 0; list-style: none; }
-.recap li { margin: 0.6rem 0; padding-left: 1.25rem; position: relative; font-size: 15.5px; line-height: 1.45; }
-.recap li::before { content: ""; position: absolute; left: 0; top: 0.6rem; width: 8px; height: 1.5px; background: var(--sage-soft); }
-
-/* Today */
-.today { background: var(--terracotta-soft); border-radius: 10px; padding: 1.375rem 1.625rem; margin: 1.5rem 0; border: 0.5px dashed var(--terracotta); }
-.today .h { font-size: 11px; color: var(--terracotta-deep); letter-spacing: 2px; text-transform: uppercase; font-weight: 500; margin-bottom: 0.5rem; }
-.today p { margin: 0; font-size: 15.5px; color: var(--ink); line-height: 1.5; }
-
-/* ============ INTERACTIVE WIDGETS ============ */
-
-/* Generic interactive box */
-.iwidget { background: var(--cream); border: 0.5px solid var(--line); border-radius: 12px; padding: 1.5rem; margin: 1.75rem 0; }
-.iwidget .ititle { font-family: 'PT Serif', Georgia, serif; font-size: 18px; font-weight: 700; margin: 0 0 0.25rem; color: var(--ink); }
-.iwidget .isub { font-size: 13px; color: var(--ink-mute); margin-bottom: 1.25rem; line-height: 1.4; }
-.iwidget .ibtn { background: var(--terracotta); color: var(--cream-light); border: none; padding: 0.75rem 1.5rem; border-radius: 8px; font-size: 14px; cursor: pointer; font-weight: 500; font-family: inherit; transition: background 0.15s; }
-.iwidget .ibtn:hover { background: var(--terracotta-deep); }
-.iwidget .ibtn-sage { background: var(--sage-deep); }
-.iwidget .ibtn-sage:hover { background: var(--sage); }
-.iwidget input[type="number"], .iwidget input[type="time"], .iwidget input[type="text"], .iwidget select { padding: 8px 12px; border: 0.5px solid var(--line-strong); border-radius: 6px; font-size: 14px; font-family: inherit; background: var(--cream-light); color: var(--ink); width: 100%; }
-.iwidget input[type="range"] { touch-action: pan-y; -webkit-appearance: auto; }
-.iwidget input:focus { outline: 2px solid var(--terracotta); outline-offset: -1px; }
-.iwidget label { display: block; font-size: 13px; color: var(--ink-mute); margin-bottom: 0.4rem; font-weight: 500; }
-.iwidget .iresult { background: var(--terracotta-soft); border-radius: 8px; padding: 1rem 1.25rem; margin-top: 1rem; font-size: 15px; color: var(--ink); display: none; }
-.iwidget .iresult.show { display: block; }
-.iwidget .iresult strong { color: var(--terracotta-deep); font-weight: 500; }
-
-/* Sleep calc */
-.sleep-calc-row { display: flex; gap: 1rem; align-items: end; flex-wrap: wrap; margin-bottom: 0.5rem; }
-.sleep-calc-row > div { flex: 1; min-width: 140px; }
-
-/* Circadian wheel */
-.circadian { text-align: center; }
-.circadian-clock { display: flex; flex-direction: column; align-items: stretch; gap: 1.25rem; }
-.circadian-time { width: 100%; padding: 0 0.25rem; }
-.circadian-time input[type="range"] { width: 100%; height: 14px; -webkit-appearance: none; appearance: none; background: linear-gradient(to right, var(--terracotta) 0%, var(--terracotta-soft) 40%, var(--sage-soft) 60%, var(--sage) 100%); border-radius: 7px; outline: none; }
-.circadian-time input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 26px; height: 26px; border-radius: 50%; background: var(--cream-light); border: 2px solid var(--terracotta-deep); cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.15); }
-.circadian-time input[type="range"]::-moz-range-thumb { width: 26px; height: 26px; border-radius: 50%; background: var(--cream-light); border: 2px solid var(--terracotta-deep); cursor: pointer; }
-.circadian-out { width: 100%; text-align: left; }
-.circadian-out h5 { font-family: 'PT Serif', Georgia, serif; font-size: 16px; font-weight: 700; margin: 0 0 0.25rem; color: var(--terracotta); }
-.circadian-out p { margin: 0.25rem 0; font-size: 14px; color: var(--ink-soft); line-height: 1.4; }
-.circadian-bars { display: flex; gap: 8px; margin-top: 0.75rem; }
-.circadian-bar { flex: 1; height: 12px; background: var(--cream-deep); border-radius: 4px; position: relative; overflow: hidden; }
-.circadian-bar-fill { position: absolute; left: 0; top: 0; height: 100%; background: var(--sage); border-radius: 4px; transition: width 0.3s; }
-.circadian-bar.cortisol .circadian-bar-fill { background: var(--terracotta); }
-.circadian-legend { display: flex; gap: 1rem; margin-top: 0.5rem; font-size: 11.5px; color: var(--ink-mute); flex-wrap: wrap; }
-.circadian-legend .lg { display: inline-flex; align-items: center; gap: 6px; }
-.circadian-legend .sw { width: 14px; height: 14px; border-radius: 3px; display: inline-block; }
-.circadian-legend .sw.t { background: var(--terracotta); }
-.circadian-legend .sw.s { background: var(--sage); }
-
-/* Water calc */
-.water-glasses { display: flex; flex-wrap: wrap; gap: 6px; margin: 1rem 0; }
-.water-glass { width: 32px; height: 44px; background: var(--cream-light); border: 1.5px solid var(--line-strong); border-radius: 0 0 8px 8px; cursor: pointer; transition: all 0.15s; position: relative; user-select: none; }
-.water-glass:hover { border-color: var(--terracotta); }
-.water-glass.full { background: var(--terracotta); border-color: var(--terracotta); }
-
-/* Dopamine quiz */
-.quiz-q { padding: 1rem 0; border-bottom: 0.5px solid var(--line); }
-.quiz-q:last-child { border-bottom: none; }
-.quiz-q p { margin: 0 0 0.5rem; font-size: 14.5px; color: var(--ink); }
-.quiz-buttons { display: flex; gap: 8px; }
-.quiz-buttons button { padding: 0.45rem 1rem; border: 0.5px solid var(--line-strong); border-radius: 6px; background: var(--cream-light); color: var(--ink-soft); font-family: inherit; font-size: 13px; cursor: pointer; }
-.quiz-buttons button.selected { background: var(--terracotta); color: var(--cream-light); border-color: var(--terracotta); }
-.quiz-buttons button:hover:not(.selected) { border-color: var(--terracotta); }
-
-/* Breathing timer */
-.breath-timer { background: var(--sage-soft); border-radius: 12px; padding: 2rem; margin: 1.5rem 0; text-align: center; }
-.breath-circle { width: 140px; height: 140px; border-radius: 50%; background: var(--cream-light); border: 2px solid var(--sage); display: flex; align-items: center; justify-content: center; margin: 1rem auto; transition: transform 4s ease-in-out, background 0.6s; font-family: 'PT Serif', Georgia, serif; font-size: 18px; color: var(--sage-deep); }
-.breath-circle.in { transform: scale(1.45); background: var(--sage); color: var(--cream-light); }
-.breath-circle.hold { transform: scale(1.45); background: var(--terracotta); color: var(--cream-light); }
-.breath-circle.out { transform: scale(1); background: var(--cream-light); color: var(--sage-deep); }
-.breath-cycles { font-size: 13px; color: var(--ink-mute); margin-top: 0.75rem; }
-.breath-tabs { display: flex; gap: 4px; justify-content: center; margin-bottom: 1rem; flex-wrap: wrap; }
-.breath-tab { padding: 0.4rem 0.8rem; border: 0.5px solid var(--line-strong); border-radius: 999px; background: var(--cream-light); color: var(--ink-soft); font-family: inherit; font-size: 12px; cursor: pointer; }
-.breath-tab.active { background: var(--sage-deep); color: var(--cream-light); border-color: var(--sage-deep); }
-
-/* Cold plan */
-.cold-days { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 1rem 0; }
-.cold-day-btn { padding: 0.75rem 0.5rem; border: 0.5px solid var(--line-strong); border-radius: 8px; background: var(--cream-light); cursor: pointer; text-align: center; font-family: inherit; }
-.cold-day-btn.active { background: var(--terracotta); color: var(--cream-light); border-color: var(--terracotta); }
-.cold-day-btn .cdnum { font-family: 'PT Serif', Georgia, serif; font-size: 16px; font-weight: 700; }
-.cold-day-btn .cdsub { font-size: 11px; opacity: 0.8; margin-top: 0.15rem; }
-
-/* Supplement builder */
-.supp-symptoms { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 1rem; }
-.supp-symptom { padding: 0.75rem 1rem; border: 0.5px solid var(--line-strong); border-radius: 8px; background: var(--cream-light); cursor: pointer; font-size: 14px; user-select: none; }
-.supp-symptom:hover { border-color: var(--terracotta); }
-.supp-symptom.checked { background: var(--terracotta-soft); border-color: var(--terracotta); color: var(--terracotta-deep); }
-
-/* Why ladder */
-.why-step { margin-bottom: 0.75rem; }
-.why-step label { font-size: 12px; color: var(--terracotta); font-weight: 500; letter-spacing: 1px; text-transform: uppercase; }
-
-/* SOS quick buttons */
-.sos-quick { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 1.25rem 0; }
-.sos-btn { padding: 1rem 1.25rem; border: 0.5px solid var(--terracotta); border-radius: 10px; background: var(--cream-light); cursor: pointer; text-align: left; font-family: inherit; transition: all 0.15s; }
-.sos-btn:hover { background: var(--terracotta-soft); }
-.sos-btn .sost { font-family: 'PT Serif', Georgia, serif; font-size: 15px; font-weight: 700; color: var(--terracotta-deep); margin-bottom: 0.15rem; }
-.sos-btn .sosd { font-size: 12px; color: var(--ink-mute); }
-
-/* Self-diagnosis */
-.diag { background: var(--cream); border: 0.5px solid var(--line); border-radius: 10px; padding: 1.5rem; margin: 1.5rem 0; }
-.diag h4 { font-family: 'PT Serif', Georgia, serif; font-size: 18px; font-weight: 700; margin: 0 0 1rem; color: var(--ink); }
-.diag-row { display: flex; align-items: center; gap: 1rem; padding: 0.75rem 0; border-bottom: 0.5px solid var(--line); }
-.diag-row:last-child { border-bottom: none; }
-.diag-label { flex: 1; font-size: 14px; color: var(--ink-soft); line-height: 1.4; }
-.diag-input { width: 80px; padding: 6px 10px; border: 0.5px solid var(--line-strong); border-radius: 6px; font-size: 14px; font-family: inherit; background: var(--cream-light); color: var(--ink); text-align: center; }
-.diag-input:focus { outline: 2px solid var(--terracotta); }
-.diag-total { margin-top: 1rem; padding-top: 1rem; border-top: 0.5px solid var(--line-strong); font-size: 14px; color: var(--ink-mute); display: flex; justify-content: space-between; align-items: center; }
-.diag-total strong { font-family: 'PT Serif', Georgia, serif; font-size: 24px; color: var(--terracotta); font-weight: 700; }
-
-/* Glossary grid */
-.gloss-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; margin: 1rem 0; }
-.gloss-item { background: var(--cream); padding: 0.75rem 1rem; border-radius: 6px; border: 0.5px solid var(--line); font-size: 13.5px; line-height: 1.4; }
-.gloss-item strong { display: block; color: var(--terracotta); font-size: 12px; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 0.25rem; font-weight: 500; }
-
-/* ============ NEW WIDGETS (chapter 9 and others) ============ */
-
-/* Stroop test */
-.stroop-area { background: var(--cream); border-radius: 10px; padding: 2rem 1rem; text-align: center; margin: 1rem 0; min-height: 200px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
-.stroop-word { font-family: 'PT Serif', Georgia, serif; font-size: 56px; font-weight: 700; margin-bottom: 1.5rem; line-height: 1; }
-.stroop-buttons { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; max-width: 320px; margin: 0 auto; width: 100%; }
-.stroop-color-btn { padding: 0.85rem 1rem; border: 0.5px solid var(--line-strong); border-radius: 8px; background: var(--cream-light); font-family: inherit; font-size: 14px; cursor: pointer; color: var(--ink); font-weight: 500; touch-action: manipulation; }
-.stroop-color-btn:hover { border-color: var(--terracotta); }
-.stroop-info { display: flex; justify-content: space-between; font-size: 13px; color: var(--ink-mute); padding: 0 0.25rem; }
-
-/* N-back */
-.nback-area { background: var(--cream); border-radius: 10px; padding: 2rem 1rem; text-align: center; margin: 1rem 0; min-height: 200px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
-.nback-letter { font-family: 'PT Serif', Georgia, serif; font-size: 88px; font-weight: 700; color: var(--terracotta); line-height: 1; margin-bottom: 1.5rem; min-height: 96px; display: flex; align-items: center; justify-content: center; }
-.nback-controls { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
-.nback-info { display: flex; justify-content: space-between; font-size: 13px; color: var(--ink-mute); margin-top: 1rem; padding: 0 0.25rem; }
-
-/* Memory span */
-.memspan-area { background: var(--cream); border-radius: 10px; padding: 2rem 1rem; text-align: center; margin: 1rem 0; }
-.memspan-display { font-family: 'PT Serif', Georgia, serif; font-size: 64px; font-weight: 700; color: var(--terracotta); line-height: 1; margin-bottom: 1.5rem; letter-spacing: 6px; min-height: 72px; }
-.memspan-input { font-family: 'PT Serif', Georgia, serif !important; font-size: 24px !important; text-align: center; letter-spacing: 4px; }
-
-/* Reaction time */
-.reaction-area { background: var(--cream); border-radius: 10px; padding: 2rem 1rem; text-align: center; margin: 1rem 0; }
-.reaction-zone { width: 100%; max-width: 320px; height: 200px; margin: 0 auto 1rem; border-radius: 12px; background: var(--cream-deep); display: flex; align-items: center; justify-content: center; font-family: 'PT Serif', serif; font-size: 22px; color: var(--ink-mute); cursor: pointer; transition: background 0.1s; user-select: none; touch-action: manipulation; }
-.reaction-zone.wait { background: var(--terracotta-deep); color: var(--cream-light); }
-.reaction-zone.go { background: var(--sage); color: var(--cream-light); font-size: 32px; }
-.reaction-zone.tooEarly { background: var(--terracotta); color: var(--cream-light); }
-
-/* Quiz cog type */
-.cog-type-q { padding: 1rem 0; border-bottom: 0.5px solid var(--line); }
-.cog-type-q:last-of-type { border-bottom: none; }
-.cog-type-q p { margin: 0 0 0.5rem; font-size: 14.5px; color: var(--ink); font-weight: 500; }
-.cog-type-q .opts { display: flex; flex-direction: column; gap: 6px; }
-.cog-type-q .opts button { padding: 0.7rem 1rem; border: 0.5px solid var(--line-strong); border-radius: 8px; background: var(--cream-light); font-family: inherit; font-size: 13.5px; cursor: pointer; color: var(--ink-soft); text-align: left; touch-action: manipulation; }
-.cog-type-q .opts button.selected { background: var(--terracotta); color: var(--cream-light); border-color: var(--terracotta); }
-.cog-type-q .opts button:hover:not(.selected) { border-color: var(--terracotta); }
-
-/* Focus check */
-.focus-task { padding: 1rem; background: var(--cream); border-radius: 8px; margin-bottom: 0.75rem; }
-.focus-task p { margin: 0 0 0.5rem; font-size: 14px; color: var(--ink); }
-.focus-task .opts { display: flex; gap: 6px; flex-wrap: wrap; }
-.focus-task .opts button { padding: 0.45rem 0.85rem; border: 0.5px solid var(--line-strong); border-radius: 6px; background: var(--cream-light); font-family: inherit; font-size: 13px; cursor: pointer; color: var(--ink-soft); touch-action: manipulation; }
-.focus-task .opts button.selected { background: var(--terracotta); color: var(--cream-light); border-color: var(--terracotta); }
-.focus-task .opts button.correct { background: var(--sage); color: var(--cream-light); border-color: var(--sage); }
-.focus-task .opts button.wrong { background: var(--terracotta); color: var(--cream-light); border-color: var(--terracotta); }
-
-/* Sleep score, dopamine score */
-.score-bar { height: 14px; background: var(--cream-deep); border-radius: 7px; overflow: hidden; margin-top: 0.5rem; }
-.score-fill { height: 100%; transition: width 0.4s; border-radius: 7px; }
-.score-fill.good { background: var(--sage); }
-.score-fill.mid { background: var(--amber); }
-.score-fill.bad { background: var(--terracotta); }
-
-/* End */
-.end { text-align: center; padding: 4rem 2rem; background: var(--cream); border-top: 0.5px solid var(--line); }
-.end-title { font-family: 'PT Serif', Georgia, serif; font-size: 26px; color: var(--ink); margin-bottom: 0.5rem; font-weight: 700; }
-.end-quote { font-family: 'PT Serif', Georgia, serif; font-style: italic; color: var(--ink-mute); font-size: 16px; margin: 0.5rem 0 1.5rem; }
-.end-author { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--terracotta); margin-top: 1rem; }
-
-/* Mobile */
-@media (max-width: 900px) {
-  body { padding-top: 48px; }
-  .layout { display: block; padding: 0.75rem; }
-  .sidebar { display: none; }
-  .menu-bar { display: block; }
-  .top-btn.show { display: flex; }
-  .content { max-width: 100%; border: none; border-radius: 0; background: var(--cream-light); }
-  .cover { padding: 3rem 1.25rem; }
-  .cover h1 { font-size: 28px; }
-  .cover .sub { font-size: 15px; }
-  .chap-head { padding: 2rem 1.25rem 1.25rem; }
-  .chap-head h2 { font-size: 26px; }
-  .chap-head .lead { font-size: 16px; }
-  .chap-body { padding: 1.5rem 1.25rem 1rem; }
-  .chap-body h3 { font-size: 21px; }
-  .section-pad { padding: 1.75rem 1.25rem; }
-  .disclaimer { padding: 1.25rem; font-size: 12.5px; }
-  .dd { grid-template-columns: 1fr; }
-  .supp-symptoms { grid-template-columns: 1fr; }
-  .cold-days { grid-template-columns: repeat(2, 1fr); }
-  .sos-quick { grid-template-columns: 1fr; }
-      body { font-size: 16px; }
-}
-@media print {
-  body { background: white; font-size: 11pt; line-height: 1.4; }
-  .layout { display: block; max-width: 100%; padding: 0; }
-  .sidebar, .menu-bar, .progress-bar, .top-btn, .mobile-menu { display: none; }
-  .content { background: white; border: none; max-width: 100%; }
-  .chap-head { page-break-before: always; }
-  h2, h3, h4 { page-break-after: avoid; }
-  .recap, .proto, .today, .fact, .highlight, .warn, .term, .breath-timer, .tracker, .diag, .iwidget { page-break-inside: avoid; }
-  @page { size: A5; margin: 12mm; }
-}
-</style>
+<style>:root{--cream:#F7F2E8;--cream-light:#FDFAF4;--cream-deep:#EFE7D6;--ink:#2A2620;--ink-soft:#4A4339;--ink-mute:#5A4D3C;--sage:#6B8E6B;--sage-deep:#4A6B4A;--sage-soft:#DCE5D8;--terracotta:#C4633D;--terracotta-soft:#F5DCCD;--terracotta-deep:#8F4324;--amber:#B5854A;--amber-soft:#F4E8D0;--line:rgba(42,38,32,0.12);--line-strong:rgba(42,38,32,0.2)}*{box-sizing:border-box;margin:0;padding:0}html{}body{font-family:'Inter','Helvetica Neue',Arial,sans-serif;background:var(--cream);color:var(--ink);line-height:1.55;font-size:17px;-webkit-font-smoothing:antialiased}.serif{font-family:'PT Serif',Georgia,serif}.progress-bar{position:fixed;top:0;left:0;width:100%;height:3px;background:rgba(42,38,32,0.06);z-index:1000}.progress-fill{height:100%;background:var(--terracotta);width:0%;transition:width 0.1s linear}.layout{max-width:1180px;margin:0 auto;padding:2rem;display:flex;gap:3rem}.sidebar{width:220px;flex-shrink:0;align-self:flex-start;position:sticky;top:2rem;max-height:calc(100vh - 4rem);overflow-y:auto;padding-right:0.5rem}.sidebar::-webkit-scrollbar{width:4px}.sidebar::-webkit-scrollbar-thumb{background:var(--line);border-radius:4px}.toc-title{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--terracotta);font-weight:500;margin-bottom:1rem;padding-bottom:0.75rem;border-bottom:0.5px solid var(--line)}.toc-link{display:flex;gap:0.5rem;padding:0.4rem 0.5rem;border-radius:6px;color:var(--ink-mute);text-decoration:none;font-size:13px;line-height:1.4;transition:all 0.15s;border-left:2px solid transparent}.toc-link:hover{color:var(--ink);background:var(--cream-light)}.toc-link.active{color:var(--terracotta);border-left-color:var(--terracotta);background:var(--terracotta-soft)}.toc-num{font-family:'PT Serif',Georgia,serif;font-size:11px;color:var(--ink-mute);min-width:18px}.toc-link.active .toc-num{color:var(--terracotta)}.toc-part{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--sage-deep);font-weight:500;margin:1.25rem 0 0.5rem 0.5rem}.toc-part:first-of-type{margin-top:0.5rem}.content{max-width:760px;flex:1;background:var(--cream-light);border-radius:12px;border:0.5px solid var(--line)}.menu-bar{display:none;position:fixed;top:0;left:0;right:0;background:#C4633D;color:#FDFAF4;padding:14px 18px;z-index:999;box-shadow:0 2px 8px rgba(0,0,0,0.15);cursor:pointer;font-family:'Inter',sans-serif;font-size:14px;font-weight:500;letter-spacing:1px;text-transform:uppercase;text-align:center;user-select:none;-webkit-tap-highlight-color:rgba(255,255,255,0.2);border:none;margin:0}.menu-bar-text{display:inline-flex;align-items:center;gap:8px;pointer-events:none}.menu-bar-icon{display:inline-block;width:16px;height:12px;position:relative;pointer-events:none}.menu-bar-icon span{position:absolute;left:0;right:0;height:2px;background:currentColor;border-radius:1px;top:5px;display:block}.menu-bar-icon::before,.menu-bar-icon::after{content:'';position:absolute;left:0;right:0;height:2px;background:currentColor;border-radius:1px}.menu-bar-icon::before{top:0}.menu-bar-icon::after{bottom:0}.top-btn{display:none;position:fixed;bottom:1.25rem;right:1.25rem;background:var(--cream-light);color:var(--ink);border:0.5px solid var(--line-strong);width:44px;height:44px;border-radius:50%;font-size:18px;cursor:pointer;z-index:998;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,0.08);opacity:0;transition:opacity 0.2s;touch-action:manipulation;-webkit-tap-highlight-color:rgba(0,0,0,0)}.top-btn.show{display:flex;opacity:1}.mobile-menu{position:fixed;top:0;right:0;bottom:0;left:0;background:var(--cream);z-index:1001;display:none;flex-direction:column;padding:2rem 1.5rem;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}.mobile-menu.open{display:flex}.mobile-menu-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:2rem;padding-bottom:1rem;border-bottom:0.5px solid var(--line)}.mobile-menu-title{font-family:'PT Serif',Georgia,serif;font-size:22px;font-weight:700;color:var(--ink)}.mobile-close{background:transparent;border:0.5px solid var(--line-strong);width:40px;height:40px;border-radius:50%;font-size:20px;cursor:pointer;color:var(--ink);touch-action:manipulation;-webkit-tap-highlight-color:rgba(0,0,0,0)}.mobile-progress{font-size:13px;color:var(--ink-mute);margin-bottom:2rem;padding:0.75rem 1rem;background:var(--cream-light);border-radius:8px;border:0.5px solid var(--line)}.mobile-progress strong{color:var(--terracotta);font-weight:500}.mobile-link{display:flex;gap:0.75rem;padding:1rem 0.75rem;border-radius:8px;color:var(--ink);text-decoration:none;font-size:16px;line-height:1.4;border-bottom:0.5px solid var(--line)}.mobile-link.active{background:var(--terracotta-soft);color:var(--terracotta-deep);border-color:transparent}.mobile-link.active .mobile-link-num{color:var(--terracotta)}.mobile-link-num{font-family:'PT Serif',Georgia,serif;font-size:14px;color:var(--ink-mute);min-width:28px}.mobile-part{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--sage-deep);font-weight:500;margin:1.5rem 0 0.5rem;padding-left:0.75rem}.mobile-part:first-of-type{margin-top:0}.cover{padding:4rem 2.5rem;text-align:center;background:var(--cream);border-bottom:0.5px solid var(--line)}.cover .badge{display:inline-block;font-size:11px;color:var(--terracotta);letter-spacing:3px;font-weight:500;margin-bottom:2rem;text-transform:uppercase;padding:5px 14px;border:0.5px solid var(--terracotta);border-radius:999px}.cover h1{font-family:'PT Serif',Georgia,serif;font-size:42px;font-weight:700;margin:0 0 1rem;color:var(--ink);line-height:1.1;letter-spacing:-1px}.cover h1 em{font-style:italic;color:var(--terracotta);font-weight:400}.cover .sub{font-size:17px;color:var(--ink-mute);margin:1.25rem auto 2.5rem;font-style:italic;font-family:'PT Serif',Georgia,serif;max-width:380px;line-height:1.4}.cover .author{font-size:11px;color:var(--ink-mute);letter-spacing:3px;text-transform:uppercase;border-top:0.5px solid var(--line);padding-top:1.5rem;display:inline-block}.cover-img{max-width:100%;margin:1.5rem auto 0;display:block;border-radius:8px}.section-pad{padding:2.5rem}.disclaimer{background:var(--cream);padding:1.5rem 2.5rem;border-bottom:0.5px solid var(--line);font-size:13px;color:var(--ink-mute);line-height:1.5;font-style:italic}.intro h2{font-family:'PT Serif',Georgia,serif;font-size:30px;font-weight:700;margin:0 0 1.25rem;color:var(--ink);letter-spacing:-0.3px;line-height:1.2}.intro p{margin:0.75rem 0;color:var(--ink-soft)}.chap-head{padding:3rem 2.5rem 1.5rem;border-bottom:0.5px solid var(--line);background:var(--cream);position:relative}.chap-head .part{font-size:11px;color:var(--sage-deep);letter-spacing:2.5px;text-transform:uppercase;font-weight:500;margin-bottom:0.75rem}.chap-head .num{font-family:'PT Serif',Georgia,serif;font-size:14px;color:var(--ink-mute);letter-spacing:1px;margin-bottom:0.5rem}.chap-head h2{font-family:'PT Serif',Georgia,serif;font-size:38px;font-weight:700;margin:0.25rem 0 1rem;color:var(--ink);line-height:1.1;letter-spacing:-0.5px}.chap-head .lead{font-family:'PT Serif',Georgia,serif;font-size:19px;font-style:italic;color:var(--ink-soft);margin:0;line-height:1.4}.chap-illust{width:100%;height:auto;display:block;margin:1.5rem 0 0;border-radius:8px;background:var(--cream-light)}.chap-body{padding:2rem 2.5rem 1.5rem}.chap-body p{margin:0.875rem 0;color:var(--ink-soft)}.chap-body h3{font-family:'PT Serif',Georgia,serif;font-size:24px;font-weight:700;margin:2.25rem 0 0.875rem;color:var(--ink);letter-spacing:-0.3px;line-height:1.25}.chap-body h4{font-family:'PT Serif',Georgia,serif;font-size:18px;font-weight:700;margin:1.5rem 0 0.5rem;color:var(--ink)}.ref{color:var(--terracotta);text-decoration:none;border-bottom:1px dotted var(--terracotta);padding-bottom:1px}.ref:hover{background:var(--terracotta-soft);border-bottom-style:solid}.fact{background:var(--cream-deep);border-left:3px solid var(--sage);padding:1.125rem 1.375rem;margin:1.5rem 0;font-size:15.5px;color:var(--ink-soft)}.fact strong{color:var(--ink);font-weight:500}.highlight{background:var(--terracotta-soft);border-left:3px solid var(--terracotta);padding:1.125rem 1.375rem;margin:1.5rem 0;font-size:15.5px;color:var(--ink-soft)}.highlight strong{color:var(--terracotta-deep);font-weight:500}.warn{background:var(--amber-soft);border-left:3px solid var(--amber);padding:1.125rem 1.375rem;margin:1.5rem 0;font-size:15.5px;color:var(--ink-soft)}.warn strong{color:var(--ink);font-weight:500}.term{background:var(--cream);border:0.5px solid var(--line);border-radius:8px;padding:1.125rem 1.375rem;margin:1.25rem 0;font-size:15px;color:var(--ink-soft);line-height:1.55}.term .word{display:block;font-size:11px;color:var(--terracotta);letter-spacing:1.5px;text-transform:uppercase;font-weight:500;margin-bottom:0.5rem}.term strong{color:var(--ink);font-weight:500}.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin:1.5rem 0}.stat{background:var(--cream);border:0.5px solid var(--line);border-radius:8px;padding:1.125rem 1.25rem}.stat .num{font-family:'PT Serif',Georgia,serif;font-size:28px;font-weight:700;color:var(--terracotta);line-height:1;margin-bottom:0.4rem;letter-spacing:-0.5px}.stat .lbl{font-size:12.5px;color:var(--ink-mute);line-height:1.3}.steps{margin:1.25rem 0;padding:0;list-style:none;counter-reset:s}.steps li{counter-increment:s;position:relative;padding:1rem 0 1rem 3rem;font-size:15.5px;border-bottom:0.5px solid var(--line);color:var(--ink-soft);line-height:1.5}.steps li:last-child{border-bottom:none}.steps li::before{content:counter(s);position:absolute;left:0;top:1rem;width:2rem;height:2rem;background:var(--sage);color:var(--cream-light);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:500}.steps strong{color:var(--ink);font-weight:500}.dd{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:1.25rem 0}.dd .col{padding:1.125rem 1.25rem;border-radius:8px;font-size:15px;line-height:1.5}.dd .yes{background:var(--sage-soft);color:var(--ink)}.dd .no{background:var(--cream);color:var(--ink-soft);border:0.5px solid var(--line)}.dd .col .h{display:block;margin-bottom:0.6rem;font-weight:500;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--sage-deep)}.dd .no .h{color:var(--terracotta)}.dd ul{margin:0;padding:0;list-style:none}.dd li{margin:0.5rem 0;padding-left:1.1rem;position:relative;line-height:1.4}.dd .yes li::before{content:"";position:absolute;left:0;top:0.65rem;width:6px;height:6px;background:var(--sage-deep);border-radius:50%}.dd .no li::before{content:"";position:absolute;left:0;top:0.7rem;width:8px;height:1.5px;background:var(--terracotta)}.proto{background:var(--cream);border:0.5px solid var(--line);border-radius:10px;padding:1.5rem 1.75rem;margin:1.5rem 0}.proto .h{font-size:11px;color:var(--terracotta);letter-spacing:2px;text-transform:uppercase;font-weight:500;margin-bottom:1rem}.proto .row{display:flex;gap:1rem;padding:0.75rem 0;border-bottom:0.5px solid var(--line);font-size:15px;color:var(--ink-soft);line-height:1.4}.proto .row:last-child{border-bottom:none;padding-bottom:0}.proto .row:first-of-type{padding-top:0}.proto .t{min-width:70px;color:var(--ink);font-weight:500;font-family:'PT Serif',Georgia,serif;font-size:14.5px}.recap{background:var(--sage-deep);color:var(--cream-light);border-radius:10px;padding:2rem 1.75rem;margin:2rem 0}.recap .h{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--sage-soft);margin-bottom:0.75rem;font-weight:500}.recap h4{font-family:'PT Serif',Georgia,serif;font-size:24px;font-weight:700;margin:0 0 1.125rem;color:var(--cream-light);line-height:1.2}.recap ul{margin:0;padding:0;list-style:none}.recap li{margin:0.6rem 0;padding-left:1.25rem;position:relative;font-size:15.5px;line-height:1.45}.recap li::before{content:"";position:absolute;left:0;top:0.6rem;width:8px;height:1.5px;background:var(--sage-soft)}.today{background:var(--terracotta-soft);border-radius:10px;padding:1.375rem 1.625rem;margin:1.5rem 0;border:0.5px dashed var(--terracotta)}.today .h{font-size:11px;color:var(--terracotta-deep);letter-spacing:2px;text-transform:uppercase;font-weight:500;margin-bottom:0.5rem}.today p{margin:0;font-size:15.5px;color:var(--ink);line-height:1.5}.iwidget{background:var(--cream);border:0.5px solid var(--line);border-radius:12px;padding:1.5rem;margin:1.75rem 0}.iwidget .ititle{font-family:'PT Serif',Georgia,serif;font-size:18px;font-weight:700;margin:0 0 0.25rem;color:var(--ink)}.iwidget .isub{font-size:13px;color:var(--ink-mute);margin-bottom:1.25rem;line-height:1.4}.iwidget .ibtn{background:var(--terracotta);color:var(--cream-light);border:none;padding:0.75rem 1.5rem;border-radius:8px;font-size:14px;cursor:pointer;font-weight:500;font-family:inherit;transition:background 0.15s}.iwidget .ibtn:hover{background:var(--terracotta-deep)}.iwidget .ibtn-sage{background:var(--sage-deep)}.iwidget .ibtn-sage:hover{background:var(--sage)}.iwidget input[type="number"],.iwidget input[type="time"],.iwidget input[type="text"],.iwidget select{padding:8px 12px;border:0.5px solid var(--line-strong);border-radius:6px;font-size:14px;font-family:inherit;background:var(--cream-light);color:var(--ink);width:100%}.iwidget input[type="range"]{touch-action:pan-y;-webkit-appearance:auto}.iwidget input:focus{outline:2px solid var(--terracotta);outline-offset:-1px}.iwidget label{display:block;font-size:13px;color:var(--ink-mute);margin-bottom:0.4rem;font-weight:500}.iwidget .iresult{background:var(--terracotta-soft);border-radius:8px;padding:1rem 1.25rem;margin-top:1rem;font-size:15px;color:var(--ink);display:none}.iwidget .iresult.show{display:block}.iwidget .iresult strong{color:var(--terracotta-deep);font-weight:500}.sleep-calc-row{display:flex;gap:1rem;align-items:end;flex-wrap:wrap;margin-bottom:0.5rem}.sleep-calc-row > div{flex:1;min-width:140px}.circadian{text-align:center}.circadian-clock{display:flex;flex-direction:column;align-items:stretch;gap:1.25rem}.circadian-time{width:100%;padding:0 0.25rem}.circadian-time input[type="range"]{width:100%;height:14px;-webkit-appearance:none;appearance:none;background:linear-gradient(to right,var(--terracotta) 0%,var(--terracotta-soft) 40%,var(--sage-soft) 60%,var(--sage) 100%);border-radius:7px;outline:none}.circadian-time input[type="range"]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:26px;height:26px;border-radius:50%;background:var(--cream-light);border:2px solid var(--terracotta-deep);cursor:pointer;box-shadow:0 2px 4px rgba(0,0,0,0.15)}.circadian-time input[type="range"]::-moz-range-thumb{width:26px;height:26px;border-radius:50%;background:var(--cream-light);border:2px solid var(--terracotta-deep);cursor:pointer}.circadian-out{width:100%;text-align:left}.circadian-out h5{font-family:'PT Serif',Georgia,serif;font-size:16px;font-weight:700;margin:0 0 0.25rem;color:var(--terracotta)}.circadian-out p{margin:0.25rem 0;font-size:14px;color:var(--ink-soft);line-height:1.4}.circadian-bars{display:flex;gap:8px;margin-top:0.75rem}.circadian-bar{flex:1;height:12px;background:var(--cream-deep);border-radius:4px;position:relative;overflow:hidden}.circadian-bar-fill{position:absolute;left:0;top:0;height:100%;background:var(--sage);border-radius:4px;transition:width 0.3s}.circadian-bar.cortisol .circadian-bar-fill{background:var(--terracotta)}.circadian-legend{display:flex;gap:1rem;margin-top:0.5rem;font-size:11.5px;color:var(--ink-mute);flex-wrap:wrap}.circadian-legend .lg{display:inline-flex;align-items:center;gap:6px}.circadian-legend .sw{width:14px;height:14px;border-radius:3px;display:inline-block}.circadian-legend .sw.t{background:var(--terracotta)}.circadian-legend .sw.s{background:var(--sage)}.water-glasses{display:flex;flex-wrap:wrap;gap:6px;margin:1rem 0}.water-glass{width:32px;height:44px;background:var(--cream-light);border:1.5px solid var(--line-strong);border-radius:0 0 8px 8px;cursor:pointer;transition:all 0.15s;position:relative;user-select:none}.water-glass:hover{border-color:var(--terracotta)}.water-glass.full{background:var(--terracotta);border-color:var(--terracotta)}.quiz-q{padding:1rem 0;border-bottom:0.5px solid var(--line)}.quiz-q:last-child{border-bottom:none}.quiz-q p{margin:0 0 0.5rem;font-size:14.5px;color:var(--ink)}.quiz-buttons{display:flex;gap:8px}.quiz-buttons button{padding:0.45rem 1rem;border:0.5px solid var(--line-strong);border-radius:6px;background:var(--cream-light);color:var(--ink-soft);font-family:inherit;font-size:13px;cursor:pointer}.quiz-buttons button.selected{background:var(--terracotta);color:var(--cream-light);border-color:var(--terracotta)}.quiz-buttons button:hover:not(.selected){border-color:var(--terracotta)}.breath-timer{background:var(--sage-soft);border-radius:12px;padding:2rem;margin:1.5rem 0;text-align:center}.breath-circle{width:140px;height:140px;border-radius:50%;background:var(--cream-light);border:2px solid var(--sage);display:flex;align-items:center;justify-content:center;margin:1rem auto;transition:transform 4s ease-in-out,background 0.6s;font-family:'PT Serif',Georgia,serif;font-size:18px;color:var(--sage-deep)}.breath-circle.in{transform:scale(1.45);background:var(--sage);color:var(--cream-light)}.breath-circle.hold{transform:scale(1.45);background:var(--terracotta);color:var(--cream-light)}.breath-circle.out{transform:scale(1);background:var(--cream-light);color:var(--sage-deep)}.breath-cycles{font-size:13px;color:var(--ink-mute);margin-top:0.75rem}.breath-tabs{display:flex;gap:4px;justify-content:center;margin-bottom:1rem;flex-wrap:wrap}.breath-tab{padding:0.4rem 0.8rem;border:0.5px solid var(--line-strong);border-radius:999px;background:var(--cream-light);color:var(--ink-soft);font-family:inherit;font-size:12px;cursor:pointer}.breath-tab.active{background:var(--sage-deep);color:var(--cream-light);border-color:var(--sage-deep)}.cold-days{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:1rem 0}.cold-day-btn{padding:0.75rem 0.5rem;border:0.5px solid var(--line-strong);border-radius:8px;background:var(--cream-light);cursor:pointer;text-align:center;font-family:inherit}.cold-day-btn.active{background:var(--terracotta);color:var(--cream-light);border-color:var(--terracotta)}.cold-day-btn .cdnum{font-family:'PT Serif',Georgia,serif;font-size:16px;font-weight:700}.cold-day-btn .cdsub{font-size:11px;opacity:0.8;margin-top:0.15rem}.supp-symptoms{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:1rem}.supp-symptom{padding:0.75rem 1rem;border:0.5px solid var(--line-strong);border-radius:8px;background:var(--cream-light);cursor:pointer;font-size:14px;user-select:none}.supp-symptom:hover{border-color:var(--terracotta)}.supp-symptom.checked{background:var(--terracotta-soft);border-color:var(--terracotta);color:var(--terracotta-deep)}.why-step{margin-bottom:0.75rem}.why-step label{font-size:12px;color:var(--terracotta);font-weight:500;letter-spacing:1px;text-transform:uppercase}.sos-block{background:var(--cream);border-left:3px solid var(--terracotta);padding:1.25rem 1.5rem;margin:1.25rem 0}.sos-block h4{font-family:'PT Serif',Georgia,serif;font-size:18px;font-weight:700;margin:0 0 0.5rem;color:var(--terracotta-deep)}.sos-block ol{margin:0.5rem 0 0 1.25rem;padding:0}.sos-block li{margin:0.25rem 0;font-size:15px;color:var(--ink-soft)}.list-soft{margin-left:1.25rem;color:var(--ink-soft)}.list-soft li{margin:0.4rem 0}.sos-quick{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:1.25rem 0}.sos-btn{padding:1rem 1.25rem;border:0.5px solid var(--terracotta);border-radius:10px;background:var(--cream-light);cursor:pointer;text-align:left;font-family:inherit;transition:all 0.15s}.sos-btn:hover{background:var(--terracotta-soft)}.sos-btn .sost{font-family:'PT Serif',Georgia,serif;font-size:15px;font-weight:700;color:var(--terracotta-deep);margin-bottom:0.15rem}.sos-btn .sosd{font-size:12px;color:var(--ink-mute)}.diag{background:var(--cream);border:0.5px solid var(--line);border-radius:10px;padding:1.5rem;margin:1.5rem 0}.diag h4{font-family:'PT Serif',Georgia,serif;font-size:18px;font-weight:700;margin:0 0 1rem;color:var(--ink)}.diag-row{display:flex;align-items:center;gap:1rem;padding:0.75rem 0;border-bottom:0.5px solid var(--line)}.diag-row:last-child{border-bottom:none}.diag-label{flex:1;font-size:14px;color:var(--ink-soft);line-height:1.4}.diag-input{width:80px;padding:6px 10px;border:0.5px solid var(--line-strong);border-radius:6px;font-size:14px;font-family:inherit;background:var(--cream-light);color:var(--ink);text-align:center}.diag-input:focus{outline:2px solid var(--terracotta)}.diag-total{margin-top:1rem;padding-top:1rem;border-top:0.5px solid var(--line-strong);font-size:14px;color:var(--ink-mute);display:flex;justify-content:space-between;align-items:center}.diag-total strong{font-family:'PT Serif',Georgia,serif;font-size:24px;color:var(--terracotta);font-weight:700}.gloss-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin:1rem 0}.gloss-item{background:var(--cream);padding:0.75rem 1rem;border-radius:6px;border:0.5px solid var(--line);font-size:13.5px;line-height:1.4}.gloss-item strong{display:block;color:var(--terracotta);font-size:12px;letter-spacing:0.5px;text-transform:uppercase;margin-bottom:0.25rem;font-weight:500}.stroop-area{background:var(--cream);border-radius:10px;padding:2rem 1rem;text-align:center;margin:1rem 0;min-height:200px;display:flex;flex-direction:column;align-items:center;justify-content:center}.stroop-word{font-family:'PT Serif',Georgia,serif;font-size:56px;font-weight:700;margin-bottom:1.5rem;line-height:1}.stroop-buttons{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;max-width:320px;margin:0 auto;width:100%}.stroop-color-btn{padding:0.85rem 1rem;border:0.5px solid var(--line-strong);border-radius:8px;background:var(--cream-light);font-family:inherit;font-size:14px;cursor:pointer;color:var(--ink);font-weight:500;touch-action:manipulation}.stroop-color-btn:hover{border-color:var(--terracotta)}.stroop-info{display:flex;justify-content:space-between;font-size:13px;color:var(--ink-mute);padding:0 0.25rem}.nback-area{background:var(--cream);border-radius:10px;padding:2rem 1rem;text-align:center;margin:1rem 0;min-height:200px;display:flex;flex-direction:column;align-items:center;justify-content:center}.nback-letter{font-family:'PT Serif',Georgia,serif;font-size:88px;font-weight:700;color:var(--terracotta);line-height:1;margin-bottom:1.5rem;min-height:96px;display:flex;align-items:center;justify-content:center}.nback-controls{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}.nback-info{display:flex;justify-content:space-between;font-size:13px;color:var(--ink-mute);margin-top:1rem;padding:0 0.25rem}.memspan-area{background:var(--cream);border-radius:10px;padding:2rem 1rem;text-align:center;margin:1rem 0}.memspan-display{font-family:'PT Serif',Georgia,serif;font-size:64px;font-weight:700;color:var(--terracotta);line-height:1;margin-bottom:1.5rem;letter-spacing:6px;min-height:72px}.memspan-input{font-family:'PT Serif',Georgia,serif !important;font-size:24px !important;text-align:center;letter-spacing:4px}.reaction-area{background:var(--cream);border-radius:10px;padding:2rem 1rem;text-align:center;margin:1rem 0}.reaction-zone{width:100%;max-width:320px;height:200px;margin:0 auto 1rem;border-radius:12px;background:var(--cream-deep);display:flex;align-items:center;justify-content:center;font-family:'PT Serif',serif;font-size:22px;color:var(--ink-mute);cursor:pointer;transition:background 0.1s;user-select:none;touch-action:manipulation}.reaction-zone.wait{background:var(--terracotta-deep);color:var(--cream-light)}.reaction-zone.go{background:var(--sage);color:var(--cream-light);font-size:32px}.reaction-zone.tooEarly{background:var(--terracotta);color:var(--cream-light)}.cog-type-q{padding:1rem 0;border-bottom:0.5px solid var(--line)}.cog-type-q:last-of-type{border-bottom:none}.cog-type-q p{margin:0 0 0.5rem;font-size:14.5px;color:var(--ink);font-weight:500}.cog-type-q .opts{display:flex;flex-direction:column;gap:6px}.cog-type-q .opts button{padding:0.7rem 1rem;border:0.5px solid var(--line-strong);border-radius:8px;background:var(--cream-light);font-family:inherit;font-size:13.5px;cursor:pointer;color:var(--ink-soft);text-align:left;touch-action:manipulation}.cog-type-q .opts button.selected{background:var(--terracotta);color:var(--cream-light);border-color:var(--terracotta)}.cog-type-q .opts button:hover:not(.selected){border-color:var(--terracotta)}.focus-task{padding:1rem;background:var(--cream);border-radius:8px;margin-bottom:0.75rem}.focus-task p{margin:0 0 0.5rem;font-size:14px;color:var(--ink)}.focus-task .opts{display:flex;gap:6px;flex-wrap:wrap}.focus-task .opts button{padding:0.45rem 0.85rem;border:0.5px solid var(--line-strong);border-radius:6px;background:var(--cream-light);font-family:inherit;font-size:13px;cursor:pointer;color:var(--ink-soft);touch-action:manipulation}.focus-task .opts button.selected{background:var(--terracotta);color:var(--cream-light);border-color:var(--terracotta)}.focus-task .opts button.correct{background:var(--sage);color:var(--cream-light);border-color:var(--sage)}.focus-task .opts button.wrong{background:var(--terracotta);color:var(--cream-light);border-color:var(--terracotta)}.score-bar{height:14px;background:var(--cream-deep);border-radius:7px;overflow:hidden;margin-top:0.5rem}.score-fill{height:100%;transition:width 0.4s;border-radius:7px}.score-fill.good{background:var(--sage)}.score-fill.mid{background:var(--amber)}.score-fill.bad{background:var(--terracotta)}.end{text-align:center;padding:4rem 2rem;background:var(--cream);border-top:0.5px solid var(--line)}.end-title{font-family:'PT Serif',Georgia,serif;font-size:26px;color:var(--ink);margin-bottom:0.5rem;font-weight:700}.end-quote{font-family:'PT Serif',Georgia,serif;font-style:italic;color:var(--ink-mute);font-size:16px;margin:0.5rem 0 1.5rem}.end-author{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--terracotta);margin-top:1rem}@media (max-width:900px){body{padding-top:48px}.layout{display:block;padding:0.75rem}.sidebar{display:none}.menu-bar{display:block}.top-btn.show{display:flex}.content{max-width:100%;border:none;border-radius:0;background:var(--cream-light)}.cover{padding:3rem 1.25rem}.cover h1{font-size:28px}.cover .sub{font-size:15px}.chap-head{padding:2rem 1.25rem 1.25rem}.chap-head h2{font-size:26px}.chap-head .lead{font-size:16px}.chap-body{padding:1.5rem 1.25rem 1rem}.chap-body h3{font-size:21px}.section-pad{padding:1.75rem 1.25rem}.disclaimer{padding:1.25rem;font-size:12.5px}.dd{grid-template-columns:1fr}.supp-symptoms{grid-template-columns:1fr}.cold-days{grid-template-columns:repeat(2,1fr)}.sos-quick{grid-template-columns:1fr}body{font-size:16px}}@media print{body{background:white;font-size:11pt;line-height:1.4}.layout{display:block;max-width:100%;padding:0}.sidebar,.menu-bar,.progress-bar,.top-btn,.mobile-menu{display:none}.content{background:white;border:none;max-width:100%}.chap-head{page-break-before:always}h2,h3,h4{page-break-after:avoid}.recap,.proto,.today,.fact,.highlight,.warn,.term,.breath-timer,.tracker,.diag,.iwidget{page-break-inside:avoid}@page{size:A5;margin:12mm}}</style>
 </head>
 <body>
 
@@ -442,7 +83,7 @@ body {
   <div class="badge">Мозговой Спринт</div>
   <h1>Как прокачать мозг<br>на <em>+50%</em><br>за 30 дней</h1>
   <p class="sub">Простая система ясной головы, спокойствия и энергии</p>
-  <img src="https://i.ibb.co/whJJ6dx6/cover2.png" alt="Мозговой Спринт" class="cover-img" onerror="this.style.display='none'">
+  <img src="https://i.ibb.co/whJJ6dx6/cover2.png" alt="Мозговой Спринт. Перезагрузка мозга и тела за 30 дней" class="cover-img" fetchpriority="high" onerror="this.style.display='none'">
   <div class="author">Родион Сапрыкин</div>
 </section>
 
@@ -459,7 +100,7 @@ body {
 <p>Цифра «+50%» в названии это маркер ощущения. Кто-то почувствует меньше, кто-то намного больше. Главное, что изменения будут заметные и устойчивые.</p>
 <h3>Как читать эту книгу</h3>
 <p>Не пытайся внедрить всё за один день. Это самая частая причина, по которой люди бросают любые системы. Прочитай сначала всю книгу, чтобы видеть картину целиком. Потом начни с одной главы. Когда привычка из первой главы встанет на автомат, добавляй следующую.</p>
-<p>В <a href="#" data-anchor="#ch10" class="ref">Главе 10</a> есть готовый план на 30 дней по неделям. Можно следовать ему как есть. Можно сделать свой темп. Главное правило: лучше пять минут каждый день, чем час раз в неделю.</p>
+<p>В <a href="#" data-anchor="#ch10" class="ref">Главе 17</a> есть готовый план на 30 дней по неделям. Можно следовать ему как есть. Можно сделать свой темп. Главное правило: лучше пять минут каждый день, чем час раз в неделю.</p>
 <div class="highlight">
 <strong>Принцип одного процента.</strong> Если становиться на 1% лучше каждый день, через год ты в 37 раз эффективнее. Не пытайся изменить всё сразу. Маленькие шаги складываются в большие изменения.
 </div>
@@ -470,7 +111,7 @@ body {
   <div class="num">Глава 01</div>
   <h2>Сон. Главный рычаг</h2>
   <p class="lead">Если выбрать только одну привычку из всей книги, выбирай сон. Он управляет всем остальным.</p>
-  <img src="https://i.ibb.co/7xDwwDxd/1.png" alt="Сон" class="chap-illust" onerror="this.style.display='none'">
+  <img loading="lazy" decoding="async" src="https://i.ibb.co/7xDwwDxd/1.png" alt="Сон" class="chap-illust" onerror="this.style.display='none'">
 </section>
 <div class="chap-body">
 <p>Представь, что мозг это компьютер. Днём он считает, общается, принимает решения. Ночью он не выключается. Он чистит память, сортирует впечатления, удаляет лишнее и переносит важное в долговременное хранилище.</p>
@@ -602,7 +243,7 @@ body {
 <li><strong>Прохладная спальня.</strong> 18–19°C. Чтобы заснуть, тело должно остыть. В жаркой комнате крутишься и не уходишь в глубокий сон.</li>
 <li><strong>Темнота.</strong> Плотные шторы, выключенные индикаторы техники, повязка на глаза при необходимости. Любой свет ночью сбивает выработку мелатонина, гормона сна.</li>
 <li><strong>Тишина.</strong> Беруши, белый шум, закрытая дверь. Каждый ночной звук пробивает фазу глубокого сна, даже без осознанного пробуждения.</li>
-<li><strong>Без экранов за час до сна.</strong> Синий свет от телефона тормозит мелатонин. Подробнее об экранах и дофамине — в <a href="#" data-anchor="#ch5" class="ref">Главе 5</a>.</li>
+<li><strong>Без экранов за час до сна.</strong> Синий свет от телефона тормозит мелатонин. Подробнее об экранах и дофамине — в <a href="#" data-anchor="#ch5" class="ref">Главе 8</a>.</li>
 <li><strong>Кофеин до 14:00.</strong> Период полураспада кофеина 5–6 часов. Чашка в 17:00 всё ещё активна в крови к полуночи.</li>
 <li><strong>Кровать только для сна.</strong> Не работай в постели, не смотри сериалы. Мозг должен ассоциировать кровать с одним: пора отключаться.</li>
 </ol>
@@ -617,8 +258,8 @@ body {
 <span class="h">Делай</span>
 <ul>
 <li>Тёплый душ за час до сна</li>
-<li>Магний за 30–60 минут до сна <a href="#" data-anchor="#ch8" class="ref">(см. Главу 8)</a></li>
-<li>Дыхание 4-7-8 в кровати <a href="#" data-anchor="#ch6" class="ref">(см. Главу 6)</a></li>
+<li>Магний за 30–60 минут до сна <a href="#" data-anchor="#ch8" class="ref">(см. Главу 11)</a></li>
+<li>Дыхание 4-7-8 в кровати <a href="#" data-anchor="#ch6" class="ref">(см. Главу 9)</a></li>
 <li>Скучная бумажная книга</li>
 <li>Тёплый травяной чай</li>
 </ul>
@@ -689,7 +330,7 @@ body {
   <div class="num">Глава 02</div>
   <h2>Свет. Второй по силе рычаг</h2>
   <p class="lead">Свет утром в глаза это самая мощная команда мозгу: проснись и работай.</p>
-  <img src="https://i.ibb.co/4ZzVJX1b/2.png" alt="Свет" class="chap-illust" onerror="this.style.display='none'">
+  <img loading="lazy" decoding="async" src="https://i.ibb.co/4ZzVJX1b/2.png" alt="Свет" class="chap-illust" onerror="this.style.display='none'">
 </section>
 <div class="chap-body">
 <p>В мозге есть невидимые часы. Они называются циркадными ритмами. Эти часы управляют всем: бодрость, чувство голода, желание спать, готовность мозга работать. Эти часы постоянно подстраиваются. И главный регулировщик это свет.</p>
@@ -765,7 +406,7 @@ body {
 </div>
 </div>
 <div class="highlight">
-<strong>Зимой.</strong> Если зимой темно с утра, купи лампу для светотерапии 10 000 люкс. Она недорогая, ставится на стол. 20 минут утром во время кофе или чтения почты заменяют недостающий солнечный свет. Это особенно важно при сезонной депрессии. Витамин D зимой тоже критичен — <a href="#" data-anchor="#ch8" class="ref">Глава 8</a>.
+<strong>Зимой.</strong> Если зимой темно с утра, купи лампу для светотерапии 10 000 люкс. Она недорогая, ставится на стол. 20 минут утром во время кофе или чтения почты заменяют недостающий солнечный свет. Это особенно важно при сезонной депрессии. Витамин D зимой тоже критичен — <a href="#" data-anchor="#ch8" class="ref">Глава 11</a>.
 </div>
 
 <h3>Вечерний свет</h3>
@@ -789,11 +430,11 @@ body {
 
 <h3>Когда света не хватает</h3>
 <p>Если работа в офисе без окон, северный город или подъём до рассвета зимой, нужен план Б. Используй несколько слоёв.</p>
-<ul style="margin-left:1.25rem;color:var(--ink-soft)">
+<ul class="list-soft">
 <li style="margin:0.5rem 0">Лампа для светотерапии на рабочий стол утром на 20–30 минут.</li>
 <li style="margin:0.5rem 0">Прогулка в обеденный перерыв обязательна, даже 10 минут.</li>
 <li style="margin:0.5rem 0">Будильник-имитатор рассвета, который постепенно повышает яркость за 30 минут до подъёма.</li>
-<li style="margin:0.5rem 0">Витамин D3 в добавках, см. <a href="#" data-anchor="#ch8" class="ref">Главу 8</a>.</li>
+<li style="margin:0.5rem 0">Витамин D3 в добавках, см. <a href="#" data-anchor="#ch8" class="ref">Главу 11</a>.</li>
 </ul>
 
 <div class="recap">
@@ -848,7 +489,7 @@ body {
   <div class="num">Глава 03</div>
   <h2>Движение. Удобрение для мозга</h2>
   <p class="lead">Тело и мозг это одна система. Когда тело двигается, мозг становится умнее.</p>
-  <img src="https://i.ibb.co/Z1LyQc09/3.png" alt="Движение" class="chap-illust" onerror="this.style.display='none'">
+  <img loading="lazy" decoding="async" src="https://i.ibb.co/Z1LyQc09/3.png" alt="Движение" class="chap-illust" onerror="this.style.display='none'">
 </section>
 <div class="chap-body">
 <p>Самое мощное лекарство для мозга, которое можно купить в любой аптеке, это кроссовки. Регулярное движение делает с мозгом то, чего не делает ни одна добавка, ни одна медитация, ни одна тренировка памяти.</p>
@@ -945,7 +586,7 @@ Brain-Derived Neurotrophic Factor. Белок-удобрение для мозг
 
 <h3>Без зала и без оборудования</h3>
 <p>Есть три простых упражнения, которые покрывают 80% потребностей. Для них не нужен зал, оборудование и спортивная форма.</p>
-<ul style="margin-left:1.25rem;color:var(--ink-soft)">
+<ul class="list-soft">
 <li style="margin:0.5rem 0"><strong>Приседания.</strong> 3 подхода по 15 раз. Спина прямая, опускание как на стул.</li>
 <li style="margin:0.5rem 0"><strong>Отжимания.</strong> 3 подхода. Если тяжело от пола, делай от стены или с колен. Постепенно усложняй.</li>
 <li style="margin:0.5rem 0"><strong>Планка.</strong> 3 подхода по 30–60 секунд. Прямая линия от пяток до головы, живот втянут.</li>
@@ -974,7 +615,7 @@ Brain-Derived Neurotrophic Factor. Белок-удобрение для мозг
   <div class="num">Глава 04</div>
   <h2>Вода и питание</h2>
   <p class="lead">Мозг это 75% воды и 60% жира. Чем его кормишь, тем он думает.</p>
-  <img src="https://i.ibb.co/gFzWFvgf/4.png" alt="Вода и питание" class="chap-illust" onerror="this.style.display='none'">
+  <img loading="lazy" decoding="async" src="https://i.ibb.co/gFzWFvgf/4.png" alt="Вода и питание" class="chap-illust" onerror="this.style.display='none'">
 </section>
 <div class="chap-body">
 <p>Здесь не будет диет, подсчёта калорий и запретов. Только то, что точно работает для мозга. Простые правила, которые можно выполнять без усилий.</p>
@@ -1016,7 +657,7 @@ Brain-Derived Neurotrophic Factor. Белок-удобрение для мозг
 <h3>Главные продукты для мозга</h3>
 <p>Не «правильные продукты» в общем, а конкретные группы, у которых самый сильный эффект на мозг.</p>
 <ol class="steps">
-<li><strong>Жирная рыба.</strong> Лосось, сардины, скумбрия, форель. 2–3 раза в неделю. Источник Омега-3, главного строительного материала для нейронов. Если рыба не любимая, переходи к <a href="#" data-anchor="#ch8" class="ref">Главе 8</a> про добавки.</li>
+<li><strong>Жирная рыба.</strong> Лосось, сардины, скумбрия, форель. 2–3 раза в неделю. Источник Омега-3, главного строительного материала для нейронов. Если рыба не любимая, переходи к <a href="#" data-anchor="#ch8" class="ref">Главе 11</a> про добавки.</li>
 <li><strong>Яйца.</strong> Холин из желтка нужен для памяти и фокуса. 1–3 яйца в день безопасно для подавляющего большинства людей. Старая страшилка про холестерин уже давно опровергнута.</li>
 <li><strong>Орехи и семена.</strong> Грецкие, миндаль, фундук, тыквенные семечки. Горсть в день. Хорошие жиры, магний, цинк, витамин Е.</li>
 <li><strong>Тёмная зелень.</strong> Шпинат, руккола, кейл, петрушка. Магний, фолиевая кислота, антиоксиданты. В каждый обед добавляй пучок зелени или горсть салата.</li>
@@ -1093,7 +734,7 @@ Brain-Derived Neurotrophic Factor. Белок-удобрение для мозг
 
 <h3>Когда есть</h3>
 <p>Не менее важно, чем что есть. Простые правила:</p>
-<ul style="margin-left:1.25rem;color:var(--ink-soft)">
+<ul class="list-soft">
 <li style="margin:0.5rem 0">Завтрак через 30–60 минут после пробуждения. Не сразу, дай телу проснуться.</li>
 <li style="margin:0.5rem 0">Кофе только после еды. Кофе натощак на пустой желудок усиливает тревогу и ломает кортизол.</li>
 <li style="margin:0.5rem 0">Ужин за 2–3 часа до сна. Поздний ужин ломает глимфатическую чистку мозга ночью <a href="#" data-anchor="#ch1" class="ref">(см. Главу 1)</a>.</li>
@@ -1122,7 +763,7 @@ Brain-Derived Neurotrophic Factor. Белок-удобрение для мозг
   <div class="num">Глава 05</div>
   <h2>Воспаление. Тихий враг мозга</h2>
   <p class="lead">Не та боль, которую видно. То медленное тление, которое годами съедает энергию, ясность и настроение.</p>
-  <img src="https://i.ibb.co/wZt228Ps/image.png" alt="Воспаление" class="chap-illust" onerror="this.style.display='none'">
+  <img loading="lazy" decoding="async" src="https://i.ibb.co/wZt228Ps/image.png" alt="Воспаление" class="chap-illust" onerror="this.style.display='none'">
 </section>
 <div class="chap-body">
 <p>Когда мы слышим слово «воспаление», представляем красное горло или опухший палец. Это острое воспаление. Оно нужно, оно лечит, оно быстро проходит.</p>
@@ -1298,7 +939,7 @@ Brain-Derived Neurotrophic Factor. Белок-удобрение для мозг
   <div class="num">Глава 06</div>
   <h2>Гормональный баланс</h2>
   <p class="lead">Гормоны это химические сообщения тела. Когда сообщения путаются, путается всё: настроение, сон, фокус, либидо, энергия.</p>
-  <img src="https://i.ibb.co/qLLKjMGL/image.png" alt="Гормоны" class="chap-illust" onerror="this.style.display='none'">
+  <img loading="lazy" decoding="async" src="https://i.ibb.co/qLLKjMGL/image.png" alt="Гормоны" class="chap-illust" onerror="this.style.display='none'">
 </section>
 <div class="chap-body">
 <p>Эта глава не про лечение. Это про понимание. Если знаешь, какой гормон что делает, многие странности тела становятся объяснимыми. И понятно, к кому идти и какие анализы сдавать.</p>
@@ -1533,7 +1174,7 @@ Brain-Derived Neurotrophic Factor. Белок-удобрение для мозг
   <div class="num">Глава 07</div>
   <h2>Сексуальное здоровье и либидо</h2>
   <p class="lead">Это не отдельная тема. Это видимая часть общего гормонального и психического здоровья. Когда либидо падает, обычно сломано что-то базовое.</p>
-  <img src="https://i.ibb.co/mFbzYGnX/image.png" alt="Сексуальное здоровье" class="chap-illust" onerror="this.style.display='none'">
+  <img loading="lazy" decoding="async" src="https://i.ibb.co/mFbzYGnX/image.png" alt="Сексуальное здоровье" class="chap-illust" onerror="this.style.display='none'">
 </section>
 <div class="chap-body">
 <p>Сексуальное здоровье редко обсуждают спокойно и по делу. Эта глава именно про это. Что делает либидо сильным, что его убивает, и что делать, если уже не так как раньше.</p>
@@ -1604,13 +1245,13 @@ Brain-Derived Neurotrophic Factor. Белок-удобрение для мозг
 </div>
 
 <h4>Когда идти к урологу или андрологу</h4>
-<ul style="margin-left:1.25rem;color:var(--ink-soft)">
-<li style="margin:0.4rem 0">Пропали утренние эрекции на 2+ недели</li>
-<li style="margin:0.4rem 0">Проблемы с эрекцией повторяются в комфортной обстановке</li>
-<li style="margin:0.4rem 0">Резкое снижение либидо без явной причины</li>
-<li style="margin:0.4rem 0">Боль или дискомфорт в области простаты</li>
-<li style="margin:0.4rem 0">Изменения в мочеиспускании</li>
-<li style="margin:0.4rem 0">После 40 — обязательно плановый осмотр раз в год, даже без жалоб</li>
+<ul class="list-soft">
+<li>Пропали утренние эрекции на 2+ недели</li>
+<li>Проблемы с эрекцией повторяются в комфортной обстановке</li>
+<li>Резкое снижение либидо без явной причины</li>
+<li>Боль или дискомфорт в области простаты</li>
+<li>Изменения в мочеиспускании</li>
+<li>После 40 — обязательно плановый осмотр раз в год, даже без жалоб</li>
 </ul>
 <div class="warn">
 <strong>Не игнорируй.</strong> Мужчины часто терпят и тянут. Чем раньше разобраться, тем легче решается. Тестостерон-заместительная терапия, ингибиторы ФДЭ-5, психотерапия — все эти инструменты работают, когда подобраны правильно.
@@ -1668,14 +1309,14 @@ Brain-Derived Neurotrophic Factor. Белок-удобрение для мозг
 </ol>
 
 <h4>Когда идти к гинекологу или сексологу</h4>
-<ul style="margin-left:1.25rem;color:var(--ink-soft)">
-<li style="margin:0.4rem 0">Боль или дискомфорт во время секса</li>
-<li style="margin:0.4rem 0">Резкое снижение либидо без явной причины</li>
-<li style="margin:0.4rem 0">Сухость, жжение, дискомфорт</li>
-<li style="margin:0.4rem 0">Сильный ПМС, влияющий на жизнь</li>
-<li style="margin:0.4rem 0">Сбитый или болезненный цикл</li>
-<li style="margin:0.4rem 0">Симптомы перименопаузы или менопаузы</li>
-<li style="margin:0.4rem 0">Плановый осмотр раз в год, без жалоб</li>
+<ul class="list-soft">
+<li>Боль или дискомфорт во время секса</li>
+<li>Резкое снижение либидо без явной причины</li>
+<li>Сухость, жжение, дискомфорт</li>
+<li>Сильный ПМС, влияющий на жизнь</li>
+<li>Сбитый или болезненный цикл</li>
+<li>Симптомы перименопаузы или менопаузы</li>
+<li>Плановый осмотр раз в год, без жалоб</li>
 </ul>
 
 <div class="iwidget" id="libidoCheckWidget">
@@ -1743,7 +1384,7 @@ Brain-Derived Neurotrophic Factor. Белок-удобрение для мозг
   <div class="num">Глава 08</div>
   <h2>Дофамин и цифровая гигиена</h2>
   <p class="lead">Это не лень и не слабость воли. Это выгорание от потока коротких удовольствий.</p>
-  <img src="https://i.ibb.co/1Yjgd89F/5.png" alt="Дофамин" class="chap-illust" onerror="this.style.display='none'">
+  <img loading="lazy" decoding="async" src="https://i.ibb.co/1Yjgd89F/5.png" alt="Дофамин" class="chap-illust" onerror="this.style.display='none'">
 </section>
 <div class="chap-body">
 <p>Если сосредоточиться невозможно, отвлечения постоянны, обычные дела кажутся скучными, а в телефон тянет всё время — это не лень. Это сломанная дофаминовая система. И её можно починить.</p>
@@ -1828,7 +1469,7 @@ Brain-Derived Neurotrophic Factor. Белок-удобрение для мозг
   <div class="num">Глава 09</div>
   <h2>Дыхание и медитация</h2>
   <p class="lead">Самый быстрый способ изменить состояние мозга. Бесплатно, всегда с собой, эффект за минуту.</p>
-  <img src="https://i.ibb.co/Kc119rD4/6.png" alt="Дыхание" class="chap-illust" onerror="this.style.display='none'">
+  <img loading="lazy" decoding="async" src="https://i.ibb.co/Kc119rD4/6.png" alt="Дыхание" class="chap-illust" onerror="this.style.display='none'">
 </section>
 <div class="chap-body">
 <p>Дыхание это единственная функция тела, которой управляешь и сознательно, и бессознательно. Это значит, через дыхание можно напрямую достучаться до нервной системы. За 1–3 минуты возможно успокоиться, сосредоточиться, прийти в себя или зарядиться. Без таблеток.</p>
@@ -1889,9 +1530,9 @@ Brain-Derived Neurotrophic Factor. Белок-удобрение для мозг
 <p>Выбери технику, нажми кнопку и следуй кругу. Круг расширяется на вдохе, замирает на задержке, сжимается на выдохе.</p>
 <div class="breath-timer">
   <div class="breath-tabs">
-    <button class="breath-tab active" data-breath="478" onclick="setBreathMode('478')">4-7-8</button>
-    <button class="breath-tab" data-breath="square" onclick="setBreathMode('square')">По квадрату</button>
-    <button class="breath-tab" data-breath="phys" onclick="setBreathMode('phys')">Физиологический вздох</button>
+    <button aria-pressed="true" class="breath-tab active" data-breath="478" onclick="setBreathMode('478')">4-7-8</button>
+    <button aria-pressed="false" class="breath-tab" data-breath="square" onclick="setBreathMode('square')">По квадрату</button>
+    <button aria-pressed="false" class="breath-tab" data-breath="phys" onclick="setBreathMode('phys')">Физиологический вздох</button>
   </div>
   <div class="breath-circle" id="breathCircle">Готов</div>
   <button class="ibtn ibtn-sage" onclick="startBreath()" id="breathStartBtn">Начать</button>
@@ -1906,7 +1547,7 @@ Brain-Derived Neurotrophic Factor. Белок-удобрение для мозг
 <li><strong>Выдох ртом 8 секунд.</strong> Долго, тонкой струёй, через приоткрытые губы.</li>
 <li><strong>Повтори 4 цикла.</strong> Это всего 76 секунд.</li>
 </ol>
-<p>Когда использовать: перед сном в кровати <a href="#" data-anchor="#ch1" class="ref">(см. Главу 1)</a>, при панической атаке <a href="#" data-anchor="#ch11" class="ref">(см. Главу 11)</a>, перед сложным разговором, когда спокойствие не приходит. Эффект за 1–2 цикла.</p>
+<p>Когда использовать: перед сном в кровати <a href="#" data-anchor="#ch1" class="ref">(см. Главу 1)</a>, при панической атаке <a href="#" data-anchor="#ch11" class="ref">(см. Главу 21)</a>, перед сложным разговором, когда спокойствие не приходит. Эффект за 1–2 цикла.</p>
 
 <h3>Техника 2. Дыхание по квадрату. Перед задачей</h3>
 <p>Армейская техника для сохранения ясности под давлением. Вдох, задержка, выдох, задержка по 4 секунды. Балансирует нервную систему, даёт спокойную сосредоточенность.</p>
@@ -1940,7 +1581,7 @@ Brain-Derived Neurotrophic Factor. Белок-удобрение для мозг
 Состояние глубокого расслабления тела с сохранением сознания. Аналогично йога-нидре. Восстанавливает дофамин, снимает усталость, улучшает фокус. Можно делать в обед на работе, не ложась.
 </div>
 <p>Используется как:</p>
-<ul style="margin-left:1.25rem;color:var(--ink-soft)">
+<ul class="list-soft">
 <li style="margin:0.5rem 0">Дневная перезагрузка между задачами или в обеденный перерыв.</li>
 <li style="margin:0.5rem 0">После плохой ночи для восстановления энергии <a href="#" data-anchor="#ch1" class="ref">(см. Главу 1)</a>.</li>
 <li style="margin:0.5rem 0">Перед сном, если не получается уснуть.</li>
@@ -1981,7 +1622,7 @@ Brain-Derived Neurotrophic Factor. Белок-удобрение для мозг
   <div class="num">Глава 10</div>
   <h2>Холод и тепло. Термостресс</h2>
   <p class="lead">Краткий стресс делает крепче. Длинный убивает.</p>
-  <img src="https://i.ibb.co/B5c8yj4f/7.png" alt="Холод и тепло" class="chap-illust" onerror="this.style.display='none'">
+  <img loading="lazy" decoding="async" src="https://i.ibb.co/B5c8yj4f/7.png" alt="Холод и тепло" class="chap-illust" onerror="this.style.display='none'">
 </section>
 <div class="chap-body">
 <p>Тело создано выживать в неудобных условиях. Холод, жара, голод. Всё это в малых дозах активирует механизмы защиты и восстановления. Без этого стресса тело и мозг постепенно теряют тонус.</p>
@@ -2035,10 +1676,10 @@ Brain-Derived Neurotrophic Factor. Белок-удобрение для мозг
   <div class="ititle">План холодового душа на 4 недели</div>
   <div class="isub">Нажми на нужную неделю, чтобы увидеть, что делать. Постепенный заход безопаснее и эффективнее.</div>
   <div class="cold-days">
-    <button class="cold-day-btn active" onclick="setColdWeek(1)"><div class="cdnum">1</div><div class="cdsub">Старт</div></button>
-    <button class="cold-day-btn" onclick="setColdWeek(2)"><div class="cdnum">2</div><div class="cdsub">Привыкание</div></button>
-    <button class="cold-day-btn" onclick="setColdWeek(3)"><div class="cdnum">3</div><div class="cdsub">Закрепление</div></button>
-    <button class="cold-day-btn" onclick="setColdWeek(4)"><div class="cdnum">4</div><div class="cdsub">Норма</div></button>
+    <button aria-pressed="true" class="cold-day-btn active" onclick="setColdWeek(1)"><div class="cdnum">1</div><div class="cdsub">Старт</div></button>
+    <button aria-pressed="false" class="cold-day-btn" onclick="setColdWeek(2)"><div class="cdnum">2</div><div class="cdsub">Привыкание</div></button>
+    <button aria-pressed="false" class="cold-day-btn" onclick="setColdWeek(3)"><div class="cdnum">3</div><div class="cdsub">Закрепление</div></button>
+    <button aria-pressed="false" class="cold-day-btn" onclick="setColdWeek(4)"><div class="cdnum">4</div><div class="cdsub">Норма</div></button>
   </div>
   <div class="iresult show" id="coldResult"></div>
 </div>
@@ -2054,7 +1695,7 @@ Brain-Derived Neurotrophic Factor. Белок-удобрение для мозг
 <p>Утром или в первой половине дня. Холодовое воздействие резко поднимает кортизол и норадреналин. Это правильно утром, плохо вечером перед сном <a href="#" data-anchor="#ch1" class="ref">(см. Главу 1)</a>.</p>
 <p>Если только что закончил силовую тренировку, не делай холод сразу. Подожди 4–6 часов. Холод сразу после силовой блокирует рост мышц.</p>
 <div class="highlight">
-<strong>Дышать ровно.</strong> Главное правило при холоде: спокойное равномерное дыхание. Не задерживать. Не визжать. Длинный выдох помогает справиться с шоком <a href="#" data-anchor="#ch6" class="ref">(см. Главу 6)</a>. Через 30–40 секунд тело привыкает, становится терпимо.
+<strong>Дышать ровно.</strong> Главное правило при холоде: спокойное равномерное дыхание. Не задерживать. Не визжать. Длинный выдох помогает справиться с шоком <a href="#" data-anchor="#ch6" class="ref">(см. Главу 9)</a>. Через 30–40 секунд тело привыкает, становится терпимо.
 </div>
 
 <h3>Тепло. Сауна и баня</h3>
@@ -2077,7 +1718,7 @@ Heat Shock Proteins. Активируются от тепла. Восстана�
 
 <h3>Без сауны и проруби</h3>
 <p>Если нет доступа к сауне или невозможно купаться в открытой воде, можно получить большую часть эффекта через простые вещи:</p>
-<ul style="margin-left:1.25rem;color:var(--ink-soft)">
+<ul class="list-soft">
 <li style="margin:0.5rem 0">Контрастный душ ежедневно.</li>
 <li style="margin:0.5rem 0">Горячая ванна 40°C на 20 минут раз в неделю активирует белки теплового шока почти как сауна.</li>
 <li style="margin:0.5rem 0">Прогулка зимой в лёгкой одежде вместо теплой шубы. Это тоже холодовое воздействие.</li>
@@ -2108,10 +1749,10 @@ Heat Shock Proteins. Активируются от тепла. Восстана�
   <div class="num">Глава 11</div>
   <h2>Добавки. Стартовый и продвинутый набор</h2>
   <p class="lead">Добавки это не магия. Это 10% эффекта поверх фундамента из сна, света, движения и питания.</p>
-  <img src="https://i.ibb.co/7fRjrPL/8.png" alt="Добавки" class="chap-illust" onerror="this.style.display='none'">
+  <img loading="lazy" decoding="async" src="https://i.ibb.co/7fRjrPL/8.png" alt="Добавки" class="chap-illust" onerror="this.style.display='none'">
 </section>
 <div class="chap-body">
-<p>Сначала важное предупреждение. Добавки не заменят плохой сон, отсутствие движения и пиццу на ужин. Если фундамент не построен, никакая ашваганда не спасёт. Сначала <a href="#" data-anchor="#ch1" class="ref">главы 1–5</a>, потом эта.</p>
+<p>Сначала важное предупреждение. Добавки не заменят плохой сон, отсутствие движения и пиццу на ужин. Если фундамент не построен, никакая ашваганда не спасёт. Сначала <a href="#" data-anchor="#ch1" class="ref">главы 1–11 (фундамент и биология)</a>, потом эта.</p>
 <p>Но если фундамент стоит, добавки реально дают ещё 10–15% поверх. И этот процент стоит того, чтобы разобраться.</p>
 <div class="warn">
 <strong>Перед началом любого приёма добавок проконсультируйся с врачом</strong>, особенно при наличии хронических заболеваний или приёме лекарств. Дозировки в этой главе общие, для здорового взрослого человека. Конкретная ситуация может отличаться.
@@ -2303,7 +1944,7 @@ Heat Shock Proteins. Активируются от тепла. Восстана�
 </div>
 
 <h3>Что не работает или сомнительно</h3>
-<ul style="margin-left:1.25rem;color:var(--ink-soft)">
+<ul class="list-soft">
 <li style="margin:0.5rem 0"><strong>Поливитамины.</strong> Дешёвые мульти содержат всё подряд в плохой форме и низких дозах. Лучше отдельные добавки в правильных формах.</li>
 <li style="margin:0.5rem 0"><strong>Зелёные смеси типа Athletic Greens.</strong> Дорого, маркетинг, не доказано лучше обычных овощей <a href="#" data-anchor="#ch4" class="ref">(см. Главу 4)</a>.</li>
 <li style="margin:0.5rem 0"><strong>Ноотропы по типу пирацетама и фенибута.</strong> В РФ они аптечные, в Европе и США рецептурные. Эффект сомнительный, побочки реальные. Не рекомендую без врача.</li>
@@ -2318,7 +1959,7 @@ Heat Shock Proteins. Активируются от тепла. Восстана�
 <li>Расширение: креатин, цинк, ашваганда, L-теанин, альфа-GPC</li>
 <li>Утром: жирорастворимые с едой, Омега-3, B-комплекс, родиола, цитиколин</li>
 <li>Вечером: магний, ашваганда, глицин, фосфатидилсерин</li>
-<li>Сначала фундамент (главы 1–5), потом добавки</li>
+<li>Сначала фундамент (главы 1–10), потом добавки</li>
 </ul>
 </div>
 <div class="today">
@@ -2332,7 +1973,7 @@ Heat Shock Proteins. Активируются от тепла. Восстана�
   <div class="num">Глава 12</div>
   <h2>Эмоции и эмоциональный интеллект</h2>
   <p class="lead">Эмоции это сигналы, а не помехи. Тот, кто умеет их читать и проживать, выигрывает в любой сфере.</p>
-  <img src="https://i.ibb.co/mrRQFfxH/image.png" alt="Эмоции" class="chap-illust" onerror="this.style.display='none'">
+  <img loading="lazy" decoding="async" src="https://i.ibb.co/mrRQFfxH/image.png" alt="Эмоции" class="chap-illust" onerror="this.style.display='none'">
 </section>
 <div class="chap-body">
 <p>Эмоциональный интеллект — это не «быть мягким и приятным». Это набор навыков: узнавать свою эмоцию, понимать, что она говорит, выбирать действие осознанно, а не реактивно. И понимать то же самое в других людях.</p>
@@ -2472,7 +2113,7 @@ Heat Shock Proteins. Активируются от тепла. Восстана�
   <div class="num">Глава 13</div>
   <h2>Отношения и одиночество</h2>
   <p class="lead">Качество отношений — один из самых сильных предикторов когнитивного здоровья и долголетия. Сильнее, чем диета и упражнения вместе взятые.</p>
-  <img src="https://i.ibb.co/0Rh90sfm/image.png" alt="Отношения" class="chap-illust" onerror="this.style.display='none'">
+  <img loading="lazy" decoding="async" src="https://i.ibb.co/0Rh90sfm/image.png" alt="Отношения" class="chap-illust" onerror="this.style.display='none'">
 </section>
 <div class="chap-body">
 <p>Гарвардское исследование развития взрослых длится с 1938 года. 84 года данных. Главный вывод: люди, у которых хорошие тёплые отношения, дольше живут, реже болеют, лучше стареют, меньше деменции. Не доход, не статус, не профессия — отношения.</p>
@@ -2642,7 +2283,7 @@ Heat Shock Proteins. Активируются от тепла. Восстана�
   <div class="num">Глава 14</div>
   <h2>Мышление и внимание</h2>
   <p class="lead">Когда фундамент стоит и мозг работает, нужны инструменты, чтобы направлять его в нужную сторону.</p>
-  <img src="https://i.ibb.co/jkPn0YPn/9.png" alt="Мышление" class="chap-illust" onerror="this.style.display='none'">
+  <img loading="lazy" decoding="async" src="https://i.ibb.co/jkPn0YPn/9.png" alt="Мышление" class="chap-illust" onerror="this.style.display='none'">
 </section>
 <div class="chap-body">
 <p>Эта глава про инструменты для головы. Не теория, не философия. Шесть простых методов, которые можно использовать сегодня для решения реальных задач.</p>
@@ -2953,7 +2594,7 @@ Heat Shock Proteins. Активируются от тепла. Восстана�
   <div class="num">Глава 15</div>
   <h2>Тайм-менеджмент. Глубокая работа и фокус</h2>
   <p class="lead">Дело не в количестве часов. Дело в качестве часов. Один час глубокого фокуса делает то, что не сделают шесть часов рассеянного присутствия.</p>
-  <img src="https://i.ibb.co/FqqWcgbQ/image.png" alt="Тайм-менеджмент" class="chap-illust" onerror="this.style.display='none'">
+  <img loading="lazy" decoding="async" src="https://i.ibb.co/FqqWcgbQ/image.png" alt="Тайм-менеджмент" class="chap-illust" onerror="this.style.display='none'">
 </section>
 <div class="chap-body">
 <p>Эта глава не про планировщики и приложения. Она про базовую идею: внимание это самый ценный ресурс современного человека, дороже денег. И почти все системы вокруг настроены на то, чтобы его украсть.</p>
@@ -3017,9 +2658,9 @@ Heat Shock Proteins. Активируются от тепла. Восстана�
   <div class="isub">Запусти один цикл фокусированной работы. Выбери длину и нажми «Старт». Таймер покажет обратный отсчёт.</div>
   <div class="breath-timer" style="background:var(--terracotta-soft)">
     <div class="breath-tabs">
-      <button class="breath-tab active" data-pomo="25" onclick="setPomodoroMode(25)">25 мин</button>
-      <button class="breath-tab" data-pomo="50" onclick="setPomodoroMode(50)">50 мин</button>
-      <button class="breath-tab" data-pomo="90" onclick="setPomodoroMode(90)">90 мин</button>
+      <button aria-pressed="true" class="breath-tab active" data-pomo="25" onclick="setPomodoroMode(25)">25 мин</button>
+      <button aria-pressed="false" class="breath-tab" data-pomo="50" onclick="setPomodoroMode(50)">50 мин</button>
+      <button aria-pressed="false" class="breath-tab" data-pomo="90" onclick="setPomodoroMode(90)">90 мин</button>
     </div>
     <div class="breath-circle" id="pomodoroCircle" style="font-size:32px">25:00</div>
     <button class="ibtn" onclick="togglePomodoro()" id="pomodoroBtn">Старт</button>
@@ -3038,12 +2679,12 @@ Heat Shock Proteins. Активируются от тепла. Восстана�
 </ol>
 
 <h3>Что забирает время незаметно</h3>
-<ul style="margin-left:1.25rem;color:var(--ink-soft)">
-<li style="margin:0.4rem 0"><strong>Уведомления.</strong> Каждое разрушает фокус. Выключай всё, кроме звонков от важных людей.</li>
-<li style="margin:0.4rem 0"><strong>«Только проверю почту».</strong> Чаще всего это 30–60 минут. Лучше выделить 2–3 окна в день и не открывать почту между ними.</li>
-<li style="margin:0.4rem 0"><strong>Чужие приоритеты.</strong> Чужой «срочный» вопрос почти всегда не срочный. Учись говорить «у меня сейчас блок, отвечу через 2 часа».</li>
-<li style="margin:0.4rem 0"><strong>Встречи без повестки.</strong> 60 минут можно сжать до 25, если есть чёткая цель. Без неё встреча расползается.</li>
-<li style="margin:0.4rem 0"><strong>«Залип в YouTube/соцсетях».</strong> Часто это сигнал усталости. Не бороться силой воли, а отдохнуть нормально <a href="#" data-anchor="#ch6" class="ref">(см. дыхательные техники в Главе 9)</a>.</li>
+<ul class="list-soft">
+<li><strong>Уведомления.</strong> Каждое разрушает фокус. Выключай всё, кроме звонков от важных людей.</li>
+<li><strong>«Только проверю почту».</strong> Чаще всего это 30–60 минут. Лучше выделить 2–3 окна в день и не открывать почту между ними.</li>
+<li><strong>Чужие приоритеты.</strong> Чужой «срочный» вопрос почти всегда не срочный. Учись говорить «у меня сейчас блок, отвечу через 2 часа».</li>
+<li><strong>Встречи без повестки.</strong> 60 минут можно сжать до 25, если есть чёткая цель. Без неё встреча расползается.</li>
+<li><strong>«Залип в YouTube/соцсетях».</strong> Часто это сигнал усталости. Не бороться силой воли, а отдохнуть нормально <a href="#" data-anchor="#ch6" class="ref">(см. дыхательные техники в Главе 9)</a>.</li>
 </ul>
 
 <div class="iwidget" id="timeAuditWidget">
@@ -3144,7 +2785,7 @@ Heat Shock Proteins. Активируются от тепла. Восстана�
   <div class="num">Глава 16</div>
   <h2>Привычки. Как мозг закрепляет новое</h2>
   <p class="lead">Сила воли — конечный ресурс. Привычка — бесконечный. Зрелые системы строятся не на дисциплине, а на автоматизации полезных действий.</p>
-  <img src="https://i.ibb.co/WWML4VCz/image.png" alt="Привычки" class="chap-illust" onerror="this.style.display='none'">
+  <img loading="lazy" decoding="async" src="https://i.ibb.co/WWML4VCz/image.png" alt="Привычки" class="chap-illust" onerror="this.style.display='none'">
 </section>
 <div class="chap-body">
 <p>Эта глава должна быть сердцем книги. Все рекомендации до этого работают только тогда, когда они становятся привычками. Иначе они забываются через две недели.</p>
@@ -3189,11 +2830,11 @@ Heat Shock Proteins. Активируются от тепла. Восстана�
 
 <h3>Правило двух минут</h3>
 <p>Когда хочешь ввести новую привычку, в первые 2 недели делай её в варианте «не больше 2 минут».</p>
-<ul style="margin-left:1.25rem;color:var(--ink-soft)">
-<li style="margin:0.4rem 0">Хочешь читать каждый день — читай одну страницу.</li>
-<li style="margin:0.4rem 0">Хочешь медитировать — медитируй 1 минуту.</li>
-<li style="margin:0.4rem 0">Хочешь тренироваться — надевай форму и делай 5 приседаний.</li>
-<li style="margin:0.4rem 0">Хочешь писать — пиши одно предложение.</li>
+<ul class="list-soft">
+<li>Хочешь читать каждый день — читай одну страницу.</li>
+<li>Хочешь медитировать — медитируй 1 минуту.</li>
+<li>Хочешь тренироваться — надевай форму и делай 5 приседаний.</li>
+<li>Хочешь писать — пиши одно предложение.</li>
 </ul>
 <p>Это кажется смешным, но именно поэтому работает. Сопротивление настолько мало, что мозг не успевает изобрести причину уклониться. А когда уже начал, обычно продолжается дальше, чем 2 минуты. После 2 недель закрепления — можно увеличивать.</p>
 
@@ -3248,7 +2889,7 @@ Heat Shock Proteins. Активируются от тепла. Восстана�
 </div>
 
 <h3>Что делать после срыва</h3>
-<p>Срыв — не катастрофа. Главное правило, которое отделяет тех, кто доводит дело до конца, от тех, кто бросает: **никогда не пропускать два раза подряд**.</p>
+<p>Срыв — не катастрофа. Главное правило, которое отделяет тех, кто доводит дело до конца, от тех, кто бросает: <strong>никогда не пропускать два раза подряд</strong>.</p>
 <ol class="steps">
 <li><strong>Не штрафуй себя.</strong> Вина и стыд только увеличивают вероятность следующего срыва.</li>
 <li><strong>Не «начинай сначала».</strong> Просто продолжай со следующего дня, как будто срыва не было.</li>
@@ -3279,12 +2920,12 @@ Heat Shock Proteins. Активируются от тепла. Восстана�
 
 <h3>Когда привычка становится автоматической</h3>
 <p>Признаки, что новая привычка закрепилась:</p>
-<ul style="margin-left:1.25rem;color:var(--ink-soft)">
-<li style="margin:0.4rem 0">Ты делаешь её, не задумываясь, по утрам/вечерам</li>
-<li style="margin:0.4rem 0">Если пропустил, чувствуешь дискомфорт</li>
-<li style="margin:0.4rem 0">Не нужна сила воли, чтобы начать</li>
-<li style="margin:0.4rem 0">Делаешь даже когда устал или плохое настроение</li>
-<li style="margin:0.4rem 0">Перестроилась среда вокруг этой привычки</li>
+<ul class="list-soft">
+<li>Ты делаешь её, не задумываясь, по утрам/вечерам</li>
+<li>Если пропустил, чувствуешь дискомфорт</li>
+<li>Не нужна сила воли, чтобы начать</li>
+<li>Делаешь даже когда устал или плохое настроение</li>
+<li>Перестроилась среда вокруг этой привычки</li>
 </ul>
 <p>Когда это произошло — привычка перешла в автоматизм. Можно добавлять следующую. Не раньше.</p>
 
@@ -3311,7 +2952,7 @@ Heat Shock Proteins. Активируются от тепла. Восстана�
   <div class="num">Глава 17</div>
   <h2>30 дней. План и самодиагностика</h2>
   <p class="lead">Знание не меняет жизнь. Жизнь меняет действие. План это первый шаг.</p>
-  <img src="https://i.ibb.co/zHQQ55vH/10.png" alt="План 30 дней" class="chap-illust" onerror="this.style.display='none'">
+  <img loading="lazy" decoding="async" src="https://i.ibb.co/zHQQ55vH/10.png" alt="План 30 дней" class="chap-illust" onerror="this.style.display='none'">
 </section>
 <div class="chap-body">
 <p>Эта глава самая важная в книге. Здесь конкретный план на 30 дней по неделям. Не пытайся внедрить всё сразу. Это самая частая причина провала любых систем.</p>
@@ -3404,7 +3045,7 @@ Heat Shock Proteins. Активируются от тепла. Восстана�
 <p>Привычки прошлой недели сохраняем. Добавляем тело.</p>
 <div class="proto">
 <div class="h">Неделя 2. Что добавляется</div>
-<div class="row"><div class="t">Утро</div><div>5 минут випассаны после душа <a href="#" data-anchor="#ch6" class="ref">(см. Главу 6)</a>.</div></div>
+<div class="row"><div class="t">Утро</div><div>5 минут випассаны после душа <a href="#" data-anchor="#ch6" class="ref">(см. Главу 9)</a>.</div></div>
 <div class="row"><div class="t">День</div><div>Прогулка 15 минут после обеда. Микропаузы 5 минут каждый час работы.</div></div>
 <div class="row"><div class="t">3 раза/нед</div><div>Кардио 25–30 минут (быстрая ходьба, бег, велосипед, бассейн) <a href="#" data-anchor="#ch3" class="ref">(см. Главу 3)</a>.</div></div>
 <div class="row"><div class="t">Вечер</div><div>Дыхание 4-7-8 в кровати. 4 цикла.</div></div>
@@ -3415,8 +3056,8 @@ Heat Shock Proteins. Активируются от тепла. Восстана�
 <p>Привычки первых двух недель сохраняем. Добавляем химию тела.</p>
 <div class="proto">
 <div class="h">Неделя 3. Что добавляется</div>
-<div class="row"><div class="t">Утро</div><div>С завтраком: Омега-3, Витамин D3+K2, B-комплекс <a href="#" data-anchor="#ch8" class="ref">(см. Главу 8)</a>.</div></div>
-<div class="row"><div class="t">День</div><div>Тарелка ½ овощи + ¼ белок + ¼ сложные углеводы <a href="#" data-anchor="#ch4" class="ref">(см. Главу 4)</a>. 30 секунд холода в конце душа <a href="#" data-anchor="#ch7" class="ref">(см. Главу 7)</a>.</div></div>
+<div class="row"><div class="t">Утро</div><div>С завтраком: Омега-3, Витамин D3+K2, B-комплекс <a href="#" data-anchor="#ch8" class="ref">(см. Главу 11)</a>.</div></div>
+<div class="row"><div class="t">День</div><div>Тарелка ½ овощи + ¼ белок + ¼ сложные углеводы <a href="#" data-anchor="#ch4" class="ref">(см. Главу 4)</a>. 30 секунд холода в конце душа <a href="#" data-anchor="#ch7" class="ref">(см. Главу 10)</a>.</div></div>
 <div class="row"><div class="t">2 раза/нед</div><div>Силовые тренировки 30–45 минут.</div></div>
 <div class="row"><div class="t">Вечер</div><div>Магний глицинат за 30–60 минут до сна. Ужин за 2–3 часа до сна.</div></div>
 </div>
@@ -3426,8 +3067,8 @@ Heat Shock Proteins. Активируются от тепла. Восстана�
 <p>Финальная неделя. Все базовые привычки уже работают. Теперь работа с вниманием и мышлением.</p>
 <div class="proto">
 <div class="h">Неделя 4. Что добавляется</div>
-<div class="row"><div class="t">Утро</div><div>Первый час без телефона. Только вода, свет, медитация, завтрак <a href="#" data-anchor="#ch5" class="ref">(см. Главу 5)</a>.</div></div>
-<div class="row"><div class="t">Утро+</div><div>5 минут матрицы Эйзенхауэра: задачи на день по приоритетам <a href="#" data-anchor="#ch9" class="ref">(см. Главу 9)</a>.</div></div>
+<div class="row"><div class="t">Утро</div><div>Первый час без телефона. Только вода, свет, медитация, завтрак <a href="#" data-anchor="#ch5" class="ref">(см. Главу 8)</a>.</div></div>
+<div class="row"><div class="t">Утро+</div><div>5 минут матрицы Эйзенхауэра: задачи на день по приоритетам <a href="#" data-anchor="#ch9" class="ref">(см. Главу 14)</a>.</div></div>
 <div class="row"><div class="t">День</div><div>Глубокая работа блоками по 50 минут. Уведомления выключены. NSDR 10–20 минут в обед.</div></div>
 <div class="row"><div class="t">Вечер</div><div>15 минут чтения с записью 2–3 идей в Zettelkasten.</div></div>
 <div class="row"><div class="t">1 раз/нед</div><div>День без соцсетей.</div></div>
@@ -3463,7 +3104,7 @@ Heat Shock Proteins. Активируются от тепла. Восстана�
   <div class="num">Глава 18</div>
   <h2>Технологии для здоровья</h2>
   <p class="lead">Часы, кольца, трекеры. Что из этого реально помогает, а что — модная игрушка за дорого.</p>
-  <img src="https://i.ibb.co/0jBJFTPz/image.png" alt="Технологии для здоровья" class="chap-illust" onerror="this.style.display='none'">
+  <img loading="lazy" decoding="async" src="https://i.ibb.co/0jBJFTPz/image.png" alt="Технологии для здоровья" class="chap-illust" onerror="this.style.display='none'">
 </section>
 <div class="chap-body">
 <p>Эта глава нужна, когда у тебя уже есть фундамент. Сначала режим, потом измерения. Никакой Apple Watch не починит плохой сон, если ты не ложишься в 23:00.</p>
@@ -3628,7 +3269,7 @@ Heat Shock Proteins. Активируются от тепла. Восстана�
   <div class="num">Глава 19</div>
   <h2>Мозг после 50</h2>
   <p class="lead">Старение мозга не неизбежная катастрофа. Многое зависит от того, что ты делаешь сейчас. Глава для тех, кому 40+, и для тех, у кого есть родители.</p>
-  <img src="https://i.ibb.co/yGfRw0d/50.png" alt="Мозг после 50" class="chap-illust" onerror="this.style.display='none'">
+  <img loading="lazy" decoding="async" src="https://i.ibb.co/yGfRw0d/50.png" alt="Мозг после 50" class="chap-illust" onerror="this.style.display='none'">
 </section>
 <div class="chap-body">
 <p>Раньше думали, что мозг с возрастом неизбежно ухудшается. Теперь известно: примерно 40% когнитивных изменений после 60 связаны с образом жизни и модифицируемы. Это огромное число. Это значит, что у тебя есть очень много рычагов.</p>
@@ -3753,7 +3394,7 @@ Heat Shock Proteins. Активируются от тепла. Восстана�
   <div class="num">Глава 20</div>
   <h2>Что НЕ работает. Биохакинг от противного</h2>
   <p class="lead">Маркетинг здоровья — отдельная индустрия. Эта глава защитит от трат на пустоту, а заодно поможет отделить зерно от шелухи в моде на «здоровый образ жизни».</p>
-  <img src="https://i.ibb.co/XrWvh9yq/image.png" alt="Что не работает" class="chap-illust" onerror="this.style.display='none'">
+  <img loading="lazy" decoding="async" src="https://i.ibb.co/XrWvh9yq/image.png" alt="Что не работает" class="chap-illust" onerror="this.style.display='none'">
 </section>
 <div class="chap-body">
 <p>В этой главе ноль продажи. Только разбор популярных трендов с честной оценкой: что имеет смысл, что бесполезно, что вредно. По каждой теме — короткий вердикт и пояснение.</p>
@@ -3911,7 +3552,7 @@ Heat Shock Proteins. Активируются от тепла. Восстана�
   <div class="num">Глава 21</div>
   <h2>SOS-протоколы</h2>
   <p class="lead">Когда всё плохо, не до планов. Эти протоколы для срочных ситуаций. Возвращайся сюда быстро.</p>
-  <img src="https://i.ibb.co/04qXWZp/11.png" alt="SOS-протоколы" class="chap-illust" onerror="this.style.display='none'">
+  <img loading="lazy" decoding="async" src="https://i.ibb.co/04qXWZp/11.png" alt="SOS-протоколы" class="chap-illust" onerror="this.style.display='none'">
 </section>
 <div class="chap-body">
 <p>Жизнь не идёт по графику. Случаются панические атаки, бессонные ночи, срывы, тревога перед важным днём. Эта глава шпаргалка. Когда плохо, открываешь и делаешь по пунктам.</p>
@@ -3954,139 +3595,139 @@ Heat Shock Proteins. Активируются от тепла. Восстана�
   <button class="sos-btn" data-sos-target="sosEmpty"><div class="sost">Внутри пусто</div><div class="sosd">Апатия и тоска</div></button>
 </div>
 
-<div id="sosPanic" style="background:var(--cream);border-left:3px solid var(--terracotta);padding:1.25rem 1.5rem;margin:1.25rem 0">
-<h4 style="font-family:'PT Serif',serif;font-size:18px;font-weight:700;margin:0 0 0.5rem;color:var(--terracotta-deep)">Паническая атака. 5 минут до облегчения</h4>
-<ol style="margin:0.5rem 0 0 1.25rem;padding:0">
-<li style="margin:0.25rem 0;font-size:15px;color:var(--ink-soft)"><strong>Дыхание 4-7-8.</strong> 4 цикла подряд. Это первое и главное <a href="#" data-anchor="#ch6" class="ref">(см. Главу 6)</a>.</li>
-<li style="margin:0.25rem 0;font-size:15px;color:var(--ink-soft)"><strong>Холод на лицо.</strong> Холодная вода или лёд на щёки и шею 20–30 секунд. Запускает рефлекс ныряния, замедляет сердце.</li>
-<li style="margin:0.25rem 0;font-size:15px;color:var(--ink-soft)"><strong>Техника 5-4-3-2-1.</strong> Вслух или про себя назови: 5 вещей, что видишь. 4 что слышишь. 3 что чувствуешь телом. 2 запаха. 1 вкус. Возвращает в настоящее.</li>
-<li style="margin:0.25rem 0;font-size:15px;color:var(--ink-soft)"><strong>Медленная ходьба 5 минут.</strong> Не сидеть на месте. Просто ходи и считай шаги.</li>
-<li style="margin:0.25rem 0;font-size:15px;color:var(--ink-soft)"><strong>Запиши, что было триггером.</strong> Через час, когда отпустит. Это поможет в будущем.</li>
+<div class="sos-block" id="sosPanic">
+<h4>Паническая атака. 5 минут до облегчения</h4>
+<ol>
+<li><strong>Дыхание 4-7-8.</strong> 4 цикла подряд. Это первое и главное <a href="#" data-anchor="#ch6" class="ref">(см. Главу 9)</a>.</li>
+<li><strong>Холод на лицо.</strong> Холодная вода или лёд на щёки и шею 20–30 секунд. Запускает рефлекс ныряния, замедляет сердце.</li>
+<li><strong>Техника 5-4-3-2-1.</strong> Вслух или про себя назови: 5 вещей, что видишь. 4 что слышишь. 3 что чувствуешь телом. 2 запаха. 1 вкус. Возвращает в настоящее.</li>
+<li><strong>Медленная ходьба 5 минут.</strong> Не сидеть на месте. Просто ходи и считай шаги.</li>
+<li><strong>Запиши, что было триггером.</strong> Через час, когда отпустит. Это поможет в будущем.</li>
 </ol>
 </div>
 
-<div id="sosBreak" style="background:var(--cream);border-left:3px solid var(--terracotta);padding:1.25rem 1.5rem;margin:1.25rem 0">
-<h4 style="font-family:'PT Serif',serif;font-size:18px;font-weight:700;margin:0 0 0.5rem;color:var(--terracotta-deep)">Срыв и перегруз. Когда хочется послать всё</h4>
-<ol style="margin:0.5rem 0 0 1.25rem;padding:0">
-<li style="margin:0.25rem 0;font-size:15px;color:var(--ink-soft)"><strong>Признай состояние вслух.</strong> «Сейчас очень плохо.» Не борись, признай.</li>
-<li style="margin:0.25rem 0;font-size:15px;color:var(--ink-soft)"><strong>Вода и лёгкая еда.</strong> Часто срыв это банальный голод и обезвоживание. Проверь сначала тело <a href="#" data-anchor="#ch4" class="ref">(см. Главу 4)</a>.</li>
-<li style="margin:0.25rem 0;font-size:15px;color:var(--ink-soft)"><strong>Отмени, что можно.</strong> Без геройства. Перенеси встречу, попроси о помощи, скажи правду.</li>
-<li style="margin:0.25rem 0;font-size:15px;color:var(--ink-soft)"><strong>Прогулка 30 минут на улице.</strong> Не на ленте, не на велике. Просто прогулка с мыслями.</li>
-<li style="margin:0.25rem 0;font-size:15px;color:var(--ink-soft)"><strong>Лечь спать раньше обычного.</strong> Завтра утром составишь план. Сегодня просто пережить.</li>
-<li style="margin:0.25rem 0;font-size:15px;color:var(--ink-soft)"><strong>На следующий день не наказывать себя.</strong> Без кофе натощак, лёгкая еда, прогулка, обычный план. Возвращение, а не штраф.</li>
+<div class="sos-block" id="sosBreak">
+<h4>Срыв и перегруз. Когда хочется послать всё</h4>
+<ol>
+<li><strong>Признай состояние вслух.</strong> «Сейчас очень плохо.» Не борись, признай.</li>
+<li><strong>Вода и лёгкая еда.</strong> Часто срыв это банальный голод и обезвоживание. Проверь сначала тело <a href="#" data-anchor="#ch4" class="ref">(см. Главу 4)</a>.</li>
+<li><strong>Отмени, что можно.</strong> Без геройства. Перенеси встречу, попроси о помощи, скажи правду.</li>
+<li><strong>Прогулка 30 минут на улице.</strong> Не на ленте, не на велике. Просто прогулка с мыслями.</li>
+<li><strong>Лечь спать раньше обычного.</strong> Завтра утром составишь план. Сегодня просто пережить.</li>
+<li><strong>На следующий день не наказывать себя.</strong> Без кофе натощак, лёгкая еда, прогулка, обычный план. Возвращение, а не штраф.</li>
 </ol>
 </div>
 
-<div id="sosNoSleep" style="background:var(--cream);border-left:3px solid var(--terracotta);padding:1.25rem 1.5rem;margin:1.25rem 0">
-<h4 style="font-family:'PT Serif',serif;font-size:18px;font-weight:700;margin:0 0 0.5rem;color:var(--terracotta-deep)">Утро после плохой ночи</h4>
-<ol style="margin:0.5rem 0 0 1.25rem;padding:0">
-<li style="margin:0.25rem 0;font-size:15px;color:var(--ink-soft)"><strong>Стакан воды 500 мл сразу.</strong></li>
-<li style="margin:0.25rem 0;font-size:15px;color:var(--ink-soft)"><strong>10–15 минут на улице.</strong> Главное правило этого утра <a href="#" data-anchor="#ch2" class="ref">(см. Главу 2)</a>.</li>
-<li style="margin:0.25rem 0;font-size:15px;color:var(--ink-soft)"><strong>Кофе только после еды.</strong> Не натощак.</li>
-<li style="margin:0.25rem 0;font-size:15px;color:var(--ink-soft)"><strong>Сложные задачи отложить.</strong> Сегодня день простых дел.</li>
-<li style="margin:0.25rem 0;font-size:15px;color:var(--ink-soft)"><strong>NSDR 20 минут в обед.</strong> Заменит часть пропущенного сна <a href="#" data-anchor="#ch6" class="ref">(см. Главу 6)</a>.</li>
-<li style="margin:0.25rem 0;font-size:15px;color:var(--ink-soft)"><strong>Не спать днём дольше 20 минут.</strong> Иначе ночью снова не уснёшь.</li>
-<li style="margin:0.25rem 0;font-size:15px;color:var(--ink-soft)"><strong>Лечь в обычное время.</strong> Не в 19:00, а в свои 22–23. Иначе на завтра сместится график.</li>
+<div class="sos-block" id="sosNoSleep">
+<h4>Утро после плохой ночи</h4>
+<ol>
+<li><strong>Стакан воды 500 мл сразу.</strong></li>
+<li><strong>10–15 минут на улице.</strong> Главное правило этого утра <a href="#" data-anchor="#ch2" class="ref">(см. Главу 2)</a>.</li>
+<li><strong>Кофе только после еды.</strong> Не натощак.</li>
+<li><strong>Сложные задачи отложить.</strong> Сегодня день простых дел.</li>
+<li><strong>NSDR 20 минут в обед.</strong> Заменит часть пропущенного сна <a href="#" data-anchor="#ch6" class="ref">(см. Главу 9)</a>.</li>
+<li><strong>Не спать днём дольше 20 минут.</strong> Иначе ночью снова не уснёшь.</li>
+<li><strong>Лечь в обычное время.</strong> Не в 19:00, а в свои 22–23. Иначе на завтра сместится график.</li>
 </ol>
 </div>
 
-<div id="sosAnxiety" style="background:var(--cream);border-left:3px solid var(--terracotta);padding:1.25rem 1.5rem;margin:1.25rem 0">
-<h4 style="font-family:'PT Serif',serif;font-size:18px;font-weight:700;margin:0 0 0.5rem;color:var(--terracotta-deep)">Тревога перед важным событием</h4>
-<ol style="margin:0.5rem 0 0 1.25rem;padding:0">
-<li style="margin:0.25rem 0;font-size:15px;color:var(--ink-soft)"><strong>Дыхание по квадрату.</strong> 5 циклов. Балансирует нервную систему <a href="#" data-anchor="#ch6" class="ref">(см. Главу 6)</a>.</li>
-<li style="margin:0.25rem 0;font-size:15px;color:var(--ink-soft)"><strong>Сожми и расслабь.</strong> Сожми все мышцы тела на 5 секунд, потом резко расслабь. 3 раза. Сбрасывает физическое напряжение.</li>
-<li style="margin:0.25rem 0;font-size:15px;color:var(--ink-soft)"><strong>Холодная вода на запястья.</strong> 30 секунд. Снижает пульс.</li>
-<li style="margin:0.25rem 0;font-size:15px;color:var(--ink-soft)"><strong>Сфокусируйся на теле.</strong> Стопы на полу. Спина прямая. Ты здесь.</li>
-<li style="margin:0.25rem 0;font-size:15px;color:var(--ink-soft)"><strong>Худший сценарий.</strong> Спроси «Что самое страшное может случиться?» Обычно это не катастрофа. Тревога становится меньше.</li>
+<div class="sos-block" id="sosAnxiety">
+<h4>Тревога перед важным событием</h4>
+<ol>
+<li><strong>Дыхание по квадрату.</strong> 5 циклов. Балансирует нервную систему <a href="#" data-anchor="#ch6" class="ref">(см. Главу 9)</a>.</li>
+<li><strong>Сожми и расслабь.</strong> Сожми все мышцы тела на 5 секунд, потом резко расслабь. 3 раза. Сбрасывает физическое напряжение.</li>
+<li><strong>Холодная вода на запястья.</strong> 30 секунд. Снижает пульс.</li>
+<li><strong>Сфокусируйся на теле.</strong> Стопы на полу. Спина прямая. Ты здесь.</li>
+<li><strong>Худший сценарий.</strong> Спроси «Что самое страшное может случиться?» Обычно это не катастрофа. Тревога становится меньше.</li>
 </ol>
 </div>
 
-<div id="sosStuck" style="background:var(--cream);border-left:3px solid var(--terracotta);padding:1.25rem 1.5rem;margin:1.25rem 0">
-<h4 style="font-family:'PT Serif',serif;font-size:18px;font-weight:700;margin:0 0 0.5rem;color:var(--terracotta-deep)">Не могу начать важное дело</h4>
-<ol style="margin:0.5rem 0 0 1.25rem;padding:0">
-<li style="margin:0.25rem 0;font-size:15px;color:var(--ink-soft)"><strong>Правило 2 минут.</strong> Скажи себе «поработаю над этим только 2 минуты». Через 2 минуты в 90% случаев ты уже втянулся.</li>
-<li style="margin:0.25rem 0;font-size:15px;color:var(--ink-soft)"><strong>Уменьши задачу.</strong> Не «написать отчёт», а «открыть документ и написать заголовок».</li>
-<li style="margin:0.25rem 0;font-size:15px;color:var(--ink-soft)"><strong>Убери все отвлекалки.</strong> Телефон в другую комнату. Браузер закрыт. Один таб с задачей <a href="#" data-anchor="#ch5" class="ref">(см. Главу 5)</a>.</li>
-<li style="margin:0.25rem 0;font-size:15px;color:var(--ink-soft)"><strong>Таймер на 25 минут.</strong> Помодоро. Только эта задача 25 минут, потом перерыв 5 минут.</li>
-<li style="margin:0.25rem 0;font-size:15px;color:var(--ink-soft)"><strong>Не получается всё равно?</strong> Возможно, просто усталость. Сделай 10-минутную прогулку и попробуй снова.</li>
+<div class="sos-block" id="sosStuck">
+<h4>Не могу начать важное дело</h4>
+<ol>
+<li><strong>Правило 2 минут.</strong> Скажи себе «поработаю над этим только 2 минуты». Через 2 минуты в 90% случаев ты уже втянулся.</li>
+<li><strong>Уменьши задачу.</strong> Не «написать отчёт», а «открыть документ и написать заголовок».</li>
+<li><strong>Убери все отвлекалки.</strong> Телефон в другую комнату. Браузер закрыт. Один таб с задачей <a href="#" data-anchor="#ch5" class="ref">(см. Главу 8)</a>.</li>
+<li><strong>Таймер на 25 минут.</strong> Помодоро. Только эта задача 25 минут, потом перерыв 5 минут.</li>
+<li><strong>Не получается всё равно?</strong> Возможно, просто усталость. Сделай 10-минутную прогулку и попробуй снова.</li>
 </ol>
 </div>
 
-<div id="sosCraving" style="background:var(--cream);border-left:3px solid var(--terracotta);padding:1.25rem 1.5rem;margin:1.25rem 0">
-<h4 style="font-family:'PT Serif',serif;font-size:18px;font-weight:700;margin:0 0 0.5rem;color:var(--terracotta-deep)">Тянет на сладкое или фастфуд</h4>
-<ol style="margin:0.5rem 0 0 1.25rem;padding:0">
-<li style="margin:0.25rem 0;font-size:15px;color:var(--ink-soft)"><strong>Стакан воды и подожди 10 минут.</strong> В половине случаев это банальное обезвоживание, маскирующееся под голод.</li>
-<li style="margin:0.25rem 0;font-size:15px;color:var(--ink-soft)"><strong>Спроси себя честно.</strong> Голод или эмоция? Если эмоция, какая именно. Назови вслух.</li>
-<li style="margin:0.25rem 0;font-size:15px;color:var(--ink-soft)"><strong>Замена «то же, но лучше».</strong> Хочется шоколад — съешь 20 грамм тёмного 70%+ <a href="#" data-anchor="#ch4" class="ref">(см. Главу 4)</a>. Хочется фастфуд — закажи нормальную еду с белком.</li>
-<li style="margin:0.25rem 0;font-size:15px;color:var(--ink-soft)"><strong>10 отжиманий или приседаний.</strong> Тяга проходит за 3–5 минут.</li>
-<li style="margin:0.25rem 0;font-size:15px;color:var(--ink-soft)"><strong>Если сорвался — не катастрофа.</strong> Завтра обычный план. Не штраф себе.</li>
+<div class="sos-block" id="sosCraving">
+<h4>Тянет на сладкое или фастфуд</h4>
+<ol>
+<li><strong>Стакан воды и подожди 10 минут.</strong> В половине случаев это банальное обезвоживание, маскирующееся под голод.</li>
+<li><strong>Спроси себя честно.</strong> Голод или эмоция? Если эмоция, какая именно. Назови вслух.</li>
+<li><strong>Замена «то же, но лучше».</strong> Хочется шоколад — съешь 20 грамм тёмного 70%+ <a href="#" data-anchor="#ch4" class="ref">(см. Главу 4)</a>. Хочется фастфуд — закажи нормальную еду с белком.</li>
+<li><strong>10 отжиманий или приседаний.</strong> Тяга проходит за 3–5 минут.</li>
+<li><strong>Если сорвался — не катастрофа.</strong> Завтра обычный план. Не штраф себе.</li>
 </ol>
 </div>
 
-<div id="sosBurnout" style="background:var(--cream);border-left:3px solid var(--terracotta);padding:1.25rem 1.5rem;margin:1.25rem 0">
-<h4 style="font-family:'PT Serif',serif;font-size:18px;font-weight:700;margin:0 0 0.5rem;color:var(--terracotta-deep)">Эмоциональное выгорание сейчас</h4>
-<ol style="margin:0.5rem 0 0 1.25rem;padding:0">
-<li style="margin:0.25rem 0;font-size:15px;color:var(--ink-soft)"><strong>Остановись.</strong> Закрой компьютер, отложи телефон. Прямо сейчас. Никто не умрёт за 30 минут.</li>
-<li style="margin:0.25rem 0;font-size:15px;color:var(--ink-soft)"><strong>Прогулка 30 минут без музыки.</strong> Только звуки мира и свои мысли. Никаких подкастов.</li>
-<li style="margin:0.25rem 0;font-size:15px;color:var(--ink-soft)"><strong>Запиши, что истощает.</strong> Три самые тяжёлые задачи или ситуации этой недели. Не для плана, для выгрузки из головы.</li>
-<li style="margin:0.25rem 0;font-size:15px;color:var(--ink-soft)"><strong>Одно «нет» сегодня.</strong> Отмени одну необязательную встречу, задачу, обещание. Без объяснений.</li>
-<li style="margin:0.25rem 0;font-size:15px;color:var(--ink-soft)"><strong>Ранний сон.</strong> Лечь на час раньше. Только сон лечит выгорание <a href="#" data-anchor="#ch1" class="ref">(см. Главу 1)</a>.</li>
-<li style="margin:0.25rem 0;font-size:15px;color:var(--ink-soft)"><strong>Через 2–3 дня пересмотри нагрузку.</strong> Выгорание — это сигнал, что что-то в режиме не так. Не игнорируй.</li>
+<div class="sos-block" id="sosBurnout">
+<h4>Эмоциональное выгорание сейчас</h4>
+<ol>
+<li><strong>Остановись.</strong> Закрой компьютер, отложи телефон. Прямо сейчас. Никто не умрёт за 30 минут.</li>
+<li><strong>Прогулка 30 минут без музыки.</strong> Только звуки мира и свои мысли. Никаких подкастов.</li>
+<li><strong>Запиши, что истощает.</strong> Три самые тяжёлые задачи или ситуации этой недели. Не для плана, для выгрузки из головы.</li>
+<li><strong>Одно «нет» сегодня.</strong> Отмени одну необязательную встречу, задачу, обещание. Без объяснений.</li>
+<li><strong>Ранний сон.</strong> Лечь на час раньше. Только сон лечит выгорание <a href="#" data-anchor="#ch1" class="ref">(см. Главу 1)</a>.</li>
+<li><strong>Через 2–3 дня пересмотри нагрузку.</strong> Выгорание — это сигнал, что что-то в режиме не так. Не игнорируй.</li>
 </ol>
 </div>
 
-<div id="sosRacing" style="background:var(--cream);border-left:3px solid var(--terracotta);padding:1.25rem 1.5rem;margin:1.25rem 0">
-<h4 style="font-family:'PT Serif',serif;font-size:18px;font-weight:700;margin:0 0 0.5rem;color:var(--terracotta-deep)">Не могу заснуть из-за мыслей</h4>
-<ol style="margin:0.5rem 0 0 1.25rem;padding:0">
-<li style="margin:0.25rem 0;font-size:15px;color:var(--ink-soft)"><strong>Встань с кровати.</strong> Если 20 минут не спишь, кровать перестаёт ассоциироваться со сном. Выйди из спальни.</li>
-<li style="margin:0.25rem 0;font-size:15px;color:var(--ink-soft)"><strong>Запиши мысли на бумагу.</strong> Всё, что крутится в голове. План на завтра, тревоги, идеи. Голова освободится.</li>
-<li style="margin:0.25rem 0;font-size:15px;color:var(--ink-soft)"><strong>Дыхание 4-7-8.</strong> 6–8 циклов <a href="#" data-anchor="#ch6" class="ref">(см. Главу 6)</a>.</li>
-<li style="margin:0.25rem 0;font-size:15px;color:var(--ink-soft)"><strong>Бумажная книга при тусклом свете.</strong> 15–20 минут. Не телефон, не сериал.</li>
-<li style="margin:0.25rem 0;font-size:15px;color:var(--ink-soft)"><strong>Когда захочется спать — обратно в кровать.</strong> Главное правило: в кровати только спишь, а не лежишь и страдаешь.</li>
+<div class="sos-block" id="sosRacing">
+<h4>Не могу заснуть из-за мыслей</h4>
+<ol>
+<li><strong>Встань с кровати.</strong> Если 20 минут не спишь, кровать перестаёт ассоциироваться со сном. Выйди из спальни.</li>
+<li><strong>Запиши мысли на бумагу.</strong> Всё, что крутится в голове. План на завтра, тревоги, идеи. Голова освободится.</li>
+<li><strong>Дыхание 4-7-8.</strong> 6–8 циклов <a href="#" data-anchor="#ch6" class="ref">(см. Главу 9)</a>.</li>
+<li><strong>Бумажная книга при тусклом свете.</strong> 15–20 минут. Не телефон, не сериал.</li>
+<li><strong>Когда захочется спать — обратно в кровать.</strong> Главное правило: в кровати только спишь, а не лежишь и страдаешь.</li>
 </ol>
 </div>
 
-<div id="sosSocial" style="background:var(--cream);border-left:3px solid var(--terracotta);padding:1.25rem 1.5rem;margin:1.25rem 0">
-<h4 style="font-family:'PT Serif',serif;font-size:18px;font-weight:700;margin:0 0 0.5rem;color:var(--terracotta-deep)">Тревога перед встречей с людьми</h4>
-<ol style="margin:0.5rem 0 0 1.25rem;padding:0">
-<li style="margin:0.25rem 0;font-size:15px;color:var(--ink-soft)"><strong>Физиологический вздох.</strong> Двойной вдох носом, длинный выдох ртом. 3–5 раз. Быстро снижает пульс.</li>
-<li style="margin:0.25rem 0;font-size:15px;color:var(--ink-soft)"><strong>Сместь фокус на другого.</strong> Подготовь 2–3 вопроса, которые задашь собеседнику. Когда слушаешь, тревога падает.</li>
-<li style="margin:0.25rem 0;font-size:15px;color:var(--ink-soft)"><strong>Силовая поза 2 минуты.</strong> В уединённом месте: стой прямо, руки в стороны или вверх. Меняет гормональный фон.</li>
-<li style="margin:0.25rem 0;font-size:15px;color:var(--ink-soft)"><strong>Реальность.</strong> Большинство людей думают о себе, а не о тебе. Никто не запоминает мелкие промахи.</li>
-<li style="margin:0.25rem 0;font-size:15px;color:var(--ink-soft)"><strong>Разреши себе уйти раньше.</strong> Если совсем тяжело, можно уйти через час. Главное — пришёл.</li>
+<div class="sos-block" id="sosSocial">
+<h4>Тревога перед встречей с людьми</h4>
+<ol>
+<li><strong>Физиологический вздох.</strong> Двойной вдох носом, длинный выдох ртом. 3–5 раз. Быстро снижает пульс.</li>
+<li><strong>Сместь фокус на другого.</strong> Подготовь 2–3 вопроса, которые задашь собеседнику. Когда слушаешь, тревога падает.</li>
+<li><strong>Силовая поза 2 минуты.</strong> В уединённом месте: стой прямо, руки в стороны или вверх. Меняет гормональный фон.</li>
+<li><strong>Реальность.</strong> Большинство людей думают о себе, а не о тебе. Никто не запоминает мелкие промахи.</li>
+<li><strong>Разреши себе уйти раньше.</strong> Если совсем тяжело, можно уйти через час. Главное — пришёл.</li>
 </ol>
 </div>
 
-<div id="sosDip" style="background:var(--cream);border-left:3px solid var(--terracotta);padding:1.25rem 1.5rem;margin:1.25rem 0">
-<h4 style="font-family:'PT Serif',serif;font-size:18px;font-weight:700;margin:0 0 0.5rem;color:var(--terracotta-deep)">Послеобеденный спад энергии</h4>
-<ol style="margin:0.5rem 0 0 1.25rem;padding:0">
-<li style="margin:0.25rem 0;font-size:15px;color:var(--ink-soft)"><strong>Прогулка 10 минут на улице.</strong> Лучшее средство от сонливости после обеда. Свет + движение <a href="#" data-anchor="#ch2" class="ref">(см. Главу 2)</a>.</li>
-<li style="margin:0.25rem 0;font-size:15px;color:var(--ink-soft)"><strong>Стакан воды.</strong> Дефицит воды часто маскируется под усталость.</li>
-<li style="margin:0.25rem 0;font-size:15px;color:var(--ink-soft)"><strong>20 минут NSDR.</strong> Если есть возможность лечь — это лучше, чем третья чашка кофе <a href="#" data-anchor="#ch6" class="ref">(см. Главу 6)</a>.</li>
-<li style="margin:0.25rem 0;font-size:15px;color:var(--ink-soft)"><strong>Перегруппируй задачи.</strong> Сложное — на утро. После обеда — рутина, общение, рутинные дела.</li>
-<li style="margin:0.25rem 0;font-size:15px;color:var(--ink-soft)"><strong>Проверь обед.</strong> Тяжёлый углеводный обед = неизбежный спад. Завтра — больше белка и овощей <a href="#" data-anchor="#ch4" class="ref">(см. Главу 4)</a>.</li>
+<div class="sos-block" id="sosDip">
+<h4>Послеобеденный спад энергии</h4>
+<ol>
+<li><strong>Прогулка 10 минут на улице.</strong> Лучшее средство от сонливости после обеда. Свет + движение <a href="#" data-anchor="#ch2" class="ref">(см. Главу 2)</a>.</li>
+<li><strong>Стакан воды.</strong> Дефицит воды часто маскируется под усталость.</li>
+<li><strong>20 минут NSDR.</strong> Если есть возможность лечь — это лучше, чем третья чашка кофе <a href="#" data-anchor="#ch6" class="ref">(см. Главу 9)</a>.</li>
+<li><strong>Перегруппируй задачи.</strong> Сложное — на утро. После обеда — рутина, общение, рутинные дела.</li>
+<li><strong>Проверь обед.</strong> Тяжёлый углеводный обед = неизбежный спад. Завтра — больше белка и овощей <a href="#" data-anchor="#ch4" class="ref">(см. Главу 4)</a>.</li>
 </ol>
 </div>
 
-<div id="sosAnger" style="background:var(--cream);border-left:3px solid var(--terracotta);padding:1.25rem 1.5rem;margin:1.25rem 0">
-<h4 style="font-family:'PT Serif',serif;font-size:18px;font-weight:700;margin:0 0 0.5rem;color:var(--terracotta-deep)">Раздражение и злость без причины</h4>
-<ol style="margin:0.5rem 0 0 1.25rem;padding:0">
-<li style="margin:0.25rem 0;font-size:15px;color:var(--ink-soft)"><strong>Проверь базовое.</strong> Спал? Ел? Пил воду? Чаще всего раздражение — это голод, недосып или обезвоживание.</li>
-<li style="margin:0.25rem 0;font-size:15px;color:var(--ink-soft)"><strong>Физический выход.</strong> 20 отжиманий, быстрая ходьба, бой с тенью. Гормон стресса сожгётся в движении.</li>
-<li style="margin:0.25rem 0;font-size:15px;color:var(--ink-soft)"><strong>Холодный душ или ополоснуть лицо.</strong> 30 секунд. Резетит нервную систему.</li>
-<li style="margin:0.25rem 0;font-size:15px;color:var(--ink-soft)"><strong>Не пиши и не звони.</strong> Сейчас точно скажешь то, о чём пожалеешь. Подожди час.</li>
-<li style="margin:0.25rem 0;font-size:15px;color:var(--ink-soft)"><strong>Если повторяется регулярно</strong> — повод поговорить со специалистом. Хроническое раздражение часто симптом выгорания или депрессии.</li>
+<div class="sos-block" id="sosAnger">
+<h4>Раздражение и злость без причины</h4>
+<ol>
+<li><strong>Проверь базовое.</strong> Спал? Ел? Пил воду? Чаще всего раздражение — это голод, недосып или обезвоживание.</li>
+<li><strong>Физический выход.</strong> 20 отжиманий, быстрая ходьба, бой с тенью. Гормон стресса сожгётся в движении.</li>
+<li><strong>Холодный душ или ополоснуть лицо.</strong> 30 секунд. Резетит нервную систему.</li>
+<li><strong>Не пиши и не звони.</strong> Сейчас точно скажешь то, о чём пожалеешь. Подожди час.</li>
+<li><strong>Если повторяется регулярно</strong> — повод поговорить со специалистом. Хроническое раздражение часто симптом выгорания или депрессии.</li>
 </ol>
 </div>
 
-<div id="sosEmpty" style="background:var(--cream);border-left:3px solid var(--terracotta);padding:1.25rem 1.5rem;margin:1.25rem 0">
-<h4 style="font-family:'PT Serif',serif;font-size:18px;font-weight:700;margin:0 0 0.5rem;color:var(--terracotta-deep)">Внутри пусто, ничего не хочется</h4>
-<ol style="margin:0.5rem 0 0 1.25rem;padding:0">
-<li style="margin:0.25rem 0;font-size:15px;color:var(--ink-soft)"><strong>Признание.</strong> Это нормально. Так бывает у всех. Сейчас не решение, сейчас пережить.</li>
-<li style="margin:0.25rem 0;font-size:15px;color:var(--ink-soft)"><strong>Маленькое действие.</strong> Помой посуду, заправь кровать, выйди в магазин. Любое мелкое дело включает мозг.</li>
-<li style="margin:0.25rem 0;font-size:15px;color:var(--ink-soft)"><strong>Контакт с человеком.</strong> Позвони родителю, другу, напиши кому-то живому. Не соцсети, а живой разговор.</li>
-<li style="margin:0.25rem 0;font-size:15px;color:var(--ink-soft)"><strong>Прогулка 30 минут.</strong> Природа, парк, лес. Зелёное лечит апатию лучше серого <a href="#" data-anchor="#ch3" class="ref">(см. Главу 3)</a>.</li>
-<li style="margin:0.25rem 0;font-size:15px;color:var(--ink-soft)"><strong>Если состояние не проходит больше 2 недель</strong> — обратись к психологу. Это не слабость, а зрелое решение.</li>
+<div class="sos-block" id="sosEmpty">
+<h4>Внутри пусто, ничего не хочется</h4>
+<ol>
+<li><strong>Признание.</strong> Это нормально. Так бывает у всех. Сейчас не решение, сейчас пережить.</li>
+<li><strong>Маленькое действие.</strong> Помой посуду, заправь кровать, выйди в магазин. Любое мелкое дело включает мозг.</li>
+<li><strong>Контакт с человеком.</strong> Позвони родителю, другу, напиши кому-то живому. Не соцсети, а живой разговор.</li>
+<li><strong>Прогулка 30 минут.</strong> Природа, парк, лес. Зелёное лечит апатию лучше серого <a href="#" data-anchor="#ch3" class="ref">(см. Главу 3)</a>.</li>
+<li><strong>Если состояние не проходит больше 2 недель</strong> — обратись к психологу. Это не слабость, а зрелое решение.</li>
 </ol>
 </div>
 
@@ -4225,22 +3866,22 @@ Heat Shock Proteins. Активируются от тепла. Восстана�
 <div class="gloss-item"><strong>Циркадные ритмы</strong>24-часовой цикл, по которому работают все системы тела. <a href="#" data-anchor="#ch2" class="ref">Глава 2</a></div>
 <div class="gloss-item"><strong>Кортизол</strong>Гормон бодрости. Высокий утром, низкий вечером. Регулируется светом. <a href="#" data-anchor="#ch2" class="ref">Глава 2</a></div>
 <div class="gloss-item"><strong>Мелатонин</strong>Гормон сна. Вырабатывается в темноте. Свет его подавляет. <a href="#" data-anchor="#ch1" class="ref">Глава 1</a></div>
-<div class="gloss-item"><strong>Дофамин</strong>Нейромедиатор мотивации. Не «гормон удовольствия», а гормон стремления. <a href="#" data-anchor="#ch5" class="ref">Глава 5</a></div>
-<div class="gloss-item"><strong>Норадреналин</strong>Гормон фокуса и активности. Поднимается от холода, кофе, интенсивности. <a href="#" data-anchor="#ch7" class="ref">Глава 7</a></div>
+<div class="gloss-item"><strong>Дофамин</strong>Нейромедиатор мотивации. Не «гормон удовольствия», а гормон стремления. <a href="#" data-anchor="#ch5" class="ref">Глава 8</a></div>
+<div class="gloss-item"><strong>Норадреналин</strong>Гормон фокуса и активности. Поднимается от холода, кофе, интенсивности. <a href="#" data-anchor="#ch7" class="ref">Глава 10</a></div>
 <div class="gloss-item"><strong>Гиппокамп</strong>Структура мозга, отвечающая за память. Растёт от кардио и обучения. <a href="#" data-anchor="#ch3" class="ref">Глава 3</a></div>
 <div class="gloss-item"><strong>Электролиты</strong>Минералы для нервов и мышц: натрий, калий, магний, кальций. <a href="#" data-anchor="#ch4" class="ref">Глава 4</a></div>
-<div class="gloss-item"><strong>NSDR</strong>Глубокий отдых без сна. 10–20 минут восстанавливают энергию как сон. <a href="#" data-anchor="#ch6" class="ref">Глава 6</a></div>
-<div class="gloss-item"><strong>Випассана</strong>Медитация наблюдения за дыханием. Тренирует фокус. <a href="#" data-anchor="#ch6" class="ref">Глава 6</a></div>
-<div class="gloss-item"><strong>HSP</strong>Белки теплового шока. Активируются от сауны. Защищают нейроны от старения. <a href="#" data-anchor="#ch7" class="ref">Глава 7</a></div>
-<div class="gloss-item"><strong>Парасимпатическая НС</strong>Система покоя. Включается длинным выдохом. <a href="#" data-anchor="#ch6" class="ref">Глава 6</a></div>
-<div class="gloss-item"><strong>Симпатическая НС</strong>Система действия. Активная при стрессе и нагрузке. <a href="#" data-anchor="#ch6" class="ref">Глава 6</a></div>
-<div class="gloss-item"><strong>Помодоро</strong>Техника работы блоками 25 минут с перерывом 5 минут. <a href="#" data-anchor="#ch5" class="ref">Глава 5</a></div>
-<div class="gloss-item"><strong>Zettelkasten</strong>Система связанных коротких заметок. Вторая память. <a href="#" data-anchor="#ch9" class="ref">Глава 9</a></div>
+<div class="gloss-item"><strong>NSDR</strong>Глубокий отдых без сна. 10–20 минут восстанавливают энергию как сон. <a href="#" data-anchor="#ch6" class="ref">Глава 9</a></div>
+<div class="gloss-item"><strong>Випассана</strong>Медитация наблюдения за дыханием. Тренирует фокус. <a href="#" data-anchor="#ch6" class="ref">Глава 9</a></div>
+<div class="gloss-item"><strong>HSP</strong>Белки теплового шока. Активируются от сауны. Защищают нейроны от старения. <a href="#" data-anchor="#ch7" class="ref">Глава 10</a></div>
+<div class="gloss-item"><strong>Парасимпатическая НС</strong>Система покоя. Включается длинным выдохом. <a href="#" data-anchor="#ch6" class="ref">Глава 9</a></div>
+<div class="gloss-item"><strong>Симпатическая НС</strong>Система действия. Активная при стрессе и нагрузке. <a href="#" data-anchor="#ch6" class="ref">Глава 9</a></div>
+<div class="gloss-item"><strong>Помодоро</strong>Техника работы блоками 25 минут с перерывом 5 минут. <a href="#" data-anchor="#ch5" class="ref">Глава 8</a></div>
+<div class="gloss-item"><strong>Zettelkasten</strong>Система связанных коротких заметок. Вторая память. <a href="#" data-anchor="#ch9" class="ref">Глава 14</a></div>
 </div>
 
 <h3>Быстрые ответы</h3>
 <h4>Что если нет 30 минут на чтение книги?</h4>
-<p>Прочитай только Главу 1, 2 и 10. Это уже даст 70% эффекта. Остальное добавишь позже.</p>
+<p>Прочитай только Главу 1, 2 и 17 (план). Это уже даст 70% эффекта. Остальное добавишь позже.</p>
 
 <h4>Можно ли пропустить добавки?</h4>
 <p>Да. Все 4 базовые добавки можно получать из еды, если ешь жирную рыбу 2–3 раза в неделю, гуляешь летом без крема, ешь много зелени и яиц. Но в наших широтах зимой добавки сильно облегчают жизнь.</p>
@@ -4330,15 +3971,8 @@ Heat Shock Proteins. Активируются от тепла. Восстана�
 <script>
 (function() {
 "use strict";
-
-// =============================================
-// УТИЛИТЫ (совместимые с Я.Браузером и WebView)
-// =============================================
-
 function $(sel, ctx) { return (ctx || document).querySelector(sel); }
 function $$(sel, ctx) { return (ctx || document).querySelectorAll(sel); }
-
-// Ручной поиск ближайшего предка с атрибутом (вместо closest)
 function findAncestor(el, attr) {
   while (el && el !== document) {
     if (el.nodeType === 1 && el.getAttribute && el.getAttribute(attr)) return el;
@@ -4346,8 +3980,6 @@ function findAncestor(el, attr) {
   }
   return null;
 }
-
-// Throttle для scroll-листенеров
 function throttle(fn, wait) {
   var last = 0, timer = null;
   return function() {
@@ -4367,16 +3999,10 @@ function throttle(fn, wait) {
     }
   };
 }
-
-// Получение позиции прокрутки (совместимый способ)
 function getScrollY() {
   return window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
 }
-
-// Плавная прокрутка к Y (ручная, через requestAnimationFrame)
-// Это нужно потому что window.scrollTo({behavior:smooth}) ломается в Я.Браузере
 var raf = window.requestAnimationFrame || window.webkitRequestAnimationFrame || function(cb) { return setTimeout(cb, 16); };
-
 function smoothScrollTo(targetY) {
   var startY = getScrollY();
   var distance = targetY - startY;
@@ -4385,7 +4011,6 @@ function smoothScrollTo(targetY) {
   function step() {
     var elapsed = +new Date() - startTime;
     var progress = Math.min(1, elapsed / duration);
-    // ease-out cubic
     var eased = 1 - Math.pow(1 - progress, 3);
     window.scrollTo(0, startY + distance * eased);
     if (progress < 1) raf(step);
@@ -4393,18 +4018,12 @@ function smoothScrollTo(targetY) {
   if (distance === 0) return;
   raf(step);
 }
-
-// Безопасный localStorage
 function lsGet(key) {
   try { return localStorage.getItem(key); } catch(e) { return null; }
 }
 function lsSet(key, val) {
   try { localStorage.setItem(key, val); return true; } catch(e) { return false; }
 }
-
-// =============================================
-// УНИВЕРСАЛЬНЫЙ ОБРАБОТЧИК ЯКОРНЫХ ССЫЛОК
-// =============================================
 function handleAnchorClick(e) {
   try {
     var link = findAncestor(e.target, 'data-anchor');
@@ -4425,10 +4044,6 @@ function handleAnchorClick(e) {
   } catch(err) {}
 }
 document.addEventListener('click', handleAnchorClick, false);
-
-// =============================================
-// PROGRESS BAR
-// =============================================
 var progressBar = document.getElementById('progress');
 var mobileProgress = document.getElementById('mobileProgress');
 function updateProgress() {
@@ -4443,10 +4058,6 @@ function updateProgress() {
   } catch(e) {}
 }
 window.addEventListener('scroll', throttle(updateProgress, 80), { passive: true });
-
-// =============================================
-// TOC ACTIVE LINK
-// =============================================
 var tocLinks = $$('.toc-link');
 var sections = [];
 for (var i = 0; i < tocLinks.length; i++) {
@@ -4475,20 +4086,14 @@ function updateActiveTocLink() {
   } catch(e) {}
 }
 window.addEventListener('scroll', throttle(updateActiveTocLink, 150), { passive: true });
-
-// =============================================
-// MOBILE MENU
-// =============================================
 var menuBtn = document.getElementById('menuBar');
 var mobileMenu = document.getElementById('mobileMenu');
 var mobileClose = document.getElementById('mobileClose');
 var mobileNav = document.getElementById('mobileNav');
-
 function buildMobileNav() {
   try {
     var src = document.getElementById('tocNav');
     if (!src || !mobileNav) return;
-    // Клонируем структуру и меняем классы
     var html = src.innerHTML
       .replace(/class="toc-link"/g, 'class="mobile-link"')
       .replace(/class="toc-num"/g, 'class="mobile-link-num"')
@@ -4502,7 +4107,6 @@ function buildMobileNav() {
   } catch(e) {}
 }
 buildMobileNav();
-
 function openMobileMenu(e) {
   if (e) { e.preventDefault(); if (e.stopPropagation) e.stopPropagation(); }
   try {
@@ -4519,7 +4123,6 @@ function closeMobileMenu(e) {
   } catch(err) {}
   return false;
 }
-
 if (menuBtn) {
   menuBtn.addEventListener('click', openMobileMenu, false);
 }
@@ -4530,15 +4133,10 @@ if (mobileNav) {
   mobileNav.addEventListener('click', function(e) {
     var link = findAncestor(e.target, 'data-anchor');
     if (link) {
-      // меню закрываем после небольшой задержки чтобы scroll успел запуститься
       setTimeout(closeMobileMenu, 100);
     }
   }, false);
 }
-
-// =============================================
-// TOP BUTTON
-// =============================================
 var topBtn = document.getElementById('topBtn');
 function updateTopBtn() {
   try {
@@ -4554,10 +4152,6 @@ if (topBtn) {
     smoothScrollTo(0);
   }, false);
 }
-
-// =============================================
-// SLEEP CALCULATOR
-// =============================================
 window.calcSleep = function() {
   try {
     var input = document.getElementById('wakeTime');
@@ -4586,10 +4180,6 @@ window.calcSleep = function() {
     result.classList.add('show');
   } catch(e) {}
 };
-
-// =============================================
-// CIRCADIAN WIDGET
-// =============================================
 function updateCircadian(hour) {
   try {
     var out = document.getElementById('circadianOut');
@@ -4641,10 +4231,6 @@ if (circTime) {
   circTime.addEventListener('input', function(e) { updateCircadian(parseInt(e.target.value, 10)); }, false);
   updateCircadian(7);
 }
-
-// =============================================
-// WATER CALCULATOR
-// =============================================
 window.calcWater = function() {
   try {
     var w = parseFloat(document.getElementById('weightInput').value);
@@ -4674,10 +4260,6 @@ window.calcWater = function() {
     }
   } catch(e) {}
 };
-
-// =============================================
-// DOPAMINE QUIZ
-// =============================================
 var quizAnswers = {};
 window.quizAnswer = function(q, val) {
   try {
@@ -4704,10 +4286,6 @@ window.quizAnswer = function(q, val) {
     }
   } catch(e) {}
 };
-
-// =============================================
-// BREATHING TIMER
-// =============================================
 var breathRunning = false;
 var breathMode = '478';
 var breathModes = {
@@ -4720,9 +4298,12 @@ window.setBreathMode = function(mode) {
     if (breathRunning) return;
     breathMode = mode;
     var tabs = $$('.breath-tab');
-    for (var i = 0; i < tabs.length; i++) tabs[i].classList.remove('active');
+    for (var i = 0; i < tabs.length; i++) {
+      tabs[i].classList.remove('active');
+      if (tabs[i].getAttribute('data-breath')) tabs[i].setAttribute('aria-pressed', 'false');
+    }
     var tab = document.querySelector('.breath-tab[data-breath="' + mode + '"]');
-    if (tab) tab.classList.add('active');
+    if (tab) { tab.classList.add('active'); tab.setAttribute('aria-pressed', 'true'); }
     var cy = document.getElementById('breathCycles');
     var ci = document.getElementById('breathCircle');
     if (cy) cy.textContent = breathModes[mode].desc;
@@ -4764,10 +4345,6 @@ window.startBreath = function() {
     doCycle();
   } catch(e) { breathRunning = false; }
 };
-
-// =============================================
-// COLD PLAN
-// =============================================
 var coldPlans = {
   1: '<strong>Неделя 1. Старт.</strong><br>В конце обычного душа последние 30 секунд переключи на максимально холодную воду. 4–5 раз за неделю. Дыши ровно, не задерживай.',
   2: '<strong>Неделя 2. Привыкание.</strong><br>Холодный душ 1 минута без тёплого финала. 3–4 раза за неделю. Если страшно — оставь голову в стороне, мочи только тело.',
@@ -4778,19 +4355,14 @@ window.setColdWeek = function(w) {
   try {
     var btns = $$('.cold-day-btn');
     for (var i = 0; i < btns.length; i++) {
-      if (i + 1 === w) btns[i].classList.add('active');
-      else btns[i].classList.remove('active');
+      if (i + 1 === w) { btns[i].classList.add('active'); btns[i].setAttribute('aria-pressed','true'); }
+      else { btns[i].classList.remove('active'); btns[i].setAttribute('aria-pressed','false'); }
     }
     var r = document.getElementById('coldResult');
     if (r) r.innerHTML = coldPlans[w];
   } catch(e) {}
 };
 try { window.setColdWeek(1); } catch(e) {}
-
-// =============================================
-// SUPPLEMENT BUILDER (expanded matrix: 18 symptoms × ~25 supplements with priorities)
-// =============================================
-// Каждая добавка: { name, dose, time }
 var suppDb = {
   'omega':       { name: 'Омега-3 (EPA+DHA)', dose: '1000–2000 мг EPA+DHA', time: 'утром с едой' },
   'd3':          { name: 'Витамин D3 + K2',    dose: 'D3 2000–5000 МЕ, K2 100–200 мкг', time: 'с завтраком, с жирной едой' },
@@ -4827,8 +4399,6 @@ var suppDb = {
   'collagen':    { name: 'Коллаген',           dose: '10–20 г',     time: 'утром или с витамином C' },
   'vit_c':       { name: 'Витамин C',          dose: '500–1000 мг', time: 'с едой' }
 };
-
-// Матрица: симптом → массивы добавок по приоритету (P1 = база, P2 = усиление, P3 = доп)
 var suppMatrix = {
   anxiety:      { p1: ['mag_gly','theanine'], p2: ['ashwa','glycine'], p3: ['magnol','gaba'] },
   sleep:        { p1: ['mag_gly','glycine'],  p2: ['melatonin','ashwa'], p3: ['theanine','magnol'] },
@@ -4849,7 +4419,6 @@ var suppMatrix = {
   pms:          { p1: ['mag_gly','b_complex'], p2: ['omega','zinc'], p3: ['d3'] },
   iron_def:     { p1: ['iron','b12'],           p2: ['folate','vit_c'], p3: [] }
 };
-// Маппинг ключей симптомов из HTML
 var symKey = {
   anxiety: 'anxiety',
   sleep: 'sleep',
@@ -4870,8 +4439,6 @@ var symKey = {
   pms: 'pms',
   iron: 'iron_def'
 };
-
-// Бинд симптомов добавок (только грид #suppSymptoms)
 (function(){
   var grid = document.getElementById('suppSymptoms');
   if (!grid) return;
@@ -4882,7 +4449,6 @@ var symKey = {
     }, false);
   }
 })();
-
 window.buildSuppPlan = function() {
   try {
     var grid = document.getElementById('suppSymptoms');
@@ -4899,7 +4465,6 @@ window.buildSuppPlan = function() {
       result.classList.add('show');
       return;
     }
-    // Считаем очки по приоритетам
     var scores = {};
     for (var s = 0; s < sympKeys.length; s++) {
       var m = suppMatrix[sympKeys[s]];
@@ -4908,7 +4473,6 @@ window.buildSuppPlan = function() {
       for (var q = 0; q < (m.p2 || []).length; q++) scores[m.p2[q]] = (scores[m.p2[q]] || 0) + 2;
       for (var r = 0; r < (m.p3 || []).length; r++) scores[m.p3[r]] = (scores[m.p3[r]] || 0) + 1;
     }
-    // Если симптомов >= 3, добавляем базовый стек на каждый день
     var addedBase = false;
     if (sympKeys.length >= 3) {
       var base = ['omega','d3','mag_gly','b_complex'];
@@ -4917,14 +4481,11 @@ window.buildSuppPlan = function() {
       }
       addedBase = true;
     }
-    // Сортируем
     var sorted = [];
     for (var k in scores) sorted.push([k, scores[k]]);
     sorted.sort(function(a, b) { return b[1] - a[1]; });
-    // Определяем количество: 6–12 в зависимости от количества симптомов
     var n = Math.min(12, Math.max(6, 4 + sympKeys.length));
     var topN = sorted.slice(0, n);
-    // Группируем по времени приёма
     var groups = { 'утро': [], 'обед': [], 'вечер': [], 'другое': [] };
     for (var t = 0; t < topN.length; t++) {
       var supp = suppDb[topN[t][0]];
@@ -4965,10 +4526,6 @@ window.buildSuppPlan = function() {
     result.classList.add('show');
   } catch(e) {}
 };
-
-// =============================================
-// WHY LADDER (saves to localStorage)
-// =============================================
 var whyInputs = $$('input[data-why]');
 for (var wi = 0; wi < whyInputs.length; wi++) {
   (function(inp) {
@@ -4981,10 +4538,6 @@ for (var wi = 0; wi < whyInputs.length; wi++) {
     }, false);
   })(whyInputs[wi]);
 }
-
-// =============================================
-// SPRINT START CALCULATOR (no grid, just text plan)
-// =============================================
 window.calcSprint = function() {
   try {
     var input = document.getElementById('sprintStart');
@@ -5041,10 +4594,6 @@ window.calcSprint = function() {
     result.classList.add('show');
   } catch(e) {}
 };
-
-// =============================================
-// SELF-DIAGNOSIS
-// =============================================
 var diagInputs = $$('[data-diag]');
 var diagTotal = document.getElementById('diagTotal');
 function updateDiag() {
@@ -5070,10 +4619,6 @@ try {
   }
   updateDiag();
 } catch(e) {}
-
-// =============================================
-// NEW: STEP CALCULATOR (Chapter 3)
-// =============================================
 window.calcSteps = function() {
   try {
     var done = parseInt(document.getElementById('stepsDone').value, 10) || 0;
@@ -5103,10 +4648,6 @@ window.calcSteps = function() {
     result.classList.add('show');
   } catch(e) {}
 };
-
-// =============================================
-// NEW: SLEEP QUALITY TEST (Chapter 1)
-// =============================================
 var sleepQualityAnswers = {};
 function bindCogQuiz(quizSelector, store) {
   var quiz = document.getElementById(quizSelector);
@@ -5127,7 +4668,6 @@ function bindCogQuiz(quizSelector, store) {
   }
 }
 bindCogQuiz('sleepQualityQuiz', sleepQualityAnswers);
-
 window.calcSleepQuality = function() {
   try {
     var total = 0, answered = 0;
@@ -5161,13 +4701,8 @@ window.calcSleepQuality = function() {
     result.classList.add('show');
   } catch(e) {}
 };
-
-// =============================================
-// NEW: READINESS QUIZ (replaces 30-day tracker)
-// =============================================
 var readinessAnswers = {};
 bindCogQuiz('readinessQuiz', readinessAnswers);
-// На readiness quiz используется .quiz-q — биндим вручную
 (function(){
   var quiz = document.getElementById('readinessQuiz');
   if (!quiz) return;
@@ -5181,7 +4716,6 @@ bindCogQuiz('readinessQuiz', readinessAnswers);
           for (var c = 0; c < btns.length; c++) btns[c].classList.remove('selected');
           this.classList.add('selected');
           readinessAnswers[key] = parseInt(this.getAttribute('data-val'), 10);
-          // авто-показ результата если все 7 ответов есть
           if (Object.keys(readinessAnswers).length === 7) {
             calcReadiness();
           }
@@ -5190,7 +4724,6 @@ bindCogQuiz('readinessQuiz', readinessAnswers);
     })(qs[i]);
   }
 })();
-
 function calcReadiness() {
   try {
     var keys = ['sleep','light','move','food','phone','stress','energy'];
@@ -5240,10 +4773,6 @@ function calcReadiness() {
     result.classList.add('show');
   } catch(e) {}
 }
-
-// =============================================
-// NEW: READY CHECKLIST (Chapter 10)
-// =============================================
 (function(){
   var grid = document.getElementById('readyChecklist');
   if (!grid) return;
@@ -5274,10 +4803,6 @@ window.calcReadyChecklist = function() {
     result.classList.add('show');
   } catch(e) {}
 };
-
-// =============================================
-// NEW: COGNITIVE TYPE QUIZ (Chapter 9)
-// =============================================
 var cogTypeAnswers = {};
 bindCogQuiz('cogTypeQuiz', cogTypeAnswers);
 window.calcCogType = function() {
@@ -5309,10 +4834,6 @@ window.calcCogType = function() {
     result.classList.add('show');
   } catch(e) {}
 };
-
-// =============================================
-// NEW: STROOP TEST (Chapter 9)
-// =============================================
 var stroopState = { idx: 0, right: 0, current: null, startTime: 0, totalTime: 0 };
 var stroopColors = [
   { key: 'red', name: 'Красный', css: '#C4633D' },
@@ -5326,7 +4847,6 @@ window.startStroop = function() {
   document.getElementById('stroopButtons').style.display = 'grid';
   document.getElementById('stroopResult').classList.remove('show');
   nextStroop();
-  // Биндим кнопки один раз
   if (!stroopState.bound) {
     var btns = document.querySelectorAll('#stroopButtons .stroop-color-btn');
     for (var i = 0; i < btns.length; i++) {
@@ -5340,7 +4860,6 @@ window.startStroop = function() {
 };
 function nextStroop() {
   if (stroopState.idx >= 10) { finishStroop(); return; }
-  // Слово - название одного цвета, написано другим случайным цветом
   var wordIdx = Math.floor(Math.random() * stroopColors.length);
   var colorIdx;
   do { colorIdx = Math.floor(Math.random() * stroopColors.length); } while (colorIdx === wordIdx);
@@ -5375,10 +4894,6 @@ function finishStroop() {
   result.innerHTML = '<strong>Правильных: ' + stroopState.right + '/10. Средняя реакция: ' + avg + ' мс.</strong><br>' + verdict;
   result.classList.add('show');
 }
-
-// =============================================
-// NEW: N-BACK (Chapter 9)
-// =============================================
 var nbackState = { idx: 0, right: 0, sequence: [], showing: false, pressed: false, timer: null };
 window.startNback = function() {
   nbackState = { idx: 0, right: 0, sequence: [], showing: false, pressed: false, timer: null };
@@ -5391,7 +4906,6 @@ window.startNback = function() {
 };
 function nbackNext() {
   if (nbackState.idx >= 12) { finishNback(); return; }
-  // 40% шанс на совпадение (если можно)
   var letters = ['А','Б','В','Г','Д','Е','Ж','З','Л','М'];
   var letter;
   if (nbackState.idx >= 2 && Math.random() < 0.4) {
@@ -5405,12 +4919,9 @@ function nbackNext() {
   document.getElementById('nbackLetter').textContent = letter;
   document.getElementById('nbackRound').textContent = nbackState.idx + 1;
   nbackState.timer = setTimeout(function() {
-    // Проверяем результат
     var isMatch = nbackState.idx >= 2 && letter === nbackState.sequence[nbackState.idx - 2];
     if (isMatch && !nbackState.pressed) {
-      // Пропустил совпадение
     } else if (!isMatch && !nbackState.pressed) {
-      // Правильно НЕ нажал
       if (nbackState.idx >= 2) nbackState.right++;
     }
     document.getElementById('nbackRight').textContent = nbackState.right;
@@ -5441,10 +4952,6 @@ function finishNback() {
   document.getElementById('nbackResult').innerHTML = '<strong>Результат: ' + nbackState.right + '/' + maxScore + '.</strong><br>' + verdict;
   document.getElementById('nbackResult').classList.add('show');
 }
-
-// =============================================
-// NEW: MEMORY SPAN (Chapter 9)
-// =============================================
 var memSpanState = { level: 3, current: '', maxReached: 0 };
 window.startMemSpan = function() {
   memSpanState = { level: 3, current: '', maxReached: 0 };
@@ -5461,7 +4968,6 @@ function showMemSpan() {
   display.textContent = memSpanState.current;
   document.getElementById('memSpanInput').style.display = 'none';
   document.getElementById('memSpanCheck').style.display = 'none';
-  // Показываем 1 секунду на цифру + 1 секунда
   var showTime = memSpanState.level * 800 + 600;
   setTimeout(function() {
     display.textContent = '?';
@@ -5502,23 +5008,16 @@ function finishMemSpan() {
   result.innerHTML = '<strong>Максимальный уровень: ' + max + ' цифр.</strong><br>' + verdict;
   result.classList.add('show');
 }
-
-// =============================================
-// NEW: REACTION TIME (Chapter 9)
-// =============================================
 var reactState = { idx: 0, times: [], waiting: false, startTime: 0, timer: null };
 (function(){
   var zone = document.getElementById('reactionZone');
   if (!zone) return;
   zone.addEventListener('click', function() {
     if (reactState.idx === 0 && !reactState.waiting && reactState.times.length === 0) {
-      // Старт
       startReactRound();
     } else if (reactState.waiting) {
-      // Слишком рано
       reactTooEarly();
     } else if (zone.classList.contains('go')) {
-      // Засчитали реакцию
       var elapsed = +new Date() - reactState.startTime;
       reactState.times.push(elapsed);
       reactState.idx++;
@@ -5575,7 +5074,6 @@ function finishReact() {
   else verdict = 'Реакция замедлена. Самые частые причины: недосып, обезвоживание, кофе уже выветрился. Прогулка 10 минут поможет.';
   document.getElementById('reactionResult').innerHTML = '<strong>Средняя реакция: ' + avg + ' мс.</strong><br>' + verdict;
   document.getElementById('reactionResult').classList.add('show');
-  // сбрасываем для нового запуска
   setTimeout(function() {
     reactState.idx = 0;
     reactState.times = [];
@@ -5583,10 +5081,6 @@ function finishReact() {
     zone.textContent = 'Нажми, чтобы начать снова';
   }, 100);
 }
-
-// =============================================
-// NEW: PEAK QUIZ (Chapter 9)
-// =============================================
 var peakAnswers = {};
 (function(){
   var quiz = document.getElementById('peakQuiz');
@@ -5655,10 +5149,6 @@ window.calcPeak = function() {
     result.classList.add('show');
   } catch(e) {}
 };
-
-// =============================================
-// NEW: FOCUS CHECK (Chapter 9)
-// =============================================
 (function(){
   var widget = document.getElementById('focusTasks');
   if (!widget) return;
@@ -5685,7 +5175,6 @@ window.calcFocus = function() {
     for (var i = 0; i < tasks.length; i++) {
       var selected = tasks[i].querySelector('button.selected');
       var btns = tasks[i].querySelectorAll('button[data-val]');
-      // Подсветка правильных и неправильных
       for (var b = 0; b < btns.length; b++) {
         if (btns[b].getAttribute('data-val') === '1') btns[b].classList.add('correct');
       }
@@ -5707,10 +5196,6 @@ window.calcFocus = function() {
     result.classList.add('show');
   } catch(e) {}
 };
-
-// =============================================
-// NEW: LIGHT TIMING (Chapter 2)
-// =============================================
 window.calcLightTiming = function() {
   try {
     var wake = document.getElementById('lightWake').value || '07:00';
@@ -5718,7 +5203,6 @@ window.calcLightTiming = function() {
     var sky = document.getElementById('lightSky').value;
     var parts = wake.split(':');
     var wakeMin = parseInt(parts[0],10) * 60 + parseInt(parts[1],10);
-    // Окно от пробуждения до +60 минут идеально
     var windowStart = wakeMin;
     var windowEnd = wakeMin + 60;
     function fmt(min) {
@@ -5744,10 +5228,6 @@ window.calcLightTiming = function() {
     document.getElementById('lightTimingResult').classList.add('show');
   } catch(e) {}
 };
-
-// =============================================
-// NEW: NUTRIENT DEFICIENCY (Chapter 4)
-// =============================================
 (function(){
   var grid = document.getElementById('nutrientGrid');
   if (!grid) return;
@@ -5770,7 +5250,6 @@ window.calcNutrientDef = function() {
       result.classList.add('show');
       return;
     }
-    // Матрица соответствия нутриентам
     var nutrMap = {
       'fatigue': ['B12','Железо','D3','Магний'],
       'hair': ['Цинк','Биотин','Железо','Белок'],
@@ -5789,7 +5268,6 @@ window.calcNutrientDef = function() {
       'tongue': ['B12','Железо','Фолат'],
       'numb': ['B12','Магний','B6']
     };
-    // Подсчёт упоминаний
     var counts = {};
     for (var s = 0; s < symptoms.length; s++) {
       var nutrs = nutrMap[symptoms[s]] || [];
@@ -5797,12 +5275,10 @@ window.calcNutrientDef = function() {
         counts[nutrs[n]] = (counts[nutrs[n]] || 0) + 1;
       }
     }
-    // Сортируем по убыванию
     var sorted = [];
     for (var k in counts) sorted.push([k, counts[k]]);
     sorted.sort(function(a, b) { return b[1] - a[1]; });
     var top = sorted.slice(0, Math.min(5, sorted.length));
-    // Источники еды для топ нутриентов
     var foodSources = {
       'B12': 'мясо, рыба, яйца, печень',
       'Железо': 'красное мясо, печень, бобовые с витамином C',
@@ -5836,10 +5312,6 @@ window.calcNutrientDef = function() {
     result.classList.add('show');
   } catch(e) {}
 };
-
-// =============================================
-// NEW: BREATH PATTERN (Chapter 6)
-// =============================================
 var breathPatternAnswers = {};
 (function(){
   var quiz = document.getElementById('breathPatternQuiz');
@@ -5869,7 +5341,6 @@ window.calcBreathPattern = function() {
       return;
     }
     var pattern, tech, why;
-    // Определяем паттерн
     if (ans.depth === 'shallow' || ans.depth === 'chest') {
       pattern = 'Поверхностное грудное дыхание. Это самый частый паттерн при стрессе и сидячей работе.';
     } else if (ans.depth === 'mixed') {
@@ -5877,7 +5348,6 @@ window.calcBreathPattern = function() {
     } else {
       pattern = 'Диафрагмальное дыхание. Это идеальная база. Молодец.';
     }
-    // Подбираем технику под состояние
     if (ans.state === 'anx') {
       tech = '4-7-8 (дыхание для тревоги)';
       why = 'Длинный выдох в 8 секунд резко активирует парасимпатику. Тревога снижается за 3–4 цикла.';
@@ -5891,7 +5361,6 @@ window.calcBreathPattern = function() {
       tech = 'Випассана 10 минут';
       why = 'Наблюдение за дыханием без управления. Тренирует фокус и устойчивость на будущее.';
     }
-    // Дополнительная подсказка
     var bonus = '';
     if (ans.mouth === 'mouth') {
       bonus = '<br><br><strong>Важно:</strong> дыхание через рот закисляет ротовую полость и сушит дыхательные пути. Тренируй дыхание через нос днём и ночью (если ночью открыт рот — обсуди с ЛОРом).';
@@ -5902,10 +5371,6 @@ window.calcBreathPattern = function() {
     result.classList.add('show');
   } catch(e) {}
 };
-
-// =============================================
-// NEW: COLD PROTOCOL (Chapter 7)
-// =============================================
 var coldProtocolAnswers = {};
 (function(){
   var quiz = document.getElementById('coldProtocolQuiz');
@@ -5974,10 +5439,6 @@ window.calcColdProtocol = function() {
     result.classList.add('show');
   } catch(e) {}
 };
-
-// =============================================
-// NEW: SOS SUGGESTION (Chapter 11)
-// =============================================
 (function(){
   var grid = document.getElementById('sosState');
   if (!grid) return;
@@ -6000,7 +5461,6 @@ window.suggestSos = function() {
       result.classList.add('show');
       return;
     }
-    // Маппинг состояния → секция
     var sectionMap = {
       'panic': { id: 'sosPanic', name: 'Паническая атака' },
       'anxiety': { id: 'sosAnxiety', name: 'Тревога' },
@@ -6015,7 +5475,6 @@ window.suggestSos = function() {
       'anger': { id: 'sosAnger', name: 'Раздражение и злость' },
       'empty': { id: 'sosEmpty', name: 'Внутри пусто' }
     };
-    // Если паника или сильная тревога — приоритет
     var primary = null;
     if (states.indexOf('panic') !== -1) primary = 'panic';
     else if (states.indexOf('anxiety') !== -1) primary = 'anxiety';
@@ -6035,7 +5494,6 @@ window.suggestSos = function() {
     result.classList.add('show');
   } catch(e) {}
 };
-// SOS-кнопки быстрого запуска (вместо inline onclick)
 (function(){
   var sosBtns = document.querySelectorAll('.sos-btn[data-sos-target]');
   for (var i = 0; i < sosBtns.length; i++) {
@@ -6050,10 +5508,6 @@ window.suggestSos = function() {
     }, false);
   }
 })();
-
-// =============================================
-// SUPPLEMENT CONFLICTS CHECKER (Chapter 8)
-// =============================================
 (function(){
   var grid = document.getElementById('conflictGrid');
   if (!grid) return;
@@ -6103,10 +5557,6 @@ window.checkConflicts = function() {
     result.classList.add('show');
   } catch(e) {}
 };
-
-// =============================================
-// NEW v5: INFLAMMATION (Chapter 5)
-// =============================================
 function bindGrid(gridId) {
   var grid = document.getElementById(gridId);
   if (!grid) return;
@@ -6170,10 +5620,6 @@ window.calcPlate = function() {
     result.classList.add('show');
   } catch(e) {}
 };
-
-// =============================================
-// NEW v5: HORMONES (Chapter 6)
-// =============================================
 bindGrid('hormoneGrid');
 window.calcHormones = function() {
   try {
@@ -6239,7 +5685,6 @@ window.buildLabsList = function() {
       prevent: ['Липидный профиль','Гомоцистеин']
     };
     var all = minSet.concat(addBySex).concat(addByAge).concat(addByConcern[concern] || []);
-    // дедупликация
     var seen = {}, unique = [];
     for (var i = 0; i < all.length; i++) {
       if (!seen[all[i]]) { seen[all[i]] = true; unique.push(all[i]); }
@@ -6252,10 +5697,6 @@ window.buildLabsList = function() {
     result.classList.add('show');
   } catch(e) {}
 };
-
-// =============================================
-// NEW v5: SEXUAL HEALTH (Chapter 7)
-// =============================================
 bindGrid('libidoGrid');
 window.calcLibido = function() {
   try {
@@ -6308,10 +5749,6 @@ window.calcSexFreq = function() {
     result.classList.add('show');
   } catch(e) {}
 };
-
-// =============================================
-// NEW v5: EMOTIONS (Chapter 12)
-// =============================================
 var emotionShades = {
   anger: ['раздражение','досада','злость','ярость','возмущение','презрение','обида'],
   fear: ['беспокойство','тревога','страх','паника','опасение','растерянность','уязвимость'],
@@ -6372,10 +5809,6 @@ window.calcEmotionalWeather = function() {
     result.classList.add('show');
   } catch(e) {}
 };
-
-// =============================================
-// NEW v5: RELATIONS (Chapter 13)
-// =============================================
 var socialAuditAns = {};
 (function(){
   var quiz = document.getElementById('socialAuditQuiz');
@@ -6459,10 +5892,6 @@ window.buildConvPlan = function() {
     result.classList.add('show');
   } catch(e) {}
 };
-
-// =============================================
-// NEW v5: TIME MANAGEMENT (Chapter 15)
-// =============================================
 var pomoState = { duration: 25 * 60, remaining: 25 * 60, running: false, timer: null };
 window.setPomodoroMode = function(min) {
   if (pomoState.running) return;
@@ -6471,8 +5900,13 @@ window.setPomodoroMode = function(min) {
   updatePomodoroDisplay();
   var tabs = document.querySelectorAll('.breath-tab[data-pomo]');
   for (var i = 0; i < tabs.length; i++) {
-    if (parseInt(tabs[i].getAttribute('data-pomo'),10) === min) tabs[i].classList.add('active');
-    else tabs[i].classList.remove('active');
+    if (parseInt(tabs[i].getAttribute('data-pomo'),10) === min) {
+      tabs[i].classList.add('active');
+      tabs[i].setAttribute('aria-pressed','true');
+    } else {
+      tabs[i].classList.remove('active');
+      tabs[i].setAttribute('aria-pressed','false');
+    }
   }
 };
 function updatePomodoroDisplay() {
@@ -6565,10 +5999,6 @@ window.calcTimeAudit = function() {
     result.classList.add('show');
   } catch(e) {}
 };
-
-// =============================================
-// NEW v5: HABITS (Chapter 16)
-// =============================================
 window.buildHabit = function() {
   try {
     var want = (document.getElementById('habitWant').value || '').trim();
@@ -6629,10 +6059,6 @@ window.calcHabitDiag = function() {
     result.classList.add('show');
   } catch(e) {}
 };
-
-// =============================================
-// NEW v5: TECH (Chapter 18)
-// =============================================
 var techPickAns = {};
 (function(){
   var quiz = document.getElementById('techPickQuiz');
@@ -6723,10 +6149,6 @@ window.calcOrtho = function() {
     result.classList.add('show');
   } catch(e) {}
 };
-
-// =============================================
-// NEW v5: BRAIN AFTER 50 (Chapter 19)
-// =============================================
 bindGrid('brainAgeGrid');
 window.calcBrainAge = function() {
   try {
@@ -6784,10 +6206,6 @@ window.calcCogReserve = function() {
     result.classList.add('show');
   } catch(e) {}
 };
-
-// =============================================
-// NEW v5: WHAT NOT WORKS (Chapter 20)
-// =============================================
 var biohackInfo = {
   detox: { v: '✕ Не работает', d: 'Печень и почки — это и есть детокс. Никакие соки и чаи ничего не «выводят». Сэкономь деньги.' },
   grounding: { v: '✕ Псевдонаука', d: 'Идея «снять заряд от земли» — мифология. Гулять босиком приятно, и всё. Не плати за коврики.' },
@@ -6840,16 +6258,11 @@ window.calcSpendCheck = function() {
     result.classList.add('show');
   } catch(e) {}
 };
-
-// =============================================
-// INIT
-// =============================================
 try {
   updateProgress();
   updateActiveTocLink();
   updateTopBtn();
 } catch(e) {}
-
 })();
 </script>
 
